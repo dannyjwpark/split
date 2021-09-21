@@ -25,7 +25,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render :show
+    if @user
+      render :show
+    else
+      redirect_to new_session_url
+    end
   end
 
   private
