@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   private
   def current_user
+    return nil if self.session[:session_token].nil?
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
