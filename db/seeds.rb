@@ -11,9 +11,3 @@ user2 = User.create(id: 2, name: "Grace", email: "grace@split.com");
 user3 = User.create(id: 3, name: "Haru", email: "haru@split.com");
 user4 = User.create(id: 4, name: "Pepper", email: "pepper@split.com");
 
-friend1 = Friend.create(id: 1, name: "Danny", email: "danny@split.com");
-friend2 = Friend.create(id: 2, name: "Grace", email: "grace@split.com");
-friend3 = Friend.create(id: 3, name: "Haru", email: "haru@split.com");
-friend4 = Friend.create(id: 4, name: "Pepper", email: "pepper@split.com");
-
-
