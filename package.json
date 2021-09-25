@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": ".split() is a clone of [Splitwise](https://www.splitwise.com/), an interpersonal finance app that allows consumers to split expenses with friends. If a group needs to share the cost of a particular bill, .split() ensures that anyone who pays is reimbursed the correct amount and with a minimal number of transactions.",
   "main": "index.js",
+  "engines": {
+    "node": "14.17.6",
+    "npm": "7.24.0"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"
+    
   },
   "dependencies": {
     "@babel/core": "^7.15.5",
@@ -20,9 +25,11 @@
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0"
   },
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
