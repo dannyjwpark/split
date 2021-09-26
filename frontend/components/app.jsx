@@ -1,10 +1,12 @@
 import React from 'react';
-import SignupContainer from './session/signup_container';
+import { Link } from 'react-router';
 
-export default () => {
-    return(
+const App = ({ children }) => {
+    return (
         <div>
-            <Route path="/signup" component={SignupContainer} />
+            {children}
         </div>
-    )
+    );
 }
+
+export default App;
