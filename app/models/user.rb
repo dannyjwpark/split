@@ -18,7 +18,7 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     attr_reader :password 
 
-    has_many :bills,
+    has_many :bills_authored,
         foreign_key: :author_id,
         class_name: "Bill"
 
@@ -29,6 +29,18 @@ class User < ApplicationRecord
     has_many :friends,
         foreign_key: :user_id,
         class_name: "Friend"
+
+    has_many :bills_paid,
+        foreign_key: :paid_by_id,
+        class_name: "BillGroup"
+
+    has_many :paid_expenses_details,
+        through: :bills_paid,
+        source: : bill
+
+    has_many :split_bills,
+        foreign_key: :split_with_id,
+        class_name: "BillGroup"
     
     
     after_initialize :ensure_session_token
