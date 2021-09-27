@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const App = ({ children }) => {
+const App = ({ desc }) => {
     return (
         <div>
-            {children}
+            {desc}
         </div>
     );
 }
