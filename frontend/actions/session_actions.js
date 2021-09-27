@@ -1,9 +1,9 @@
 import {deleteSession, postSession} from '../util/session_api';
 import { postUser } from '../util/user_api';
 
+// action constants
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
-
 
 const receiveCurrentUser = user => ({
     // POJO 
