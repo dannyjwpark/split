@@ -1,11 +1,11 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
 
   before_action :require_signed_in!, only: [:show, :index]
   
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: @user
+      render "api/users/show.json.jbuilder"
     else
       render json: @user.errors.full_messages
     end
@@ -17,14 +17,15 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    render "api/users/index.json.jbuilder"
   end
 
   def show
     @user = User.find(params[:id])
     if @user
-      render :show
+      render "api/users/show.json.jbuilder"
     else
-      redirect_to new_session_url
+      render "api/users/index.json.builder"
     end
   end
 

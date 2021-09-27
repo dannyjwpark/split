@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 
 import App from './app';
-import SignupContainer from './session/signup_container';
+// import SignupFormContainer from './session/signup_form_container';
 
 // NB: this file is complete - you do not to write/edit anything!
 const Root = ({ store }) => (
