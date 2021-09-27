@@ -10,31 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_084930) do
+ActiveRecord::Schema.define(version: 2021_09_27_172926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "bill_groups", force: :cascade do |t|
-    t.integer "bill_id", null: false
-    t.integer "split_with_id", null: false
-    t.integer "paid_by_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["bill_id"], name: "index_bill_groups_on_bill_id"
-    t.index ["paid_by_id"], name: "index_bill_groups_on_paid_by_id"
-    t.index ["split_with_id"], name: "index_bill_groups_on_split_with_id"
-  end
 
   create_table "bills", force: :cascade do |t|
     t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
-    t.string "category"
-    t.string "notes"
-    t.float "amount", null: false
-    t.index ["author_id"], name: "index_bills_on_author_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -51,9 +35,7 @@ ActiveRecord::Schema.define(version: 2021_09_27_084930) do
     t.datetime "updated_at", null: false
     t.string "name", null: false
     t.integer "friend_id", null: false
-    t.string "email", null: false
-    t.index ["friend_id"], name: "index_friends_on_friend_id"
-    t.index ["user_id"], name: "index_friends_on_user_id"
+    t.string "email"
   end
 
   create_table "users", force: :cascade do |t|

@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create!(id: 1, username: "Danny", email: "danny@split.com");
-user2 = User.create!(id: 2, username: "Grace", email: "grace@split.com");
-user3 = User.create!(id: 3, username: "Haru", email: "haru@split.com");
-user4 = User.create!(id: 4, username: "Pepper", email: "pepper@split.com");
-user5 = User.create!(id: 5, username: "Rose", email: "rose@split.com");
-user6 = User.create!(id: 6, username: "Phoebe", email: "phoebe@split.com");
-user7 = User.create!(id: 7, username: "Spencer", email: "spencer@split.com");
-user8 = User.create!(id: 8, username: "Joey", email: "joey@split.com");
+user1 = User.create!(id: 1, username: "Danny", email: "danny@split.com", password: 'abc!12345');
+user2 = User.create!(id: 2, username: "Grace", email: "grace@split.com", password: 'abc!12345');
+user3 = User.create!(id: 3, username: "Haru", email: "haru@split.com", password: 'abc!12345');
+user4 = User.create!(id: 4, username: "Pepper", email: "pepper@split.com", password: 'abc!12345');
+user5 = User.create!(id: 5, username: "Rose", email: "rose@split.com", password: 'abc!12345');
+user6 = User.create!(id: 6, username: "Phoebe", email: "phoebe@split.com", password: 'abc!12345');
+user7 = User.create!(id: 7, username: "Spencer", email: "spencer@split.com", password: 'abc!12345');
+user8 = User.create!(id: 8, username: "Joey", email: "joey@split.com", password: 'abc!12345');
 
 friend1_1 = Friend.create!(user_id: user1.id, friend_id: user3.id, email: user3.email, name: user3.username)
 friend1_2 = Friend.create!(user_id: user1.id, friend_id: user4.id, email: user4.email, name: user4.username)
