@@ -36,7 +36,7 @@ class User < ApplicationRecord
 
     has_many :paid_expenses_details,
         through: :bills_paid,
-        source: : bill
+        source: :bill
 
     has_many :split_bills,
         foreign_key: :split_with_id,

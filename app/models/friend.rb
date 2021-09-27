@@ -9,7 +9,7 @@
 #  name       :string           not null
 #
 class Friend < ApplicationRecord
-    validates_presence_of :user_id
+    validates_presence_of :user_id, :name, :friend_id, :email
 
     belongs_to :user,
         foreign_key: :user_id,
