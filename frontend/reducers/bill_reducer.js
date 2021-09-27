@@ -1,17 +1,22 @@
-// import { RECEIVE_BILLS, RECEIVE_SINGLE_BILL } from '../actions/bills';
+import { RECEIVE_BILLS, RECEIVE_BILL, REMOVE_BILL } from '../actions/bills_actions';
 
-// export default (state = {}, action) => {
-//     Object.freeze(state);
-//     const bills = {};
-//     switch (action.type) {
-//         case RECEIVE_BILLS:
-//             action.bills.forEach((bill) => {
-//                 bills[bill.id] = bill;
-//             });
-//             return bills;
-//         case RECEIVE_SINGLE_BILL:
-//             return Object.assign({}, state, { [action.bill.id]: action.bill });
-//         default:
-//             return state;
-//     }
-// };
+const billsReducer = (oldState = {}, action) => {
+    Object.freeze(oldState);
+    let nextState = Object.assign({}, oldState);
+    switch (action.type) {
+        case RECEIVE_BILLS:
+            return action.bills;
+
+        case RECEIVE_BILL:
+            return Object.assign({}, oldState, { [action.bill.id]: action.bill });
+
+        case REMOVE_BILL:
+            delete nextState[action.billId];
+            return nextState;
+
+        default:
+            return oldState;
+    }
+};
+
+export default billsReducer;
