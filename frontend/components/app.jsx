@@ -1,5 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {
+    Route,
+    Redirect,
+    Switch,
+    Link,
+    HashRouter
+} from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+
+import Modal from './modal/modal';
+
 
 const App = ({ desc }) => {
     return (

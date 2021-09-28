@@ -10,6 +10,8 @@ class SignupForm extends React.Component {
             email: '',
             password: '',
         };
+        this.update = this.update.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInput(type) {
@@ -23,6 +25,14 @@ class SignupForm extends React.Component {
         e.preventDefaultAction();
         this.props.createNewUser(this.state)
             .then(() => this.props.history.push('/users'))
+    }
+
+    update(field){
+        return e => {
+            this.setState({
+                [field]: e.currentTarget.value
+            })
+        }
     }
 
     render() {
