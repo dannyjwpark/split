@@ -13,12 +13,9 @@ const App = () => (
     <div>
         {/* <Modal /> */}
         <Switch>
-            < SessionFormContainer />
-            < SignupFormContainer />
+            <AuthRoute exact path="/login" component={SessionFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
             <AuthRoute exact path="/" component={Home} />
-            
-            {/* <AuthRoute exact path="/login" component={SessionFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
 
 
         </Switch>

@@ -84,6 +84,8 @@ const Home = () => (
     
 )
 
+export default Home;
+
 // home-header-left-nav: splitwise icon, "Splitwise"
 // home-header-right-nav: Log in button, Sign Up button
 
