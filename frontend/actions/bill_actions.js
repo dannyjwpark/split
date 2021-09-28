@@ -1,4 +1,4 @@
-import * as BillsUtil from '../util/Bills_api_util'
+import * as BillsUtil from '../util/bills_api'
 
 // action constants
 

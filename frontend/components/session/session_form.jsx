@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-export default class SessionForm extends React.Component{
+class SessionForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -47,3 +48,5 @@ export default class SessionForm extends React.Component{
         )
     }
 }
+
+export default withRouter(SessionForm);

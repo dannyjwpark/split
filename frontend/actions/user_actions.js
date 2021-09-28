@@ -1,4 +1,4 @@
-import * as UserUtil from '../util/user_api_util'
+import * as UserUtil from '../util/user_api'
 
 // action constants
 export const RECEIVE_USERS = 'RECEIVE_USERS';
@@ -26,7 +26,12 @@ export const fetchUsers = () => dispatch => {
         .then(users => (dispatch(receiveUsers(users))))
 }
 
-export const fetchUser = (user) => dispatch => {
+export const fetchUser = (userId) => dispatch => {
     return UserUtil.fetchUser(userId)
-        .then(user => (dispatch(receiveUsers(user))))
+        .then(user => (dispatch(receiveUser(user))))
+}
+
+export const createUser = (user) => dispatch => {
+    return UserUtil.createUser(user)
+        .then(user => (dispatch(receiveUser(user))))
 }

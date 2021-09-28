@@ -1,4 +1,4 @@
-import { RECEIVE_FRIENDS, RECEIVE_FRIEND, REMOVE_FRIEND } from '../actions/friends_actions';
+import { RECEIVE_FRIENDS, RECEIVE_FRIEND, REMOVE_FRIEND } from '../actions/friend_actions';
 
 const friendsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -15,7 +15,7 @@ const friendsReducer = (oldState = {}, action) => {
             return nextState
 
         default:
-            return state;
+            return oldState;
     }
 };
 

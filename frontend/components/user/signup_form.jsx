@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -10,21 +10,15 @@ class SignupForm extends React.Component {
             email: '',
             password: '',
         };
-        this.update = this.update.bind(this);
+        this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleInput(type) {
-        return (e) => {
-            // [] to make the states key values
-            this.setState({ [type]: e.target.value })
-        };
+        this.update = this.update.bind(this);
     }
 
     handleSubmit(e) {
-        e.preventDefaultAction();
-        this.props.createNewUser(this.state)
-            .then(() => this.props.history.push('/users'))
+        e.preventDefault();
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user);
     }
 
     update(field){
@@ -68,4 +62,4 @@ class SignupForm extends React.Component {
     }
 }
 
-export default SignupForm;
+export default withRouter(SignupForm);

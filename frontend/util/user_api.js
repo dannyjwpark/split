@@ -19,7 +19,7 @@ export const fetchUser = user => {
 }
 
 // create
-export const postUser = user => {
+export const createUser = user => {
     return (
         $.ajax({
             url: `/api/users`,
