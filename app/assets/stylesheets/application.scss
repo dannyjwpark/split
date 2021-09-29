@@ -15,10 +15,10 @@
  */
 
  // CSS Reset
- @import 'base/reset';
+ @import './reset';
 
  // Components
-// @import "components/*";
+@import "components/*";
 
  .session-submit {
    text-transform: capitalize;

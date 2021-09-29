@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createUser } from '../../actions/user_actions';
 import SignupForm from './signup_form';
+import { receiveErrors } from '../../actions/session_actions';
 
 const mapStateToProps = ({ errors }) => {
     return {

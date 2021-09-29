@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Home = () => (
+const SplashPage = () => (
     <div className='home-page'>
         <div className='home-header'>
             <header className='home-header-container'>
@@ -75,16 +75,16 @@ const Home = () => (
             <div className='home-footer-container'>
 
             </div>
-            <image className='home-footer-image'>
+            <img className='home-footer-image'>
 
-            </image>
+            </img>
         </footer>
 
     </div>
     
 )
 
-export default Home;
+export default SplashPage;
 
 // home-header-left-nav: splitwise icon, "Splitwise"
 // home-header-right-nav: Log in button, Sign Up button
