@@ -11,13 +11,13 @@ class SignupForm extends React.Component {
             email: '',
             password: '',
         };
-        this.inputFlag = false,
+        this.inputVisibility = false,
             this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
         return e => {
-            this.inputFlag = true;
+            this.inputVisibility = true;
             this.setState({
                 [field]: e.currentTarget.value
             });
@@ -38,8 +38,8 @@ class SignupForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {`• ${error}`}
+                    <li key={i}>
+                        {`${i}. ${error}`}
                     </li>
                 ))}
             </ul>
@@ -48,24 +48,24 @@ class SignupForm extends React.Component {
 
     render() {
 
-        const input_flag = this.inputFlag ? 'show-input' : 'dont-show-input';
+        const input_visibility = this.inputVisibility ? 'visible-input' : 'invisible-input';
 
-        const error_flag = this.props.errors.length > 0 ? 'show-error' : 'dont-show-error'
+        const error_visibility = this.props.errors.length > 0 ? 'visible-error' : 'invisible-error'
 
         return (
-            <div className="signup-form-container">
+            <div className="signup-wrapper">
 
-                <section className='signup-section'>
-                    <section className='signup-left'>
-                        <img className='signup-section-logo' src={window.logo_primary} alt="" />
+                <section className='signup-body'>
+                    <section className='signup-body-left'>
+                        <img className='signup-body-left-logo' src={window.logo_primary} alt="" />
                     </section>
 
-                    <section className='signup-right'>
+                    <section className='signup-body-right'>
                         <form onSubmit={this.handleSubmit} className="signup-form-box">
-                            <p className='signup-welcome'>Introduce Yourself</p>
+                            <p className='signup-body-right-header'>Introduce Yourself</p>
 
-                            <div className={error_flag} id='error-id'>
-                                <p id='font-bold'>The following errors occurred:</p>
+                            <div className={error_visibility} id='error-id'>
+                                <p id='font-bold'>Warning! Check the errors list: </p>
                                 <div id='errors-list'>
                                     {this.renderErrors()}
                                 </div>
@@ -80,22 +80,22 @@ class SignupForm extends React.Component {
                                     className='signup-name'
                                 />
 
-                                <span className={input_flag}>Here's my </span>
-                                <span className={input_flag} id='font-bold'>email address:</span>
+                                <span className={input_visibility}>Here's my </span>
+                                <span className={input_visibility} id='font-bold'>email address:</span>
 
                                 <input type="text"
                                     value={this.state.email}
                                     onChange={this.update('email')}
-                                    className={input_flag}
+                                    className={input_visibility}
                                 />
 
-                                <span className={input_flag}>And here's my </span>
-                                <span className={input_flag} id='font-bold'>password:</span>
+                                <span className={input_visibility}>And here's my </span>
+                                <span className={input_visibility} id='font-bold'>password:</span>
 
                                 <input type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
-                                    className={input_flag}
+                                    className={input_visibility}
                                 />
 
                                 <input className="signup-submit" type="submit" value='Sign me up!' />
