@@ -9,20 +9,22 @@ class SessionForm extends React.Component{
             email: '',
             password: ''
         };
-
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginDemoUser = this.loginDemoUser.bind(this);
     }
-
+    
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
         // https://reactrouter.com/web/api/history
-            // push(path, [state]) - (function) Pushes a new entry onto the history stack
+        // push(path, [state]) - (function) Pushes a new entry onto the history stack
+        debugger;
         this.props.processForm(user).then(() => this.props.history.push("/home"));
     }
 
     loginDemoUser(e) {
         e.preventDefault();
-        const demoUser = { email: 'demo_user@email.com', password: 'demo123' }
+        const demoUser = { username: 'Demo User', email: 'demo_user@email.com', password: 'demo123' }
         this.props.processForm(demoUser).then(() => this.props.history.push("/home"));
     }
 
@@ -37,6 +39,10 @@ class SessionForm extends React.Component{
                 ))}
             </ul>
         );
+    }
+
+    componentWillUnmount() {
+        this.props.receiveErrors([]);
     }
     
     update(field){
@@ -56,9 +62,10 @@ class SessionForm extends React.Component{
                 <header className='session-nav'>
                     <nav className='session-nav-elements'>
                         <nav className='left-session-nav'>
-                            <img className='session-logo' src={window.logo_primary} alt="" />
+                            <img className='session-nav-logo' src={window.logo_signup} alt="" />
                             <Link to="/" className='session-word-logo'>.split()</Link>
                         </nav>
+                        
                         <nav className='right-session-nav'>
                             <Link to="/login">
                                 <button className='session-login-button'>
@@ -82,11 +89,8 @@ class SessionForm extends React.Component{
                 </div>
 
                 <section className='session-section'>
-                    <section className='session-left'>
-                        <img className='session-section-logo' src={window.logo_primary} alt=""/>
-                    </section>
-
-                    <section className='session-right'>
+                    
+                    <section className='session-section-container'>
                         <form onSubmit={this.handleSubmit} className="session-form-box">
                             <p className='session-login'>Log in</p>
 

@@ -11,7 +11,7 @@ const sessionReducer = (oldState = _nullSession, action) => {
     let nextState = Object.assign({}, oldState);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            return { id: action.currentUser.id };
+            return { id: action.user.id };
 
         case LOGOUT_USER:
             return _nullSession;

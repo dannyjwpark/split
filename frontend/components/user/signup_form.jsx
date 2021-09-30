@@ -7,12 +7,12 @@ class SignupForm extends React.Component {
         super(props);
         this.state = {
             // blank initial states for future user inputs
-            name: '',
+            username: '',
             email: '',
             password: '',
         };
-        this.inputVisibility = false,
-            this.handleSubmit = this.handleSubmit.bind(this);
+        this.inputVisibility = false;   // initially false
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
@@ -54,30 +54,27 @@ class SignupForm extends React.Component {
 
         return (
             <div className="signup-wrapper">
-
+                
                 <section className='signup-body'>
-                    <section className='signup-body-left'>
-                        <img className='signup-body-left-logo' src={window.logo_primary} alt="" />
-                    </section>
+                    {/* spitwise logo (when clicked, redirect to splash page) */}
+                    <div className='signup-body-left'>
+                        <a href="/">
+                            <img className='signup-body-left-logo' src={window.logo_signup} alt="" />
+                        </a>
+                    </div>
 
-                    <section className='signup-body-right'>
+                    {/* signup form (on the right of logo) */}
+                    <div className='signup-body-right'>
                         <form onSubmit={this.handleSubmit} className="signup-form-box">
                             <p className='signup-body-right-header'>Introduce Yourself</p>
-
-                            <div className={error_visibility} id='error-id'>
-                                <p id='font-bold'>Warning! Check the errors list: </p>
-                                <div id='errors-list'>
-                                    {this.renderErrors()}
-                                </div>
-                            </div>
 
                             <div className="signup-form">
 
                                 <span className='signup-hithere'>Hi there! My name is</span>
                                 <input type="text"
-                                    value={this.state.name}
-                                    onChange={this.update('name')}
-                                    className='signup-name'
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    className='signup-username'
                                 />
 
                                 <span className={input_visibility}>Here's my </span>
@@ -96,19 +93,27 @@ class SignupForm extends React.Component {
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                     className={input_visibility}
+                                    id ='password_input'
                                 />
 
                                 <input className="signup-submit" type="submit" value='Sign me up!' />
-                                <br />
 
                                 <a href="https://secure.splitwise.com/terms" target="_blank">
-                                    <p> By signing up, you accept the .split() Terms of Service </p>
+                                    <p className="signup-agreement"> By signing up, you accept the .split() Terms of Service </p>
                                 </a>
                                 
-
                             </div>
                         </form>
-                    </section>
+                    </div>
+
+                    {/* error-list (if any) */}
+                    <div className={error_visibility} id='error-id'>
+                        <p id='font-bold'>Warning! Check the errors list: </p>
+                        <div id='errors-list'>
+                            {this.renderErrors()}
+                        </div>
+                    </div>
+
                 </section>
             </div>
         );

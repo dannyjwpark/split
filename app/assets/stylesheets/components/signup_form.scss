@@ -1,4 +1,6 @@
-.signup-section {
+@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+
+.signup-body {
   max-width: 941px;
   margin: auto;
   display: flex;
@@ -17,9 +19,12 @@
 }
 
 .signup-body-left-logo {
-  margin-right: 3px;
-  padding-top: 10px;
-  width: 230px;
+  border: 0;
+  margin-right: 25px;
+  padding: 0;
+  vertical-align: middle;
+  width: 200px;
+  // aspect-ratio: auto 200 / 200;
 }
 
 .signup-body-right {
@@ -34,31 +39,15 @@
 }
 
 .signup-body-right-header {
-  text-transform: uppercase;
-  font-family: Lato;
+  color: #999;
+  display: block;
+  font-family: 'IBM Plex Serif';
   font-size: 16px;
-  color: #999999;
-  font-weight: 550;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-.signup-submit {
-   cursor: pointer;
-   height: 56px;
-   width: 155px;
-   background-color:  #FF652F;
-   font-family: Lato;
-   font-weight: 400;
-   font-size: 23px;
-   color: white;
-   border: 2px;
-   border-radius: 5px;
-  //  box-shadow: 0 4px 2px -2px gray
-  // box-shadow:  inset 2px 2px 3px grey ;
-  //  padding: 8px 12px;
-  box-shadow:  0px 2px 5px rgba(0,0,0,.3);
-  margin-top: 10px; 
-  margin-bottom: 10px; 
- }
 
  .session-submit:hover {
   background-color: #f84808;
@@ -70,9 +59,9 @@
   border-color: 0.5px solid lightgrey ;
   width: 319px;
   height: 35px;
-  margin-bottom: 25px; 
-  color: #333333;
-  font-family: Lato;
+  margin-bottom: 15px; 
+  color: #2f2d2d;
+  font-family: 'IBM Plex Serif';
   font-size: 18px;
 }
 .invisible-input, .invisible-error {
@@ -80,42 +69,67 @@
 }
 
 .signup-hithere {
-  font-family: Lato;
+  color: #2f2d2d;
+  font-family: 'IBM Plex Serif';
   font-size: 24px;
-  color: #333333;
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
-.signup-name {
-  margin-top: 8px;
-  margin-bottom: 27px;
+.signup-username {
   border-color: 0.5px solid lightgrey ;
-  width: 319px;
-  height: 51px;
-  color: #333333;
-  font-family: Lato;
+  color: #2f2d2d;
+  font-family: 'IBM Plex Serif';
   font-size: 24px;
+  height: 35px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  width: 319px;
+}
+
+#password_input {
+  margin-bottom: 15px;
+  // margin-top: 10px;
 }
 
 span.visible-input {
-  color: #333333;
+  color: #2f2d2d;
   font-size: 18px;
-  font-family: Lato;
+  font-family: 'IBM Plex Serif';
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.signup-submit {
+  background-color:  #FF652F;
+  font-size: 24px;
+  border: 2px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: 'IBM Plex Serif';
+  height: 56px;
+  padding: 11px 15px;
+  width: 155px;
+   //  box-shadow: 0 4px 2px -2px gray
+  // box-shadow:  inset 2px 2px 3px grey ;
+  //  padding: 8px 12px;
+   
+ }
+.signup-agreement {
+  font-size: 10px;
 }
 
 #font-bold {
-  // color: #333333;
-  // font-size: 18px;
-  // font-family: Lato;
   font-weight: 600;
 }
 
 .visible-error {
-  margin-top: 12px;
-  background:#cc4455;
-  color: #ffffff;
+  color: orangered;
+  font-size: 15px;
+  font-family: 'IBM Plex Serif';
+  margin: 10px;
   padding: 10px;
-  font-size: 18px;
-  font-family: Lato;
 }
 
 #errors-list {

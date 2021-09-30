@@ -1,33 +1,87 @@
+@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+
+// navbar
+.session-nav-elements {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.session-nav-logo {
+  width:40px; 
+  margin-right: 3px;
+  margin-top: 10px;
+}
+
+.session-word-logo {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.right-session-nav {
+  position: relative;
+  margin-left: auto;
+}
+
+
+.session-login-button {
+  background-color: transparent;
+  border: none;
+  color: rgb(9, 181, 135);
+  font-size: 14px;
+  font-weight: 400;
+  height: 35px;
+  margin-top: 10px;
+  width: 95px;
+
+}
+.session-signup-button{
+  background-color:  rgb(9, 181, 135);
+  border-radius: 5px;
+  color: white;
+  font-family: 'IBM Plex Serif';
+  font-size: 14px;
+  font-weight: 400;
+  height: 35px;
+  margin-top: 10px;
+  width: 95px;
+}
+// ----------------------------------------------------------
+// body
+
 .session-section {
-  max-width: 941px;
   margin: auto;
   display: flex;
+  justify-content: center;
   // border: 1px solid blue;
-  margin-top: 50px;
+  margin-top: 40px;
+  background: url(background_img.png);
 }
 
-.session-left {
-  // border: 1px solid blue;
-  width: 470px;
-  display: flex;
-  justify-content: flex-end;
-  // flex-direction: column;
-  // padding: 60px;
-  align-items: flex-start;
-}
+// .session-left {
+//   // border: 1px solid blue;
+//   width: 470px;
+//   display: flex;
+//   justify-content: flex-end;
+//   // flex-direction: column;
+//   // padding: 60px;
+//   align-items: flex-start;
+// }
 
-.session-section-logo {
-  margin-right: 3px;
-  padding-top: 10px;
-  width: 230px;
-}
 
-.session-right {
+// .session-section-logo {
+//   background-image: ;
+//   width: 230px;
+// }
+
+.session-section-container {
   // border: 1px solid red;
   width: 470px;
   // height: 600px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   padding: 20px;
   margin-left: 3px;
@@ -35,7 +89,7 @@
 
 .session-welcome {
   text-transform: uppercase;
-  font-family: Lato;
+  font-family: 'IBM Plex Serif';
   font-size: 16px;
   color: #999999;
   font-weight: 550;
@@ -43,7 +97,7 @@
 
 .session-form span {
   color: #333333;
-  font-family: Lato;
+  font-family: 'IBM Plex Serif';
   font-size: 18px;
 }
 
@@ -54,7 +108,7 @@
   width: 270px;
   height: 30px;
   color: #333333;
-  font-family: Lato;
+  font-family: 'IBM Plex Serif';
   font-size: 18px;
 }
 
@@ -66,8 +120,8 @@
    cursor: pointer;
    height: 45px;
    width: 98px;
-   background-color:  #FF652F;
-   font-family: Lato;
+   background-color:  rgb(7, 149, 7);
+   font-family: 'IBM Plex Serif';
    font-weight: 400;
    font-size: 15px;
    color: white;
@@ -90,7 +144,7 @@
    height: 35px;
    width: 98px;
    background-color:  #393c3f;
-   font-family: Lato;
+   font-family: 'IBM Plex Serif';
    font-weight: 400;
    font-size: 15px;
    color: white;
@@ -114,7 +168,7 @@
   color: #ffffff;
   padding: 5px;
   font-size: 14px;
-  font-family: Lato;
+  font-family: 'IBM Plex Serif';
   width: 941px;
   display: flex;
   margin: auto;
