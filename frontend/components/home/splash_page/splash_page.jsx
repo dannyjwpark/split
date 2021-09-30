@@ -1,20 +1,59 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 
-const SplashPage = () => (
+class SplashPage extends React.Component {
+    
+    render(){
+        return(
     <div className='splash-page'>
-        <div className='splash-header'>
-            <header className='splash-header-container'>
-                <nav className='header-header-left-nav'>
+        <header className='splash-nav'>
+            <nav className='splash-nav-elements'>
+                <nav className='left-splash-nav'>
+                    <img className='splash-nav-logo' src={window.logo_signup} alt="" />
+                    <Link to="/" className='splash-word-logo'>.split()</Link>
                 </nav>
-                <nav className='header-header-right-nav'>
+
+                <nav className='right-splash-nav'>
+                    <Link to="/login">
+                        <button className='splash-login-button'>
+                            Log in
+                        </button>
+                    </Link>
+                    <Link to="/signup" >
+                                <button className='splash-signup-button' id='signup-button1'>
+                            Sign up
+                        </button>
+                    </Link>
                 </nav>
-            </header>
+            </nav>
+        </header>
+
+        <div className='splash-main'>
+            <div className='splash-main-left'>
+                <p className='splash-paragraph-black'>Less stress when</p>
+                <p className='splash-paragraph-black'>sharing expenses</p>
+                <p className='splash-paragraph-green'>on trips. </p>
+                <div className='splash-main-left-icons'>
+                    <img className='splash-left-icon1' src={window.airplane_icon} alt="" />
+                    <img className='splash-left-icon2' src={window.house_icon} alt="" />
+                    <img className='splash-left-icon3' src={window.heart_icon} alt="" />
+                    <img className='splash-left-icon4' src={window.star_icon} alt="" />    
+                </div>
+                <p className='splash-paragraph-light'>Keep track of your shared expenses and</p>
+                <p className='splash-paragraph-light'>balances with housemates, trips, groups,</p>
+                <p className='splash-paragraph-light'>friends, and family.</p>
+                <Link to="/signup" >
+                    <button className='splash-signup-button' id='signup-button2'>
+                        Sign up
+                    </button>
+                </Link>
+            </div>            
+            <div className='splash-main-right'>
+                <img className='splash-airplane-img' src={window.airplane_img} alt="" />
+            </div>
+            <br />
         </div>
-
-        <main className='splash-main'>
-
-        </main>
 
         <div className='splash-actions'>
 
@@ -81,8 +120,9 @@ const SplashPage = () => (
         </footer>
 
     </div>
-    
-)
+        )
+    }
+}
 
 export default SplashPage;
 

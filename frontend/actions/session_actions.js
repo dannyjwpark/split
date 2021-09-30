@@ -36,17 +36,19 @@ export const receiveErrors = errors => {
 //             dispatch(receiveErrors(err.responseJSON))
 //         );
 // }
+
+// upon successful login, take a user object & dispatch receiveCurrentUser
 export const login = user => dispatch => {
     return postSession(user)
-        // upon successful login, take a user object & dispatch receiveCurrentUser
         .then(user => dispatch(receiveCurrentUser(user)))
         , err => (
             dispatch(receiveErrors(err.responseJSON))
         );
 }
+
+// upon succesful logout, dispatch logoutCurrentUser  
 export const logout = () => dispatch => {
     return deleteSession()
-        // upon succesful logout, dispatch logoutCurrentUser  
         .then(() => dispatch(logoutUser())), 
         err => (
             dispatch(receiveErrors(err.responseJSON))
