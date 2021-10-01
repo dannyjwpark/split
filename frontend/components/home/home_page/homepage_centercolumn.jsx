@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomepageNoexpense from './homepage_noexpense'
 
 class HomepageCentercolumn extends React.Component {
     constructor(props) {
@@ -22,11 +23,15 @@ class HomepageCentercolumn extends React.Component {
                                 // addBill={this.props.addBill} 
                                 currentuser={this.props.currentuser}
                             >
-                                Add an expense
+                                <p className='expense-form-text'>Add an expense</p>
                             </button>
                         </Link>
+
                     </nav>
                 </nav>
+                <div className='center-contents'>
+                    <HomepageNoexpense />
+                </div>
             </div>
         )
     }
