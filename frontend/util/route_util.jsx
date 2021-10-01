@@ -4,7 +4,7 @@ import { Route, Redirect, withRouter } from 'react-router-dom';
 
 // making sure users can't visit "/login" once already logged in
 
-// if application state has a currentUser, redirect to "/"
+// if application state has a currentuser, redirect to "/"
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
   <Route
     path={path}

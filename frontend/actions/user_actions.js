@@ -33,8 +33,8 @@ export const fetchUsers = () => dispatch => {
         .then(users => (dispatch(receiveUsers(users))))
 }
 
-export const fetchUser = (userId) => dispatch => {
-    return UserUtil.fetchUser(userId)
+export const fetchUser = (user_id) => dispatch => {
+    return UserUtil.fetchUser(user_id)
         .then(user => (dispatch(receiveUser(user))))
 }
 

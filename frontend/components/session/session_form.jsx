@@ -13,13 +13,17 @@ class SessionForm extends React.Component{
         this.loginDemoUser = this.loginDemoUser.bind(this);
     }
     
+    // https://reactrouter.com/web/api/history
+    // push(path, [state]) - (function) Pushes a new entry onto the history stack
+    // debugger;
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        // https://reactrouter.com/web/api/history
-        // push(path, [state]) - (function) Pushes a new entry onto the history stack
-        debugger;
-        this.props.processForm(user).then(() => this.props.history.push("/home"));
+        console.log(this);
+        this.props.processForm(user).then(() => {
+            this.props.history.push("/home");
+        }
+        );
     }
 
     loginDemoUser(e) {

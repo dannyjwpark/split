@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import FriendShowContainer from './friend/friends_show_container'
-// import HomepageContainer from './home/home_page/homepage_container';
+import HomepageContainer from './home/home_page/homepage_container'
 import SplashPage from './home/splash_page/splash_page';
 // import Dashboard
 import Modal from './modal/modal';
@@ -13,13 +13,13 @@ import SignupFormContainer from './user/signup_form_container';
 
 const App = () => (
     <div>
-        {/* <Modal /> */}
+        
         <Switch>
             <AuthRoute exact path="/login" component={SessionFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
             <AuthRoute exact path="/" component={SplashPage} />
 
-            {/* <ProtectedRoute exact path="/home" component={HomepageContainer} /> */}
+            <ProtectedRoute exact path="/home" component={HomepageContainer} />
 
 
         </Switch>

@@ -7,8 +7,8 @@ export const LOGOUT_USER = 'LOGOUT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 
+// POJO 
 const receiveCurrentUser = user => {
-    // POJO 
     return ({
         type: RECEIVE_CURRENT_USER,
         user,
@@ -40,17 +40,17 @@ export const receiveErrors = errors => {
 // upon successful login, take a user object & dispatch receiveCurrentUser
 export const login = user => dispatch => {
     return postSession(user)
-        .then(user => dispatch(receiveCurrentUser(user)))
-        , err => (
+        .then(user => dispatch(receiveCurrentUser(user)), 
+        err => (
             dispatch(receiveErrors(err.responseJSON))
-        );
+        ));
 }
 
 // upon succesful logout, dispatch logoutCurrentUser  
 export const logout = () => dispatch => {
     return deleteSession()
-        .then(() => dispatch(logoutUser())), 
+        .then(() => dispatch(logoutUser()), 
         err => (
             dispatch(receiveErrors(err.responseJSON))
-        );;
+        ));
 }  
