@@ -11,8 +11,11 @@ import { fetchUser, fetchUsers } from '../../../actions/user_actions'
 
 
 const mapStateToProps = ({ session, entities: { users, friends, bills } }) => {
+// const mapStateToProps = (state) => {
     return {
         currentuser: users[session.id],
+        // currentuser: state.entities.users[state.session.id],
+        // entities: entities,
     };
 };
 

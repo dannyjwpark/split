@@ -52,6 +52,10 @@
   width: 95px;
 }
 
+.splash-login-button:hover, .splash-signup-button:hover {
+  cursor: pointer;
+}
+
 // ----------------------------------------------------------
 // body
 
@@ -135,65 +139,66 @@
     to { opacity: 0.8; }
 }
 
-// .splash-actions{
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-// }
 
-// .splash-action {
-//   grid-column: 1/4;
-//   grid-row: 1/2; 
-//   width: 100px;
-// }
-
-// .splash-action {
-//   grid-column: 1/4;
-//   grid-row: 1/2; 
-//   width: 100px;
-// }
-
-// .splash-action {
-//   grid-column: 1/4;
-//   grid-row: 1/2;
-//   width: 100px;
-// }
-
-// .splash-action {
-//   grid-column: 1/4;
-//   grid-row: 1/2; 
-//   width: 100px;
-// }
-.splash-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .splash-actions-row1{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  // flex-direction: row;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .splash-actions-row2{
+  display: grid;
+  // flex-direction: row;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.action1_container, .action4_container{
+  background: url("black_tiles.png");
   display: flex;
-  flex-direction: row;
-}
-
-.splash-actions img{
-  max-width: 2000px;
-}
-
-.action1_container, .action1_container{
-  background: url(black_tiles.png);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin-left: 100px;
+  // margin-right: 100px;
 }
 
 .action2_container{
-  background: url(green_tiles.png);
+  background: url("green_tiles.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin-left: 100px;
+  // margin-right: 100px;
 }
 
 .action3_container{
-  background: url(red_tiles.png);
+  background: url("red_tiles.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin-left: 100px;
+  // margin-right: 100px;
+}
+.splash-actions img{
+  margin-top: 30px;
 }
 
+.action_p_header {
+color: white;
+font-size: 20px;
+font-weight: bolder;
+margin-top: 30px;
+margin-bottom: 15px;
+}
+
+.action_p_body{
+color: white;
+font-size: 15px;
+font-weight: bold;
+}
 
 .feature-title{
   color: rgba(7, 7, 7, 0.777);

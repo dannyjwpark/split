@@ -9,7 +9,24 @@ class HomepageCentercolumn extends React.Component {
     render() {
         return (
             <div>
-                <p>center</p>
+                <nav className='center-nav'>
+                    <nav className='center-nav-left'>
+                        <img className='user-icon' src={window.doge} alt="" />
+                        <p></p>
+                    </nav>
+
+                    <nav className='center-nav-right'>
+                        <Link to="/">
+                            <button 
+                                className='add-expense-button'
+                                // addBill={this.props.addBill} 
+                                currentuser={this.props.currentuser}
+                            >
+                                Add an expense
+                            </button>
+                        </Link>
+                    </nav>
+                </nav>
             </div>
         )
     }

@@ -1,1 +1,11 @@
 @import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+
+.center-nav {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(216, 211, 211);
+}
+
+.user-icon {
+    width: 40px;
+}

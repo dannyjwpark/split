@@ -19,7 +19,7 @@
 .homepage-nav-logo {
   width:30px; 
   margin-right: 3px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .homepage-word-logo {
@@ -27,29 +27,58 @@
   font-family: 'IBM Plex Serif';
   font-size: 21px;
   font-weight: bolder;
-  margin-top: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
   margin-left: 8px;
 }
 
 .right-homepage-nav {
+  display: flex;
+  flex-direction: row;
   position: relative;
   margin-right: auto;
 }
 
+.account_icon {
+  width: 30px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background-color: rgb(59, 213, 172);
+}
 
-.homepage-logout-button {
+.homepage-username {
   background-color: transparent;
   border: none;
   color: rgba(245, 245, 245, 0.996);
   font-family: 'IBM Plex Serif';
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
-  height: 35px;
-  margin-top: 15px;
-  width: 95px;
-
+  // height: 35px;
+margin-top: 15px;
+  align-content: center;
 }
 
-.homepage-logout-button:hover {
+.user-dropdown-button {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-dropdown {
+  display: flex;
+  flex-direction: row;
+}
+
+.username-text {
+  color: rgba(245, 245, 245, 0.996);;
+  margin-top: 15px;
+  margin-right: 3px;
+}
+
+.user-dropdown-icon {
+  margin-top: 18px;
+  width: 12px;
+  height: 12px;
 }

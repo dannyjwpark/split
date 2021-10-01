@@ -62,18 +62,30 @@ class SplashPage extends React.Component {
         <div className='splash-actions'>
             <div className='splash-actions-row1'>
                 <div className='action1_container'>
-                    <img className='splash-action1' src={window.action1} alt="" />
+                    <p className='action_p_header'>Track balances</p>
+                    <p className='action_p_body'> Keep Track of shared expenses, </p>
+                    <p className='action_p_body'> balances, and who owes who.</p>
+                    <img className='splash-action1' src={window.action1_screen} alt="" />
                 </div>
                 <div className='action2_container'>
-                    <img className='splash-action2' src={window.action2} alt="" />
+                    <p className='action_p_header'>Organize expenses</p>
+                    <p className='action_p_body'> Split expenses with any groups: trips, </p>
+                    <p className='action_p_body'> housemates, friends, and family.</p>
+                    <img className='splash-action2' src={window.action2_screen} alt="" />
                 </div>
             </div>
             <div className='splash-actions-row2'>
                 <div className='action3_container'>
-                    <img className='splash-action3' src={window.action3} alt="" />
+                    <p className='action_p_header'>Add expenses easily</p>
+                    <p className='action_p_body'> Quickly add expenses on the go before </p>
+                    <p className='action_p_body'> you forget who paid.</p>
+                    <img className='splash-action3' src={window.action3_screen} alt="" />
                 </div>
-                    <div className='action1_container'>
-                    <img className='splash-action4' src={window.action4} alt="" />
+                <div className='action4_container'>
+                    <p className='action_p_header'>Pay friends back</p>
+                    <p className='action_p_body'> Settle up with a friend and record any </p>
+                    <p className='action_p_body'> cash or online payment.</p>
+                    <img className='splash-action4' src={window.action4_screen} alt="" />
                 </div>
             </div>
         </div>

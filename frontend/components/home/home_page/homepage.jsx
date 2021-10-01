@@ -16,19 +16,19 @@ class Homepage extends React.Component {
 
     render() {
         return (
-            <div className='homepage-wrapper'>
+            <div className='homepage-wrapper' >
                     <div className='homepage-navbar'>
-                        <HomepageNavbar />
+                        <HomepageNavbar currentuser={this.props.currentuser}/>
                     </div>
                 <div className='homepage-main'>
                     <div className='homepage-leftsidebar'>
-                        {/* <HomepageLeftsidebar /> */}
+                        <HomepageLeftsidebar />
                     </div>
                     <div className='homepage-centercolumn'>
                         <HomepageCentercolumn />
                     </div>
                     <div className='homepage-rightsidebar'>
-                        {/* <HomepageRightsidebar /> */}
+                        <HomepageRightsidebar />
                     </div>
                 </div>
                 <footer className='homepage-footer'>
