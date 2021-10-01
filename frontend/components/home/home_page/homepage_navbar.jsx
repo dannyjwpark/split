@@ -9,12 +9,14 @@ class HomepageNavbar extends React.Component {
     render(){
         return(
             <div>
-                <header className='homepage-nav'>
+                <div className='homepage-nav'>
                     <nav className='homepage-nav-elements'>
                         <nav className='left-homepage-nav'>
                             <img className='homepage-nav-logo' src={window.logo_signup} alt="" />
                             <Link to="/home" className='homepage-word-logo'>.split()</Link>
                         </nav>
+                        
+                        <div className='empty'></div>
 
                         <nav className='right-homepage-nav'>
                             <Link to="/">
@@ -24,7 +26,7 @@ class HomepageNavbar extends React.Component {
                             </Link>
                         </nav>
                     </nav>
-                </header>
+                </div>
             </div>
         )
     }

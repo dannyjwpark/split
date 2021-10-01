@@ -4,3 +4,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.homepage-centercolumn{
+    border-left: 2px solid rgba(201, 195, 195, 0.9);
+    border-right: 2px solid rgba(201, 195, 195, 0.9);
+    border-style: inset;
+    height: auto;
+}

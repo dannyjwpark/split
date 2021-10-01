@@ -9,7 +9,7 @@ class HomepageCentercolumn extends React.Component {
     render() {
         return (
             <div>
-
+                <p>center</p>
             </div>
         )
     }

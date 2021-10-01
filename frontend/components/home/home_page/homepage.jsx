@@ -17,15 +17,15 @@ class Homepage extends React.Component {
     render() {
         return (
             <div className='homepage-wrapper'>
-                <div className='homepage-main'>
                     <div className='homepage-navbar'>
                         <HomepageNavbar />
                     </div>
+                <div className='homepage-main'>
                     <div className='homepage-leftsidebar'>
                         {/* <HomepageLeftsidebar /> */}
                     </div>
                     <div className='homepage-centercolumn'>
-                        {/* <HomepageCentercolumn /> */}
+                        <HomepageCentercolumn />
                     </div>
                     <div className='homepage-rightsidebar'>
                         {/* <HomepageRightsidebar /> */}
