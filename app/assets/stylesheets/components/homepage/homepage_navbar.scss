@@ -7,29 +7,39 @@
   // margin-left: 100px;
   // margin-right: 100px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  place-items: end;
 }
 
 .left-homepage-nav {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
 }
 
 .homepage-nav-logo {
   width:30px; 
   margin-right: 3px;
   margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .homepage-word-logo {
   color: rgba(245, 245, 245, 0.996);
+  display: flex;
+  flex-direction: row;
   font-family: 'IBM Plex Serif';
   font-size: 21px;
   font-weight: bolder;
   margin-bottom: 0;
   margin-top: 0;
   margin-left: 8px;
+}
+
+.homepage-word-text{
+  margin-top: 10px;
 }
 
 .right-homepage-nav {
@@ -54,8 +64,7 @@
   font-size: 17px;
   font-weight: bold;
   // height: 35px;
-margin-top: 15px;
-  align-content: center;
+  margin-top: 15px;
 }
 
 .user-dropdown-button {

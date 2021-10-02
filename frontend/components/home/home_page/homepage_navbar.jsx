@@ -32,7 +32,7 @@ class HomepageNavbar extends React.Component {
                         <nav className='left-homepage-nav'>
                             <Link to="/home" className='homepage-word-logo'>
                                 <img className='homepage-nav-logo' src={window.logo_signup} alt="" />
-                                .split()
+                                <p className='homepage-word-text'>.split()</p>
                             </Link>
                         </nav>
 

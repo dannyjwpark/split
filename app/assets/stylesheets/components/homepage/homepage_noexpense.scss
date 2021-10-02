@@ -7,8 +7,10 @@
 
 .noexpense-container img {
     padding: 20px;
-    width: 150px;
+    width: 160px;
     align-items: center;
+    margin-left: 60px;
+    margin-top: 15px;
 }
 
 .noexpense-content {
@@ -16,16 +18,30 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 60px;
+    margin-right: 15px;
+    margin-top: 20px;
 }
 
 .noexpense-content-bold {
     font-family: 'IBM Plex Serif';
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bolder;
+    text-align: left;
+    display: block;
+    line-height: 24px;
+    word-wrap: break-word;
 }
 
 .noexpense-content-light {
     color: rgb(98, 95, 95);
     font-family: 'IBM Plex Serif';
-    font-size: 20px;
+    font-size: 21px;
+    text-align: left;
+    display: block;
+    line-height: 24px;
+}
+
+.noexpense-content-bold p, .noexpense-content-light p {
+    white-space: nowrap
 }

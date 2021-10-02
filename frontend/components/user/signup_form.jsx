@@ -79,15 +79,18 @@ class SignupForm extends React.Component {
 
                                 <span className={input_visibility}>Here's my </span>
                                 <span className={input_visibility} id='font-bold'>email address:</span>
+                                
 
                                 <input type="text"
                                     value={this.state.email}
                                     onChange={this.update('email')}
                                     className={input_visibility}
                                 />
+                                <br />
 
                                 <span className={input_visibility}>And here's my </span>
                                 <span className={input_visibility} id='font-bold'>password:</span>
+                                <br />
 
                                 <input type="password"
                                     value={this.state.password}

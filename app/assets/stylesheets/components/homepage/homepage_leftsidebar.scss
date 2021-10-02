@@ -1,8 +1,19 @@
 @import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
 
+.sidebar-actions {
+    display: flex;
+    flex-direction: column;
+}
+
 .dashboard-link, .all-expenses-link{
     display: flex;
     flex-direction: row;
+    // justify-content: flex-end;
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: 5px;
+    margin-top: 5px;
+    text-align: left;
 }
 
 .left-sidebar img {

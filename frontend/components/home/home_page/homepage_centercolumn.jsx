@@ -13,7 +13,7 @@ class HomepageCentercolumn extends React.Component {
                 <nav className='center-nav'>
                     <nav className='center-nav-left'>
                         <img className='user-icon' src={window.doge} alt="" />
-                        <p></p>
+                        <p>Dashboard</p>
                     </nav>
 
                     <nav className='center-nav-right'>

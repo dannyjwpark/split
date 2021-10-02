@@ -2,12 +2,12 @@
 
 .homepage-main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1.2fr 1fr;
 }
 
 .homepage-centercolumn{
     border-left: 2px solid rgba(201, 195, 195, 0.9);
     border-right: 2px solid rgba(201, 195, 195, 0.9);
     border-style: inset;
-    height: auto;
+    height: 180%;
 }

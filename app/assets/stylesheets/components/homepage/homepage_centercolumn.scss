@@ -1,25 +1,42 @@
 @import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
 
 .center-nav {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    background-color: rgb(216, 211, 211);
+    background-color: rgb(240, 236, 236);
 }
 
 .user-icon {
     width: 40px;
+    padding: 10px;
+}
+
+.center-nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .center-nav-right{
     margin-left: auto;
 }
 
+.center-nav-left p{
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .add-expense-button{
     background-color:rgb(255, 98, 0);
     border-radius: 8%;
     padding: 8px;
+    margin-right: 12px;
 }
 
 .expense-form-text{
     color: whitesmoke;
+    font-family: 'IBM Plex Serif';
+    font-size: 15px;
+    font-weight: bold;
 }
