@@ -60,7 +60,7 @@
 // body
 
 .splash-main{
-  background: url(background_img.png);
+  background: image-url('background_img.png');
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -154,7 +154,7 @@
 
 
 .action1_container, .action4_container{
-  background: url("black_tiles.png");
+  background: image-url("black_tiles.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,7 +164,7 @@
 }
 
 .action2_container{
-  background: url("green_tiles.png");
+  background: image-url("green_tiles.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,7 +174,7 @@
 }
 
 .action3_container{
-  background: url("red_tiles.png");
+  background: image-url("red_tiles.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
