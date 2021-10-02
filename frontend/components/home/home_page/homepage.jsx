@@ -22,7 +22,14 @@ class Homepage extends React.Component {
                     </div>
                 <div className='homepage-main'>
                     <div className='homepage-leftsidebar'>
-                        <HomepageLeftsidebar currentuser={this.props.currentuser}/>
+                        <HomepageLeftsidebar 
+                            // fetchUsers={this.props.fetchUsers}
+                            currentUser={this.props.currentuser}
+                            // addFriend={this.props.addFriend}
+                            // usersIndex={this.props.usersIndex}
+                            // fetchFriends={this.props.fetchFriends}
+                            // friends={this.props.friends}
+                        />
                     </div>
                     <div className='homepage-centercolumn'>
                         <HomepageCentercolumn currentuser={this.props.currentuser}/>

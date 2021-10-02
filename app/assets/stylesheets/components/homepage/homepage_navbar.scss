@@ -33,7 +33,7 @@
   font-family: 'IBM Plex Serif';
   font-size: 21px;
   font-weight: bolder;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   margin-top: 0;
   margin-left: 8px;
 }
@@ -47,6 +47,7 @@
   flex-direction: row;
   position: relative;
   margin-right: auto;
+  margin-bottom: 5px;
 }
 
 .account_icon {
