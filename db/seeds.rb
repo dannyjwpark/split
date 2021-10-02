@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+user_demo = User.create!(username: "Demo User", email: "demo_user@email.com", password: 'demo123');
 user1 = User.create!(username: "Danny", email: "danny@split.com", password: 'abc!12345');
 user2 = User.create!(username: "Grace", email: "grace@split.com", password: 'abc!12345');
 user3 = User.create!(username: "Haru", email: "haru@split.com", password: 'abc!12345');

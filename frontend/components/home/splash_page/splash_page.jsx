@@ -254,7 +254,7 @@ class SplashPage extends React.Component {
             <p> Pro features </p>
         </div>
 
-        <div className='splash-reviews'>
+        {/* <div className='splash-reviews'>
             <div className='splash-reviews-row1'>
                 <div className='splash-reivew1'>
                     
@@ -323,7 +323,7 @@ class SplashPage extends React.Component {
                     
                 </div>
             </div>
-        </div>
+        </div> */}
 
         <footer className='splash-footer'>
             <div className='splash-footer-container'>
