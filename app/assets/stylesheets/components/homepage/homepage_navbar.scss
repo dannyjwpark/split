@@ -7,14 +7,14 @@
   // margin-left: 100px;
   // margin-right: 100px;
   display: grid;
-  grid-template-columns: 1fr 1.3fr 1fr;
-  place-items: end;
+  grid-template-columns: 1fr 1.2fr 1fr;
 }
 
 .left-homepage-nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-right: 109px;
 }
 
 .homepage-nav-logo {
@@ -36,6 +36,7 @@
   margin-bottom: 5px;
   margin-top: 0;
   margin-left: 8px;
+  // margin-right: 20px;
 }
 
 .homepage-word-text{
@@ -46,8 +47,8 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-right: auto;
   margin-bottom: 5px;
+  margin-left: 109px;
 }
 
 .account_icon {

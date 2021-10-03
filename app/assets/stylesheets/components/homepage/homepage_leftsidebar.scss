@@ -3,9 +3,10 @@
 .sidebar-actions {
     display: flex;
     flex-direction: column;
+    margin-right: 20px;
 }
 
-.dashboard-link, .all-expenses-link{
+.dashboard-link, .all-expenses-link, .friend-list{
     display: flex;
     flex-direction: row;
     // justify-content: flex-end;
@@ -21,6 +22,29 @@
     width: 25px;
 }
 
-.sidebar-actions p{
-    margin-top: 13px;
+
+
+.friend-list {
+    background-color: #f6f6f6;
+    color: #ccc;
+    padding: 3px;
+}
+
+.friend-list:hover {
+    background-color: #e6e4e4;
+}
+
+.add-button {
+    display: inline-flex;
+    margin-left: auto;
+}
+
+.add-button-plus {
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.add-button-add {
+    font-size: 15px;
+    margin: 3px;
 }

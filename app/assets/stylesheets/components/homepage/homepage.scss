@@ -6,8 +6,20 @@
 }
 
 .homepage-centercolumn{
-    border-left: 2px solid rgba(201, 195, 195, 0.9);
-    border-right: 2px solid rgba(201, 195, 195, 0.9);
-    border-style: inset;
+    border-left: 2px solid rgba(204, 204, 204, 0.9);
+    border-right: 2px solid rgba(204, 204, 204, 0.9);
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
     height: 180%;
+    box-shadow: 0 0 12px rgb(167, 166, 166);
+}
+
+.homepage-leftsidebar {
+    margin-left: auto;
+}
+
+.homepage-rightsidebar {
+    margin-right: auto;
 }

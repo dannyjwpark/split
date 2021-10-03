@@ -22,16 +22,15 @@ class HomepageLeftsidebar extends React.Component {
                             <p className='dashboard-text'> All expenses </p>
                         </Link>
                     </div>
-                    {/* <div className='add-friends'>
-                        <AddFriend
-                            fetchUsers={this.props.fetchUsers}
-                            currentUser={this.props.currentuser}
-                            addFriend={this.props.addFriend}
-                            usersIndex={this.props.usersIndex}
-                            fetchFriends={this.props.fetchFriends}
-                            friends={this.props.friends}
-                        />
-                    </div> */}
+                    <div className='add-friend'>
+                        <span className='friend-list'>
+                            <p className='friends-text'>FRIENDS</p>
+                            <div className='add-button'>
+                                <p className='add-button-plus'>+</p>
+                                <p className='add-button-add'>add</p>
+                            </div>
+                        </span>
+                    </div>
                     
                 </div>
 
