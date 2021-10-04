@@ -21,7 +21,7 @@ export default class FriendAddForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUsers();
+        window.fetchUsers();
     }
 
     handleSubmit(e) {
@@ -45,7 +45,7 @@ export default class FriendAddForm extends React.Component {
                             const friends_arr = this.props.friends.map((ele) => ele.id)
                             if (i === 0) {
                                 return (<option key={`user-${i}`} value={user.id}>
-                                    Select a friend
+                                    + add
                                 </option>)
                             }
                             else if (user.id !== this.props.currentUser.id && !friends_arr.includes(user.id)) {

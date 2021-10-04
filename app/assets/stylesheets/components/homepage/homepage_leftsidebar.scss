@@ -74,3 +74,90 @@
     margin: 3px;
 }
 
+
+
+// --------------------------
+
+.friends-list-wrd {
+  text-transform: uppercase;
+  font-family: Lato;
+  font-weight: 500;
+  font-size: 11.5px;
+  color: rgb(240, 235, 235);
+  background-color: rgb(240, 235, 235);
+  padding-left: 4px;
+}
+
+.friends-list-text {
+  text-decoration: none;
+}
+.friend-link {
+  text-decoration: none;
+  color: rgb(240, 235, 235);
+}
+
+.friends-list-head {
+  background-color: rgb(240, 235, 235);
+  width: 167px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
+}
+
+.friend-list-icon {
+  width: 15px;
+  margin-right: 2px;
+}
+
+.friend-list-box {
+  display: flex;
+  align-items: baseline;
+  font-family: Lato;
+  font-weight: 500;
+  font-size:14.5px;
+  color: rgb(240, 235, 235);
+
+}
+
+.add-friend-form {
+  border: 1px solid rgb(240, 235, 235);
+  // box-shadow: 1px 1px 1px $lighter-grey;
+  margin-top: 15px;
+  height: 85px;
+  // display: flex;
+  // padding: 3px;
+  width:167px;
+}
+
+.add-friend-wrd {
+  color: white; 
+  background-color: rgb(157, 234, 157);
+  font-family: Lato;
+  font-size: 16px;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-left: 5px;
+  // margin-left: 5px;
+}
+.users-index-box {
+  font-family: Lato;
+  font-weight: 500;
+  font-size:14.5px;
+  color: rgb(240, 235, 235);
+  width: 156px;
+  // padding-left: 3px;
+  padding-right: 2px;
+  margin: 6px;
+  border: 1px solid rgb(240, 235, 235);
+}
+
+.add-friend-submit {
+  font-family: Lato;
+  font-size: 12px;
+  margin-left: 5px;
+  color: rgb(240, 235, 235);
+  background-color:  rgb(240, 235, 235);
+  border: 1px solid rgb(240, 235, 235);
+  padding: 3.5px; 
+  border-radius: 2px;
+}

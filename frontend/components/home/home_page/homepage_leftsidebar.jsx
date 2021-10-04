@@ -23,7 +23,7 @@ class HomepageLeftsidebar extends React.Component {
                             <p className='expense-text'> All expenses </p>
                         </Link>
                     </div>
-                    <div className='add-friend'>
+                    {/* <div className='add-friend'>
                         <span className='friend-list'>
                             <p className='friends-text'>FRIENDS</p>
                             <p className='invisible-space'>_________</p>
@@ -33,12 +33,13 @@ class HomepageLeftsidebar extends React.Component {
                             </div>
                         </span>
 
-                    </div>
-                    {/* <FriendAddForm
+                    </div> */}
+                    <FriendAddForm
                         currentuser={this.props.currentuser}
-                        friends={this.props.friends}
                         fetchFriends={this.props.fetchFriends}
-                    /> */}
+                        friends={this.props.friends}
+                        users={this.props.users}
+                    />
                     
                 </div>
 
