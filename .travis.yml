@@ -5,3 +5,9 @@ install:
   - npm install
 script: 
   - npm run webpack
+
+deploy:
+  provider: heroku
+  app: splitsplit
+  api_key:
+    secure: f603e017-f26e-47f2-9f6d-5f48a7519494
