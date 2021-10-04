@@ -13,17 +13,28 @@ import { fetchUser, fetchUsers } from '../../../actions/user_actions'
 const mapStateToProps = ({ session, entities: { users, friends, bills } }) => {
 // const mapStateToProps = (state) => {
     return {
+        bills: Object.values(bills),
         currentuser: users[session.id],
+        friends: Object.values(friends),
+        users: Object.values(users),
+        usersObj: users
         // currentuser: state.entities.users[state.session.id],
         // entities: entities,
     };
 };
 
-const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout()),
-    fetchUsers: () => dispatch(fetchUsers()),
+const mapDispatchToProps = dispatch => {
+    return{
+        addFriend: (friend) => dispatch(addFriend(friend)),
+        deleteFriend: (friend) => dispatch(deleteFriend(friend)),
+        fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
+        fetchFriend: (friend) => dispatch(fetchFriend(friend)),
 
-});
+        logout: () => dispatch(logout()),
+        fetchUser: (userId) => dispatch(fetchUser(user_id)),
+        fetchUsers: () => dispatch(fetchUsers()),
+    }
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
 
@@ -44,21 +55,16 @@ export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
 // const mapDispatchToProps = dispatch => ({
 
 
-//     addFriend: (friend) => dispatch(addFriend(friend)),
-//     deleteFriend: (friend) => dispatch(deleteFriend(friend)),
-//     fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
-//     fetchFriend: (friend) => dispatch(fetchFriend(friend)),
+// addFriend: (friend) => dispatch(addFriend(friend)),
+// deleteFriend: (friend) => dispatch(deleteFriend(friend)),
+// fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
+// fetchFriend: (friend) => dispatch(fetchFriend(friend)),
 
 
-//     addBill: (bill) => dispatch(addBill(bill)),
-//     deleteBill: (billId) => dispatch(deleteBill(billId)),
-//     fetchBills: () => dispatch(fetchBills()),
-//     fetchBill: (bill) => dispatch(fetchBill(bill)),
-//     updateBill: (bill) => dispatch(updateBill(bill)),
 
-//     logout: () => dispatch(logout()),
-//     fetchUser: (userId) => dispatch(fetchUser(user_id)),
-//     fetchUsers: () => dispatch(fetchUsers()),
+// logout: () => dispatch(logout()),
+// fetchUser: (userId) => dispatch(fetchUser(user_id)),
+// fetchUsers: () => dispatch(fetchUsers()),
 
 //     addExpenseForm: (
 //         <button className='db-add-expense-btn' onClick={() => dispatch(openModal('addexpense'))}>

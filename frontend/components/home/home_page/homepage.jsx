@@ -14,21 +14,30 @@ class Homepage extends React.Component {
         super(props);
     }
 
+
     render() {
+        // console.log(`props before return: `);
+        // console.log(this.props);
+        // console.log(this.state);
+        const logout = this.props.logout;
         return (
             <div className='homepage-wrapper' >
                     <div className='homepage-navbar'>
-                        <HomepageNavbar currentuser={this.props.currentuser}/>
+                        {/* {console.log(`props after return: ${this.props}`)} */}
+                        <HomepageNavbar 
+                            currentuser={this.props.currentuser}
+                            logout={logout}
+                        />
                     </div>
                 <div className='homepage-main'>
                     <div className='homepage-leftsidebar'>
                         <HomepageLeftsidebar 
-                            // fetchUsers={this.props.fetchUsers}
+                            addFriend={this.props.addFriend}
                             currentUser={this.props.currentuser}
-                            // addFriend={this.props.addFriend}
-                            // usersIndex={this.props.usersIndex}
-                            // fetchFriends={this.props.fetchFriends}
-                            // friends={this.props.friends}
+                            friends={this.props.friends}
+                            fetchFriends={this.props.fetchFriends}
+                            fetchUsers={this.props.fetchUsers}
+                            users={this.props.users}
                         />
                     </div>
                     <div className='homepage-centercolumn'>

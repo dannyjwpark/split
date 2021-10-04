@@ -17,16 +17,21 @@ class HomepageCentercolumn extends React.Component {
                     </nav>
 
                     <nav className='center-nav-right'>
-                        <Link to="/">
-                            <button 
-                                className='add-expense-button'
-                                // addBill={this.props.addBill} 
-                                currentuser={this.props.currentuser}
-                            >
-                                <p className='expense-form-text'>Add an expense</p>
-                            </button>
-                        </Link>
+                        <button 
+                            className='add-expense-button'
+                            // addBill={this.props.addBill} 
+                            currentuser={this.props.currentuser}
+                            onClick={() => dispatchEvent(openModal('addexpense'))}
+                        >
+                            <p className='expense-form-text'>Add an expense</p>
+                        </button>
 
+                        <button
+                            className='settle-up-button'
+                            currentuser={this.props.currentuser}
+                        >
+                            <p className='expense-form-text'>Settle up</p>
+                        </button>
                     </nav>
                 </nav>
                 <div className='center-contents'>

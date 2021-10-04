@@ -1,0 +1,86 @@
+.dd-button {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgb(59, 213, 172);
+}
+.dd-button:hover {
+  background-color:#48be9e;
+  cursor: pointer; 
+}
+
+.dd-username {
+  color: rgba(245, 245, 245, 0.996);;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 3px;
+}
+
+.dropdown-menu {
+  width: 162px;
+  height: 30px;
+  border: 1px solid grey;
+  display: block;
+  position: absolute;
+  right: 1px;
+  top: 26px;
+  font-size: 14px;
+  font-family: Lato;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgb(210, 208, 208);
+  background: #fff;
+}
+
+
+.user-dropdown-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-dropdown {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.user-dropdown-icon {
+  margin-top: 18px;
+  width: 12px;
+  height: 12px;
+}
+
+.logout-dropdown{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-icon {
+  margin-top: 5px;
+  width: 30px;
+  background-color: rgb(59, 213, 172);
+  border-radius: 16px;
+}
+.dropdown-arrow {
+  width: 10px;
+  margin-top: 10px;
+  margin-left: 3px;
+}
+.logout-list {
+  cursor: pointer; 
+  margin-top: 5px;
+  padding-right: 80px;
+}
+
+.logout-list:hover {
+  background-color: rgb(59, 213, 172);;
+}

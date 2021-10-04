@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomepageNavbarDropDown from './homepage_navbar_dropdown'
 
 class HomepageNavbar extends React.Component {
     constructor(props) {
@@ -25,8 +26,12 @@ class HomepageNavbar extends React.Component {
         // debugger;
         // const userid=this.getState().session.id;
         // const username=this.getState().entities.users[userid].username;
+        console.log(`props at navbar: `);
+        console.log(this.props);
         return (
             <div>
+                {console.log('props after returning navbar: ')}
+                {console.log(this.props)}
                 <div className='homepage-nav'>
                     <nav className='homepage-nav-elements'>
                         <nav className='left-homepage-nav'>
@@ -39,18 +44,16 @@ class HomepageNavbar extends React.Component {
                         <div className='empty'></div>
 
                         <nav className='right-homepage-nav'>
-                            <img className='account_icon' src={window.account_icon} alt="" />
-                            <nav className='user-dropdown'>
-                                <button 
+                            <nav className='user-dropdown' onClick={this.handleClick}>
+                                <div 
                                     className='user-dropdown-button' 
                                     currentuser={this.props.currentuser}
                                     logout={this.props.logout} 
                                 >
-                                    {/* <p className='username-text'> username </p> */}
-                                    {/* <p className='username-text'> {username} </p> */}
-                                    <p className='username-text'> {this.props.currentuser.username} </p>
-                                    <img className='user-dropdown-icon' src={window.dropdown_arrow} alt="" />
-                                </button>
+                                    <HomepageNavbarDropDown logout={this.props.logout} currentuser={this.props.currentuser} />
+                                    {/* <p className='username-text'> {this.props.currentuser.username} </p>
+                                    <img className='user-dropdown-icon' src={window.dropdown_arrow} alt="" currentuser={this.props.currentuser} logout={this.props.logout}/> */}
+                                </div>
                             </nav>
                         </nav>
                     </nav>
