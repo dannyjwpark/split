@@ -324,17 +324,40 @@ class SplashPage extends React.Component {
                 </div>
             </div>
         </div> */}
+        <footer>
+            <section className="splash-footer">
+                <section className="splash-footer-left">
+                    <div className='splash-footer-technologies'>
+                        <span className='footer-span'>Technologies</span>
+                        <p>Javascript</p>
+                        <p>React/Redux</p>
+                        <p>Ruby on Rails</p>
+                        <p>Postgresql</p>
+                    </div>
+                    <div className='splash-footer-account'>
+                        <span className='footer-span'>Account</span>
+                        <br />
+                        <Link to="/login" className='footer-link'>Log in</Link>
+                        <br />
+                        <Link to="/signup" className='footer-link'>Sign Up</Link>
+                    </div>
 
-        <footer className='splash-footer'>
-            <div className='splash-footer-container'>
-
-            </div>
-            <img className='splash-footer-image'>
-
-            </img>
+                </section>
+                <section className="splash-footer-right">
+                    <div className='social-links'>
+                        <a href="https://github.com/dannyjwpark/split" target="_blank">
+                            <img className="footer_Github" src={window.github_icon} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/jwp007/" target="_blank">
+                            <img className="footer_Linkedin" src={window.linkedin_icon} />
+                        </a>
+                    </div>
+                    <p>Made with ❤️ in Seattle, WA</p>
+                </section>
+            </section>
+            <img className='footer-background' src={window.footer_background} alt="" />
         </footer>
-
-    </div>
+     </div>
         )
     }
 }

@@ -252,7 +252,6 @@ font-weight: bold;
   height: 22px;
 }
 
-
 .splash-reviews{
   display: flex;
   flex-direction: column;
@@ -268,4 +267,44 @@ font-weight: bold;
   display: flex;
   flex-direction: row;
   margin: 10px;
+}
+
+.splash-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 45px;
+}
+
+.splash-footer div {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+}
+
+.footer-span {
+  margin-bottom: 5px;
+}
+
+
+.splash-footer-right {
+  align-items: center;
+}
+
+.splash-footer img {
+  width: 40px;
+  height: 40px; 
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+ 
+}
+
+.splash-footer-right p {
+  margin-bottom: 40px;
+}
+
+.footer-background {
+  width: 100%;
+  // margin-top: 20px;
 }

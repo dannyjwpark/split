@@ -38,9 +38,6 @@ class Homepage extends React.Component {
                         <HomepageRightsidebar currentuser={this.props.currentuser}/>
                     </div>
                 </div>
-                <footer className='homepage-footer'>
-
-                </footer>
             </div>
         )
     }
