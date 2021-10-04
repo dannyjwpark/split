@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FriendAddForm from '../../friend/friend_add_form';
+import FriendList from '../../friend/friend_list';
 
 class HomepageLeftsidebar extends React.Component {
     constructor(props) {
@@ -23,22 +24,20 @@ class HomepageLeftsidebar extends React.Component {
                             <p className='expense-text'> All expenses </p>
                         </Link>
                     </div>
-                    {/* <div className='add-friend'>
-                        <span className='friend-list'>
-                            <p className='friends-text'>FRIENDS</p>
-                            <p className='invisible-space'>_________</p>
-                            <div className='add-button'>
-                                <p className='add-button-plus'>+</p>
-                                <p className='add-button-add'>add</p>
-                            </div>
-                        </span>
-
-                    </div> */}
+                    <FriendList
+                            currentUser={this.props.currentUser}
+                            friends={this.props.friends}
+                            fetchFriends={this.props.fetchFriends}
+                            users={this.props.users}
+                            className='friend-list'
+                        />
                     <FriendAddForm
+                        addFriend={this.props.addFriend}
                         currentuser={this.props.currentuser}
                         fetchFriends={this.props.fetchFriends}
                         friends={this.props.friends}
                         users={this.props.users}
+                        className='friend-add-form'
                     />
                     
                 </div>

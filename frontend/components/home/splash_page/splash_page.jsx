@@ -332,6 +332,7 @@ class SplashPage extends React.Component {
                         <p>Javascript</p>
                         <p>React/Redux</p>
                         <p>Ruby on Rails</p>
+                        <p>HTML/CSS</p>
                         <p>Postgresql</p>
                     </div>
                     <div className='splash-footer-account'>

@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
         fetchFriend: (friend) => dispatch(fetchFriend(friend)),
 
         logout: () => dispatch(logout()),
-        fetchUser: (userId) => dispatch(fetchUser(user_id)),
+        fetchUser: (user_id) => dispatch(fetchUser(user_id)),
         fetchUsers: () => dispatch(fetchUsers()),
     }
 };

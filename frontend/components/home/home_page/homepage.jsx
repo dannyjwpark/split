@@ -19,14 +19,13 @@ class Homepage extends React.Component {
         // console.log(`props before return: `);
         // console.log(this.props);
         // console.log(this.state);
-        const logout = this.props.logout;
+        // const logout = this.props.logout;
         return (
             <div className='homepage-wrapper' >
                     <div className='homepage-navbar'>
-                        {/* {console.log(`props after return: ${this.props}`)} */}
                         <HomepageNavbar 
                             currentuser={this.props.currentuser}
-                            logout={logout}
+                            logout={this.props.logout}
                         />
                     </div>
                 <div className='homepage-main'>

@@ -7,7 +7,7 @@ export default class FriendAddForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            friend: 'John Doe',
+            friend: 'Name:',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -39,23 +39,22 @@ export default class FriendAddForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit} className='add-friend-form'>
                 <p className='add-friend-wrd'>Add Friends</p>
-                <select className='users-index-box' onChange={this.update('friend')} value={this.state.friend} >
+                <input className='users-index-box' onChange={this.update('friend')} value={this.state.friend} />
                     {
                         this.props.users.map((user, i) => {
-                            const friends_arr = this.props.friends.map((ele) => ele.id)
+                            const friend_list = this.props.friends.map((friend) => friend.id)
                             if (i === 0) {
-                                return (<option key={`user-${i}`} value={user.id}>
-                                    + add
+                                return (<option key={`user #${i}: `} value={user.id}>
+                                    
                                 </option>)
                             }
-                            else if (user.id !== this.props.currentUser.id && !friends_arr.includes(user.id)) {
-                                return (<option key={`user-${i}`} value={user.id}>
-                                    {user.name}
+                            else if (user.id !== this.props.currentUser.id && !friend_list.includes(user.id)) {
+                                return (<option key={`user #${i}: `} value={user.id}>
+                                    {user.username}
                                 </option>)
                             }
                         })
                     }
-                </select>
                 <br />
                 <input className="add-friend-submit" type="submit" value='Add Friend' />
             </form>

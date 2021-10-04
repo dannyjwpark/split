@@ -54,7 +54,7 @@ export default class FriendShow extends React.Component {
                                 deleteExpense={this.props.deleteExpense}
 
                                 currentUser={this.props.currentUser}
-                                friends={this.props.friends}
+                                friends={Object.values(this.props.friends)}
                                 expenses={this.props.expenses}
                                 users={this.props.users}
                                 usersObj={this.props.usersObj}

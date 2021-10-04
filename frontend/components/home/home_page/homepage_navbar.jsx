@@ -26,8 +26,6 @@ class HomepageNavbar extends React.Component {
         // debugger;
         // const userid=this.getState().session.id;
         // const username=this.getState().entities.users[userid].username;
-        console.log(`props at navbar: `);
-        console.log(this.props);
         return (
             <div>
                 {console.log('props after returning navbar: ')}
@@ -47,8 +45,8 @@ class HomepageNavbar extends React.Component {
                             <nav className='user-dropdown' onClick={this.handleClick}>
                                 <div 
                                     className='user-dropdown-button' 
-                                    currentuser={this.props.currentuser}
-                                    logout={this.props.logout} 
+                                    // currentuser={this.props.currentuser}
+                                    // logout={this.props.logout} 
                                 >
                                     <HomepageNavbarDropDown logout={this.props.logout} currentuser={this.props.currentuser} />
                                     {/* <p className='username-text'> {this.props.currentuser.username} </p>
