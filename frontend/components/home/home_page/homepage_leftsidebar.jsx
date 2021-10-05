@@ -26,6 +26,7 @@ class HomepageLeftsidebar extends React.Component {
                     </div>
                     <FriendList
                             addFriend={this.props.addFriend}
+                            deleteFriend={this.props.deleteFriend}
                             currentUser={this.props.currentUser}
                             friends={this.props.friends}
                             fetchFriends={this.props.fetchFriends}

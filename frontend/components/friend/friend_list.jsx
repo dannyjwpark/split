@@ -4,6 +4,24 @@ import { Link } from 'react-router-dom';
 export default class FriendList extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            friend: ''
+        }
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.getFriend(field);
+        const user_id = this.props.currentUser.id;
+        const friend = { friend_user_id: user_id, name: this.state.friend };
+        this.props.deleteFriend(friend);
+    }
+
+    getFriend(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        })
     }
 
     render() {
@@ -27,6 +45,9 @@ export default class FriendList extends React.Component {
                                     {friend.name}
                                 </div>
                             </Link>
+                            <button className='friend-delete-button' onClick={this.handleDelete}>
+                                <img src={window.delete_icon} id='delete-icon' alt="" />
+                            </button>
                         </li>
                         )
                     }

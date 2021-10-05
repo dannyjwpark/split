@@ -11,10 +11,14 @@ user1 = User.create!(username: "Danny", email: "danny@split.com", password: 'abc
 user2 = User.create!(username: "Grace", email: "grace@split.com", password: 'abc!12345');
 user3 = User.create!(username: "Haru", email: "haru@split.com", password: 'abc!12345');
 user4 = User.create!(username: "Pepper", email: "pepper@split.com", password: 'abc!12345');
-user5 = User.create!(username: "Rose", email: "rose@split.com", password: 'abc!12345');
+user5 = User.create!(username: "Ross", email: "ross@split.com", password: 'abc!12345');
 user6 = User.create!(username: "Phoebe", email: "phoebe@split.com", password: 'abc!12345');
 user7 = User.create!(username: "Spencer", email: "spencer@split.com", password: 'abc!12345');
 user8 = User.create!(username: "Joey", email: "joey@split.com", password: 'abc!12345');
+user9 = User.create!(username: "Rachel", email: "rachel@split.com", password: 'abc!12345');
+user10 = User.create!(username: "Chandler", email: "chandler@split.com", password: 'abc!12345');
+user11 = User.create!(username: "Monica", email: "monica@split.com", password: 'abc!12345');
+
 
 friend1_1 = Friend.create!(user_id: user1.id, friend_id: user3.id, email: user3.email, name: user3.username)
 friend1_2 = Friend.create!(user_id: user1.id, friend_id: user4.id, email: user4.email, name: user4.username)
