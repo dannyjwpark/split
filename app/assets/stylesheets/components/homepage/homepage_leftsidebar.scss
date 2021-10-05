@@ -152,12 +152,16 @@
 .users-index-box {
   font-weight: 500;
   font-size:14.5px;
-  color: rgb(240, 235, 235);
+  color: rgb(206, 202, 202);
   width: 156px;
   // padding-left: 3px;
   padding-right: 2px;
   margin: 6px;
   border: 1px solid rgb(240, 235, 235);
+}
+
+.users-index-box:focus {
+    color:rgb(75, 74, 74)
 }
 
 .add-friend-submit {

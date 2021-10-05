@@ -10,10 +10,14 @@
 class Bill < ApplicationRecord
     validates_presence_of :author_id
     
-    belongs_to :user,
+    belongs_to :author,
         foreign_key: :author_id,
         class_name: "User"
     
+    belongs_to :bill_groups,
+        foreign_key: :bill_id,
+        class_name: "BillGroup"
+
     has_many :comments,
         foreign_key: :bill_id,
         class_name: "Comment"

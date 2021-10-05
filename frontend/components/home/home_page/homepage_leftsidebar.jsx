@@ -7,7 +7,7 @@ class HomepageLeftsidebar extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    
     render() {
         return (
             <div className='left-sidebar'>
@@ -33,7 +33,7 @@ class HomepageLeftsidebar extends React.Component {
                         />
                     <FriendAddForm
                         addFriend={this.props.addFriend}
-                        currentuser={this.props.currentuser}
+                        currentUser={this.props.currentUser}
                         fetchFriends={this.props.fetchFriends}
                         friends={this.props.friends}
                         users={this.props.users}

@@ -1,12 +1,10 @@
 // index
-export const fetchFriends = user_id => {
-    return (
+export const fetchFriends = user_id => (
         $.ajax({
             method: 'GET',
             url: `/api/users/${user_id}/friends`,
     })
-    )
-};
+);
 
 // show
 export const fetchFriend = friend => {
@@ -19,15 +17,13 @@ export const fetchFriend = friend => {
 };
 
 // create
-export const addFriend = friend => {
-    return (
+export const addFriend = friend => (
         $.ajax({
         method: 'POST',
             url: `/api/users/${friend.user_id}/friends`,
             data: { friend }
     })
-    )
-};
+);
 
 // destroy
 export const deleteFriend = friend => {

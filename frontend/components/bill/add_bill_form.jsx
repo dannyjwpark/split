@@ -14,7 +14,7 @@ class AddBillForm extends React.Component {
             amount: '',
             notes: '',
             friends_arr: [],
-            paid_by_id: `${this.props.currentUser.id}`,
+            payer_id: `${this.props.currentUser.id}`,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.selectedFriend = this.selectedFriend.bind(this);
@@ -141,7 +141,7 @@ class AddBillForm extends React.Component {
                         <div className='details-2-top'>
                             Paid by
                             <div className='addex-paidby'>
-                                <select className='paidby-selector' onChange={this.update('paid_by_id')} value={this.state.paid_by_id}>
+                                <select className='paidby-selector' onChange={this.update('payer_id')} value={this.state.paid_by_id}>
                                     <option value={this.props.currentUser.id}>you</option>
                                     {
                                         this.state.friends_arr.map((friend_id, i) =>

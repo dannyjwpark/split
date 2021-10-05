@@ -31,7 +31,7 @@ class User < ApplicationRecord
         class_name: "Friend"
 
     has_many :bills_paid,
-        foreign_key: :paid_by_id,
+        foreign_key: :payer_id,
         class_name: "BillGroup"
 
     has_many :paid_expenses_details,
@@ -39,7 +39,7 @@ class User < ApplicationRecord
         source: :bill
 
     has_many :split_bills,
-        foreign_key: :split_with_id,
+        foreign_key: :split_id,
         class_name: "BillGroup"
     
     
