@@ -15,8 +15,8 @@ export default class FriendList extends React.Component {
                 </div>
                 
                 <ul>
-                    {console.log('this.props @ friend_list: ')}
-                    {console.log(this.props)}
+                    {/* {console.log('this.props @ friend_list: ')} */}
+                    {/* {console.log(this.props)} */}
                     {
                     this.props.friends.map ( (friend, i) => 
                         <li className='friend-list' key={`Friend #${i}: `}>

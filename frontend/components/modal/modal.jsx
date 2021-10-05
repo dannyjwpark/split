@@ -6,7 +6,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 // import LoginFormContainer from '../session_form/login_form_container';
 // import SignupFormContainer from '../session_form/signup_form_container';
-// import AddBillContainer from './add_bill_container';
+import AddBillFormContainer from '../bill/add_bill_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -14,8 +14,8 @@ function Modal({ modal, closeModal }) {
     }
     let component;
     switch (modal) {
-        case 'addBill':
-            // component = <LoginFormContainer />;
+        case 'addbill':
+            component = <AddBillFormContainer />;
             break;
         default:
             return null;

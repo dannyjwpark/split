@@ -43,6 +43,7 @@ class Homepage extends React.Component {
                         <HomepageCentercolumn 
                             currentuser={this.props.currentuser}
                             addBillForm={this.props.addBillForm}
+                            openModal={this.props.openModal}
                         />
                     </div>
                     <div className='homepage-rightsidebar'>

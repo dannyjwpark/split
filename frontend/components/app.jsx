@@ -3,7 +3,8 @@ import { Link, Route, Switch} from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-// import FriendShowContainer from './friend/friends_show_container'
+import AllBillsContainer from './bill/all_bills_container';
+import FriendsShowContainer from './friend/friends_show_container'
 import HomepageContainer from './home/home_page/homepage_container'
 import SplashPage from './home/splash_page/splash_page';
 // import Dashboard
@@ -13,15 +14,18 @@ import SignupFormContainer from './user/signup_form_container';
 
 const App = () => (
     <div>
-        
+        <Modal />
+
         <Switch>
             <AuthRoute exact path="/login" component={SessionFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
             <AuthRoute exact path="/" component={SplashPage} />
 
             <ProtectedRoute exact path="/home" component={HomepageContainer} />
+            
+            <Route path="/friends/:friendId" component={FriendsShowContainer} />
 
-
+            <Route exact path="/bills" component={AllBillsContainer} />
         </Switch>
     </div>
 );

@@ -19,7 +19,7 @@ class HomepageLeftsidebar extends React.Component {
                         </Link>
                     </div>
                     <div className='all-expenses'>
-                        <Link to="" className='all-expenses-link'>
+                        <Link to="/bills" className='all-expenses-link'>
                             <img className='all-expenses-icon' src={window.all_expenses_icon} alt="" />
                             <p className='expense-text'> All expenses </p>
                         </Link>

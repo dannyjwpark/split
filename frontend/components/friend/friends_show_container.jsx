@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
         logout: () => dispatch(logout()),
         
         addBillForm: (
-            <button className='db-add-expense-btn' onClick={() => dispatch(openModal('addbill'))}>
+            <button className='db-add-expense-btn' onClick={() => dispatch(openModal('addBill'))}>
                 Add an expense
             </button>
         ),

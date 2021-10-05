@@ -39,8 +39,8 @@ export default class FriendAddForm extends React.Component {
 
 
     render() {
-        {console.log('props in friend_add_form')}
-        {console.log(this.props)}
+        // {console.log('props in friend_add_form')}
+        // {console.log(this.props)}
         return (
             <form onSubmit={this.handleSubmit} className='add-friend-form'>
                 <p className='add-friend-wrd'>Add Friends</p>

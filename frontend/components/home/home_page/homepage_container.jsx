@@ -34,8 +34,10 @@ const mapDispatchToProps = dispatch => {
         fetchUser: (user_id) => dispatch(fetchUser(user_id)),
         fetchUsers: () => dispatch(fetchUsers()),
 
+        openModal: modal => dispatch(openModal(modal)),
+
         addBillForm: (
-            <button className='add-bill-button' onClick={() => dispatch(openModal('addbill'))}>
+            <button className='add-bill-button' onClick={() => dispatch(openModal('addBill'))}>
                 Add an expense
             </button>
         ),
@@ -45,44 +47,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
-
-
-
-
-
-// const mapStateToProps = ({ session, entities: { users, friends, bills } }) => {
-//     return {
-//         bills: Object.values(bills)
-//         currentuser: users[session.id],
-//         friends: Object.values(friends),
-//         usersIndex: Object.values(usersIndex),
-//         usersIndexObj: usersIndex,
-//     };
-// };
-
-// const mapDispatchToProps = dispatch => ({
-
-
-// addFriend: (friend) => dispatch(addFriend(friend)),
-// deleteFriend: (friend) => dispatch(deleteFriend(friend)),
-// fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
-// fetchFriend: (friend) => dispatch(fetchFriend(friend)),
-
-
-
-// logout: () => dispatch(logout()),
-// fetchUser: (userId) => dispatch(fetchUser(user_id)),
-// fetchUsers: () => dispatch(fetchUsers()),
-
-//     addExpenseForm: (
-//         <button className='db-add-expense-btn' onClick={() => dispatch(openModal('addexpense'))}>
-//             Add a bill
-//         </button>
-//     ),
-//     closeModal: () => dispatch(closeModal()),
-
-
-
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Homepage);

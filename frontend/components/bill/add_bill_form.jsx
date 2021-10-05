@@ -1,7 +1,5 @@
 import React from 'react';
-import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class AddBillForm extends React.Component {
     constructor(props) {
@@ -59,44 +57,20 @@ class AddBillForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="addex-form">
 
                     <header className="addex-head">
-                        <span>Add an expense</span>
+                        <p>Add an expense</p>
                         <div onClick={this.props.closeModal} className="close-x">X</div>
                     </header>
 
                     <div className='addex-friends'>
                         <div className='friends-wrd'>
                             With
-                            <span id='font-bold'> you </span>
-                            and:
+                            <p id='font-bold'> you </p>
+                            and friend
                         </div>
-
-                        <AutoComplete
-                            friends={friendsList}
-                            selectFriendProp={this.selectedFriend}
-                        />
-
-                        <div className='addex-friends-added'>
-                            <span className='added-friends-wrd'>Friends added:</span>
-                            {
-                                this.state.friends_arr.map((friend_id, i) =>
-                                    <ul>
-                                        <li key={`friend_id-${i}`}>
-                                            {this.props.usersObj[friend_id].name}
-                                        </li>
-                                    </ul>
-
-                                )
-                            }
-                        </div>
-
-
                     </div>
 
                     <div className='addex-details-1'>
-
                         <div className='details-1-left'>
-
-
                             <div className='categories-list'>
                                 <select className='categories-selector' onChange={this.update('category')} value={this.state.category}>
                                     <option value="General">General</option>
@@ -125,7 +99,6 @@ class AddBillForm extends React.Component {
                                 <br />
                                 <span>Amount:</span>
                                 <br />
-                                {/* <span>$</span> */}
                                 <input type="text"
                                     value={this.state.amount}
                                     onChange={this.update('amount')}

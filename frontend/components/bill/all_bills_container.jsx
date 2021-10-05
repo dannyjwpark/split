@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import AllBills from './all_bills'
-
-import React from 'react';
 import { openModal, closeModal } from '../../actions/modal_actions';
+
+import AllBills from './all_bills'
 
 const mapStateToProps = ({ session, entities: { bills, friends, users } }) => {
     return ({
@@ -37,6 +36,8 @@ const mapDispatchToProps = dispatch => {
                 Add an expense
             </button>
         ),
+
+        openModal: () => dispatch(openModal()),
         closeModal: () => dispatch(closeModal()),
 
 

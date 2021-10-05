@@ -28,8 +28,8 @@ class HomepageNavbar extends React.Component {
         // const username=this.getState().entities.users[userid].username;
         return (
             <div>
-                {console.log('props after returning navbar: ')}
-                {console.log(this.props)}
+                {/* {console.log('props after returning navbar: ')} */}
+                {/* {console.log(this.props)} */}
                 <div className='homepage-nav'>
                     <nav className='homepage-nav-elements'>
                         <nav className='left-homepage-nav'>
