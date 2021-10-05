@@ -1,11 +1,18 @@
 class Api::FriendsController < ApplicationController
 
     def create
-        @friend_relationshipship = Friend.create!(friend_params)
-        @friend = User.find_by(id: @friend_relationship.friend_id)
-
+        # debugger
+        @friend = User.find_by(username: params["name"])
+        
         if @friend
+            @friend_relationshipship = Friend.create!({
+                user_id: params["user_id"],
+                friend_id: @friend.id,
+                name: @friend.username
+            })
             render 'api/friends/show.json.jbuilder'
+        else
+            render json: "error: no user found"
         end
     end
 
@@ -30,7 +37,7 @@ class Api::FriendsController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
-        @friends = @user.friend_list
+        @friends = @user.friends
         render 'api/friends/index.json.jbuilder'
     end
 

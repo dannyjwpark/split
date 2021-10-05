@@ -6,11 +6,11 @@
     margin-right: 20px;
 }
 
-.dashboard-link, .all-expenses-link, .friend-list{
+.dashboard-link, .all-expenses-link {
     display: flex;
     flex-direction: row;
     // justify-content: flex-end;
-    align-items: baseline;
+    align-items: center;
     margin-left: auto;
     margin-right: 5px;
     margin-top: 5px;
@@ -38,18 +38,20 @@
 }
 
 .friend-list {
-    background-color: #f6f6f6;
-    color: #ccc;
+    background-color: transparent;
+    color: rgb(140, 137, 137);
     padding: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1 px;
+    height: 35px;
 }
 
 .friend-list:hover {
     background-color: #e6e4e4;
 }
 
-.friends-text {
-    font-size: 13px;
-}
 
 .invisible-space {
     visibility: hidden;
@@ -99,44 +101,29 @@
 }
 
 .friend-names {
-    color:rgb(111, 108, 108)
+  color:rgb(111, 108, 108);
 }
 
-// -----
+
+
+
 .friend-link {
   text-decoration: none;
   color: rgb(240, 235, 235);
 }
 
-.friends-list-head {
-  background-color: rgb(240, 235, 235);
-  width: 167px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  margin-bottom: 5px;
+.friends-text {
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+  color:rgb(133, 131, 131);
 }
 
-.friend-list-icon {
-  width: 15px;
-  margin-right: 2px;
-}
-
-.friend-list-box {
-  display: flex;
-  align-items: baseline;
-  font-weight: 500;
-  font-size:14.5px;
-  color: rgb(240, 235, 235);
-
-}
 
 .add-friend-form {
   border: 1px solid rgb(240, 235, 235);
-  // box-shadow: 1px 1px 1px $lighter-grey;
   margin-top: 15px;
   height: 85px;
-  // display: flex;
-  // padding: 3px;
   width:167px;
 }
 

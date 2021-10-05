@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 export default class FriendAddForm extends React.Component {
@@ -12,21 +11,22 @@ export default class FriendAddForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidUpdate() {
-        this.props.fetchFriends();
+    componentDidMount() {
+        this.props.fetchFriends(this.props.currentUser.id);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user_id = this.props.currentUser.id;
-        const friend_id = Object.values(this.state.friend).length + 1;
-        const friend_email = this.state.friend + Math.floor(Math.random() * 1000).toString() + '@split.com';
+        // const friend_id = Object.values(this.state.friend).length + 1;
+        // const friend_email = this.state.friend + Math.floor(Math.random() * 1000).toString() + '@split.com';
+        
+        // const formData = new FormData();
+        // formData.append('friend[name]', this.state.friend)
+        // formData.append('friend[email]', friend_email)
 
-        const formData = new FormData();
-        formData.append('friend[name]', this.state.friend)
-        formData.append('friend[email]', friend_email)
-
-        this.props.addFriend(formData);
+        const friend = { friend_user_id: user_id, name: this.state.friend };
+        this.props.addFriend(friend);
         this.props.fetchFriends(user_id);
         // this.props.processForm(user).then(() => this.props.history.push("/dashboard"));
     }

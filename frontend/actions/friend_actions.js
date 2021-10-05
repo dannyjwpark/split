@@ -28,9 +28,7 @@ const removeFriend = (friend) => {
 export const fetchFriends = (user_id) => dispatch => {
     return FriendsUtil.fetchFriends(user_id)
         .then(friends => (dispatch(receiveFriends(friends))
-        .catch((error) => {
-            console.log(error)
-        })
+        
     ))
 };
 
@@ -41,12 +39,9 @@ export const fetchFriend = (friend) => dispatch => {
 };
 
 export const addFriend = (friend) => dispatch => {
-    debugger;
     return FriendsUtil.addFriend(friend)
         .then(friend => (dispatch(receiveFriend(friend))
-        .catch((error) => {
-            console.log(error)
-        })
+        
     ))
 };
 

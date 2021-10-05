@@ -18,6 +18,11 @@ class AddBillForm extends React.Component {
         this.selectedFriend = this.selectedFriend.bind(this);
     }
 
+    navigateToHome() {
+        const url = `/home`;
+        this.props.history.push(url);
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -53,26 +58,26 @@ class AddBillForm extends React.Component {
 
         return (
 
-            <div className="addex-form">
-                <form onSubmit={this.handleSubmit} className="addex-form">
+            <div className="add-bill-form-container">
+                <form onSubmit={this.handleSubmit} className="add-bill-form">
 
-                    <header className="addex-head">
+                    <header className="add-bill-header">
                         <p>Add an expense</p>
                         <div onClick={this.props.closeModal} className="close-x">X</div>
                     </header>
 
-                    <div className='addex-friends'>
-                        <div className='friends-wrd'>
+                    <div className='add-bill-friends'>
+                        <div className='friends-text'>
                             With
                             <p id='font-bold'> you </p>
                             and friend
                         </div>
                     </div>
 
-                    <div className='addex-details-1'>
-                        <div className='details-1-left'>
-                            <div className='categories-list'>
-                                <select className='categories-selector' onChange={this.update('category')} value={this.state.category}>
+                    <div className='add-bill-details-1'>
+                        <div className='add-bill-details-left'>
+                            <div className='category-list'>
+                                <select className='category-selector' onChange={this.update('category')} value={this.state.category}>
                                     <option value="General">General</option>
                                     <option value="Utilities">Utilities</option>
                                     <option value="Food and Drink">Food and Drink</option>
@@ -86,14 +91,14 @@ class AddBillForm extends React.Component {
 
                         </div>
 
-                        <div className='details-1-right'>
+                        <div className='add-bills-details-right'>
 
-                            <div className='addex-desc-amt'>
+                            <div className='add-bill-desc-amt'>
                                 <span>Enter a description:</span>
                                 <input type="text"
                                     value={this.state.description}
                                     onChange={this.update('description')}
-                                    className="addex-desc"
+                                    className="add-bill-desc"
                                 />
                                 <br />
                                 <br />
@@ -102,18 +107,18 @@ class AddBillForm extends React.Component {
                                 <input type="text"
                                     value={this.state.amount}
                                     onChange={this.update('amount')}
-                                    className="addex-amt"
+                                    className="add-bill-amt"
                                 />
                             </div>
 
                         </div>
                     </div>
 
-                    <div className='addex-details-2'>
+                    <div className='add-bill-details-2'>
                         <div className='details-2-top'>
                             Paid by
-                            <div className='addex-paidby'>
-                                <select className='paidby-selector' onChange={this.update('payer_id')} value={this.state.paid_by_id}>
+                            <div className='add-bill-paidby'>
+                                <select className='paidby-selector' onChange={this.update('payer_id')} value={this.state.payer_id}>
                                     <option value={this.props.currentUser.id}>you</option>
                                     {
                                         this.state.friends_arr.map((friend_id, i) =>
@@ -138,15 +143,15 @@ class AddBillForm extends React.Component {
                             <textarea
                                 value={this.state.notes}
                                 onChange={this.update('notes')}
-                                className="addex-notes"
+                                className="add-bill-notes"
                             />
                         </div>
 
                     </div>
 
-                    <div className="addex-buttons">
-                        <input className="ae-btn-cancel" type="submit" value="Cancel" />
-                        <input className="ae-btn-save" type="submit" value="Save" />
+                    <div className="add-bill-buttons">
+                        <input className="add-bill-cancel" type="submit" value="Cancel" onClick={this.navigateToHome} />
+                        <input className="add-bill-save" type="submit" value="Save" />
                     </div>
 
                 </form>

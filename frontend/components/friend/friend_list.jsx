@@ -10,11 +10,12 @@ export default class FriendList extends React.Component {
         return(
             <div>
                 <div className='friend-list-title'>
+                    <p className='invisible-space'>______</p>
                     <p className='friends-text'>FRIENDS</p>
-                    <p className='invisible-space'>_________</p>
+                    <p className='invisible-space'>____</p>
                 </div>
                 
-                <ul>
+                <ul className='friend-list-container'>
                     {/* {console.log('this.props @ friend_list: ')} */}
                     {/* {console.log(this.props)} */}
                     {
