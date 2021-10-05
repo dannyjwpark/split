@@ -20,8 +20,13 @@ export default class FriendAddForm extends React.Component {
         e.preventDefault();
         const user_id = this.props.currentUser.id;
         const friend_id = Object.values(this.state.friend).length + 1;
-        const friend = { user_id, friend_id }
-        this.props.addFriend(friend);
+        const friend_email = this.state.friend + Math.floor(Math.random() * 1000).toString() + '@split.com';
+
+        const formData = new FormData();
+        formData.append('friend[name]', this.state.friend)
+        formData.append('friend[email]', friend_email)
+
+        this.props.addFriend(formData);
         this.props.fetchFriends(user_id);
         // this.props.processForm(user).then(() => this.props.history.push("/dashboard"));
     }

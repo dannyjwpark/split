@@ -2,20 +2,20 @@ import React from 'react';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import AutoComplete from './auto'
 
 class AddBillForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             author_id: `${this.props.currentUser.id}`,
+            amount: '',
             category: 'General',
             description: '',
-            amount: '',
-            notes: '',
             friends_arr: [],
+            notes: '',
             payer_id: `${this.props.currentUser.id}`,
-        };
+        }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.selectedFriend = this.selectedFriend.bind(this);
     }
@@ -23,14 +23,13 @@ class AddBillForm extends React.Component {
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
-        });
+        })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const expense = Object.assign({}, this.state);
-        // debugger
-        this.props.processForm(expense).then(this.props.closeModal);
+        const bill = Object.assign({}, this.state);
+        this.props.processForm(bill).then(this.props.closeModal);
     }
 
 
@@ -46,7 +45,7 @@ class AddBillForm extends React.Component {
 
     render() {
 
-        const autoFriendArr = this.props.friends.map((friend) => friend.name)
+        const friendsList = this.props.friends.map((friend) => friend.name)
 
         const perPerson = this.state.amount / (this.state.friends_arr.length + 1)
 
@@ -72,7 +71,7 @@ class AddBillForm extends React.Component {
                         </div>
 
                         <AutoComplete
-                            friends={autoFriendArr}
+                            friends={friendsList}
                             selectFriendProp={this.selectedFriend}
                         />
 

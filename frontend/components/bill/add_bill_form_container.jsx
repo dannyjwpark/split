@@ -1,34 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import React from 'react';
-import { signup } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 import AddBillForm from './add_expense';
-import { addExpense } from '../../actions/expenses_actions';
+import { addBill } from '../../actions/bill';
 
-const msp = ({ session, entities: { users, friends, users, expenses } }) => {
+const mapStateToProps = ({ session, entities: { bills, friends, users } }) => {
     return {
-        // errors: errors.session,
-        formType: 'addexpense',
+        formType: 'addBill',
 
+        bills: Object.values(bills),
         currentUser: users[session.id],
         friends: Object.values(friends),
-        // friendsObj: friends,
         users: Object.values(users),
         usersObj: users,
-        expenses: Object.values(expenses)
     };
 };
 
-const mdp = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
-        processForm: (expense) => dispatch(addExpense(expense)),
-        // otherForm: (
-        //   <button className='db-add-expense-btn' onClick={() => dispatch(openModal('addexpense'))}>
-        //     Add an expense
-        //   </button>
-        // ),
+        processForm: (bill) => dispatch(addBill(bills)),
+
         closeModal: () => dispatch(closeModal()),
 
         fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
@@ -39,4 +32,4 @@ const mdp = dispatch => {
     };
 };
 
-export default connect(msp, mdp)(AddBillForm);
+export default connect(mapStateToProps, mapDispatchToProps)(AddBillForm);

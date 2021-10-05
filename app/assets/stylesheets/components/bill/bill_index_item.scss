@@ -1,0 +1,151 @@
+@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+
+
+.category_choose_icon_1 {
+  height: 30px
+}
+
+// expense index start 
+.bill-item {
+  font-family: Lato; 
+  // padding: 5px;
+}
+
+.bill-item-header {
+  display: flex;
+  justify-content: space-between;
+  height: 58px;
+  align-items: center;
+  font-family: Lato;
+  border-top: 1.5px solid rgb(201, 196, 196);
+  font-size: 15px;
+  // border: 1px solid grey;
+  // box-shadow: 0px 20px 20px 5px lightgray
+}
+
+.bill-item-header-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 5px;
+  
+}
+.bill-item-header-left span {
+  margin-left: 6px;
+  font-size: 17px;
+  font-weight: 550;
+}
+
+.bill-item-header-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+.bill-payer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 4px;
+}
+.bill-lender {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.bill-portion-amount {
+  font-family: Lato;
+  font-size: 11px;
+  color: rgb(242, 240, 240);
+}
+
+.bill-portion-amount {
+  color: black;
+  font-size: 15px;
+  font-weight: 550;
+}
+.bill-lent-amount {
+  color: rgb(192, 216, 156);
+  font-size: 15px;
+  font-weight: 550;
+}
+.bill-lent-amount::before {
+  content:"$";
+}
+
+
+.bill-item-center {
+  background-color: rgb(226, 221, 221);
+  padding: 4px;
+  border-bottom: 1px solid rgb(218, 216, 216);
+  display: flex;
+  height: 115px;
+  align-items: center;
+}
+
+.bill-item-header-left img {
+  height: 70px
+}
+
+.bill-item-center-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.bill-item-center-amount {
+  font-size: 20px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.bill-item-center-author {
+  font-size: 12px;
+  color: rgb(218, 216, 216);
+}
+
+.bill-item-center-edit {
+  background-color: rgb(255, 98, 0);
+  color: rgb(240, 236, 236);
+  font-size: 13px;
+  width: 80;
+  border: none;
+  margin-top: 5px;
+  width: 76px;
+  font-size: 11px;
+  height: 21px;
+  border-radius: 4px
+}
+
+.category_choose_icon {
+  height: 40px;
+}
+
+.bill-item-bottom {
+  display: flex;
+  background-color: rgb(226, 221, 221);
+  height: 110px;
+  padding: 7px;
+  font-size: 14px;
+  border-bottom: 1.5px solid rgb(221, 214, 214)
+}
+
+.bill-item-bottomleft {
+  width: 300px
+}
+
+#bottomleft-paid1{
+  margin-bottom: 11px;
+}
+
+#bottomleft-paid2 {
+  margin-bottom: 5px;
+}
+
+.font-bold-2 {
+  font-weight: bold;
+}

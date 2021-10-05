@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HomepageNoexpense from './homepage_noexpense'
+import { openModal, closeModal } from '../../../actions/modal_actions'
 
 class HomepageCentercolumn extends React.Component {
     constructor(props) {
@@ -18,19 +19,19 @@ class HomepageCentercolumn extends React.Component {
 
                     <nav className='center-nav-right'>
                         <button 
-                            className='add-expense-button'
+                            className='add-bill-button'
                             // addBill={this.props.addBill} 
                             currentuser={this.props.currentuser}
-                            onClick={() => dispatchEvent(openModal('addexpense'))}
+                            onClick={() => dispatchEvent(openModal('addbill'))}
                         >
-                            <p className='expense-form-text'>Add an expense</p>
+                            <p className='bill-form-text'>Add an expense</p>
                         </button>
 
                         <button
                             className='settle-up-button'
                             currentuser={this.props.currentuser}
                         >
-                            <p className='expense-form-text'>Settle up</p>
+                            <p className='bill-form-text'>Settle up</p>
                         </button>
                     </nav>
                 </nav>

@@ -21,7 +21,9 @@ export const addFriend = friend => (
         $.ajax({
         method: 'POST',
             url: `/api/users/${friend.user_id}/friends`,
-            data: { friend }
+            data: JSON.stringify(friend),
+            contentType: false,
+            processData: false
     })
 );
 
