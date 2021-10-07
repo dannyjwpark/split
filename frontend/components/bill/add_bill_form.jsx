@@ -19,9 +19,9 @@ class AddBillForm extends React.Component {
         // this.selectFriend = this.selectFriend.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchFriends(this.props.currentUser.id);
-    }
+    // componentDidMount() {
+    //     this.props.fetchFriends(this.props.currentUser.id);
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -53,6 +53,9 @@ class AddBillForm extends React.Component {
 
     render() {
         const friendsList = Object.values(this.props.friends);
+        const friendNames = friendsList.map((friend) => friend.name);
+        // console.log('friends:');
+        // console.log(this.props.friends.map((friend) => friend["name"]));
 
         const amountQuota = this.state.amount / (friendsList.length + 1)
         const numFriends = parseFloat(amountQuota.toFixed(2));
@@ -72,16 +75,22 @@ class AddBillForm extends React.Component {
                             <p className='friends-text-regular'> With&nbsp; </p>
                             <p className='friends-text-bold'> you&nbsp; </p>
                             <p className='friends-text-regular'> and friend:&nbsp; </p>
-                            <select className='friend-list-selector' onChange={this.updateFriend('friend_list')} value={this.props.friend_list}>
+                            <select className='friend-list-selector' 
+                                onChange={this.update('friend_list')} 
+                                value={this.props.friends} 
+                                // multiple={true}
+                            >
                                 {
-                                    friendsList.forEach((friend) => {
-                                        <option value={friend}></option>
-                                    })
+                                    this.props.friends.map((friend, i) =>
+                                        <option className='friend-list-selector-item' key={`Friend #${i}: `}>
+                                            {friend["name"]}
+                                        </option>
+                                    )
                                 }
                             </select>
                         </div>
                     </div>
-
+                    
                     <div className='add-bill-details-1'>
                         <div className='add-bill-details-left'>
                             <div className='category-list'>
