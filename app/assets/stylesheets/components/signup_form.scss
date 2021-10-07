@@ -1,4 +1,4 @@
-@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='Helvetica Neue'&display=swap");
 
 .signup-body {
   max-width: 941px;
@@ -41,7 +41,7 @@
 .signup-body-right-header {
   color: #999;
   display: block;
-  font-family: 'IBM Plex Serif';
+  font-family: 'Helvetica Neue';
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -61,7 +61,7 @@
   height: 35px;
   margin-bottom: 15px; 
   color: #2f2d2d;
-  font-family: 'IBM Plex Serif';
+  font-family: 'Helvetica Neue';
   font-size: 18px;
 }
 .invisible-input, .invisible-error {
@@ -70,7 +70,7 @@
 
 .signup-hithere {
   color: #2f2d2d;
-  font-family: 'IBM Plex Serif';
+  font-family: 'Helvetica Neue';
   font-size: 24px;
   margin-bottom: 15px;
   margin-top: 10px;
@@ -79,7 +79,7 @@
 .signup-username {
   border-color: 0.5px solid lightgrey ;
   color: #2f2d2d;
-  font-family: 'IBM Plex Serif';
+  font-family: 'Helvetica Neue';
   font-size: 24px;
   height: 35px;
   margin-bottom: 15px;
@@ -95,7 +95,7 @@
 span.visible-input {
   color: #2f2d2d;
   font-size: 18px;
-  font-family: 'IBM Plex Serif';
+  font-family: 'Helvetica Neue';
   margin-bottom: 15px;
   margin-top: 10px;
 }
@@ -107,7 +107,7 @@ span.visible-input {
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  font-family: 'IBM Plex Serif';
+  font-family: 'Helvetica Neue';
   height: 56px;
   padding: 11px 15px;
   width: 155px;
@@ -126,14 +126,10 @@ span.visible-input {
   font-size: 12px;
 }
 
-#font-bold {
-  font-weight: 600;
-}
-
 .visible-error {
   color: orangered;
   font-size: 15px;
-  font-family: 'IBM Plex Serif';
+  font-family: 'Helvetica Neue';
   margin: 10px;
   padding: 10px;
 }

@@ -35,13 +35,13 @@ const mapDispatchToProps = dispatch => {
         fetchUsers: () => dispatch(fetchUsers()),
 
         openModal: modal => dispatch(openModal(modal)),
+        closeModal: modal => dispatch(closeModal(modal)),
 
         addBillForm: (
             <button className='add-bill-button' onClick={() => dispatch(openModal('addBill'))}>
                 Add an expense
             </button>
         ),
-        closeModal: () => dispatch(closeModal()),
 
     }
 };

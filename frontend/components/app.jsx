@@ -14,7 +14,7 @@ import SignupFormContainer from './user/signup_form_container';
 
 const App = () => (
     <div>
-        {/* <Modal /> */}
+        <Modal />
 
         <Switch>
             <AuthRoute exact path="/login" component={SessionFormContainer} />

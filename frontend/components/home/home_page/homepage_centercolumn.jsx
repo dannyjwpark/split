@@ -22,8 +22,8 @@ class HomepageCentercolumn extends React.Component {
                             className='add-bill-button'
                             // addBill={this.props.addBill} 
                             currentuser={this.props.currentuser}
-                            onClick={() => openModal('addBill')}
-                            // onClick={() => dispatch(this.props.openModal('addBill'))}
+                            // onClick={() => openModal('addBill')}
+                            onClick={() => dispatch(this.props.openModal('addBill'))}
                         >
                             <p className='bill-form-text'>Add an expense</p>
                         </button>

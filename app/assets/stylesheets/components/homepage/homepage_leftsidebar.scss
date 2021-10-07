@@ -172,3 +172,52 @@
   padding: 3.5px; 
   border-radius: 2px;
 }
+
+
+.submit-button-add-friend{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-friend-submit:hover {
+  cursor: pointer;
+}
+
+.question-hint-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-friend-question {
+  color: rgb(159, 155, 155);
+  background-color:  rgb(240, 235, 235);
+  border: 1px solid rgb(240, 235, 235);
+}
+
+.add-friend-question:hover + .friend-list-invisible {
+  display: block;
+  cursor: help;
+}
+
+.friend-list-invisible {
+  display: none;
+  position: absolute;
+  // margin-top: 30px;
+  margin-left: 50px;
+  color: #8c8b8b;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  
+}
+
+.existing-users-text {
+  color: rgb(94, 91, 91);
+  font-size: 14px;
+}
+
+.friend-list-invisible-item {
+  color: rgb(94, 91, 91);
+  font-size: 12px;
+  margin-top: 3px;
+}

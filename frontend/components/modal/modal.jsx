@@ -12,7 +12,7 @@ function Modal({ modal, closeModal }) {
     }
     let component;
     switch (modal) {
-        case 'addbill':
+        case 'addBill':
             component = <AddBillFormContainer />;
             break;
         default:

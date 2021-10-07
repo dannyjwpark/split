@@ -37,6 +37,7 @@ class HomepageLeftsidebar extends React.Component {
                         addFriend={this.props.addFriend}
                         currentUser={this.props.currentUser}
                         fetchFriends={this.props.fetchFriends}
+                        fetchUsers={this.props.fetchUsers}
                         friends={this.props.friends}
                         users={this.props.users}
                         className='friend-add-form'

@@ -41,8 +41,10 @@ class Homepage extends React.Component {
                     </div>
                     <div className='homepage-centercolumn'>
                         <HomepageCentercolumn 
-                            currentuser={this.props.currentuser}
                             addBillForm={this.props.addBillForm}
+                            currentuser={this.props.currentuser}
+                            friends={this.props.friends}
+                            fetchFriends={this.props.fetchFriends}
                             openModal={this.props.openModal}
                         />
                     </div>
