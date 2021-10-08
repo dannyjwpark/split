@@ -29,14 +29,18 @@ export default class BillIndexItem extends React.Component {
             payer_name = 'you'
         };
 
-        // let author_name = '';
-        // this.props.users_list.forEach(user => {
-        //     if (user.id === author_id) {
-        //         author_name = user.name;
-        //     }
-        // })
+        let author_name = '';
+        this.props.friends.forEach(user => {
+            if (user.id === author_id) {
+                author_name = user.name;
+            }
+        })
 
-        // const amount2 = amount.toFixed(2).toString();
+        if (author_name === '') {
+            author_name = 'you'
+        };
+
+        const amount2 = amount.toFixed(2).toString();
 
         // const num_payers = Object.values(split).length;
         // let portion_paid = (amount / num_payers);
@@ -91,7 +95,7 @@ export default class BillIndexItem extends React.Component {
 
                     <div className='bill-item-header-left'>
                         <p>{created_at}</p>
-                        <img src={window.category_choose_icon} alt="" className='category_choose_icon_1' />
+                        {/* <img src={window.category_choose_icon} alt="" className='category_choose_icon_1' /> */}
                         <span className='bill-item-header-description'>{description}</span>
                     </div>
 
@@ -117,23 +121,23 @@ export default class BillIndexItem extends React.Component {
 
                 </header>
 
-{/* 
+
                 <div className='bill-item-center'>
 
-                    <img src={window.category_icon} alt="" className='category_choose_icon_2' />
+                    <img src={window.category_choose_icon} alt="" className='category_choose_icon_1' />
 
                     <div className='bill-item-center-content'>
 
                         <span className='bill-item-center-description'>{description}</span>
-                        <span className='bill-item-center-amount' id='money'>{amount2}</span>
+                        <span className='bill-item-center-amount' id='money'>${amount2}</span>
                         <span className='bill-item-center-author'>Added by {author_name}</span>
-                        <button className='bill-item-center-edit'>Edit expense</button>
+                        {/* <button className='bill-item-center-edit'>Edit expense</button> */}
 
 
                     </div>
                 </div>
 
-                <div className='bill-item-bottom'>
+                {/* <div className='bill-item-bottom'>
                     <div className='bill-item-bottomleft'>
                         <ul>
                             <li className='bill-item-paid' id='bottomleft-paid1'>
