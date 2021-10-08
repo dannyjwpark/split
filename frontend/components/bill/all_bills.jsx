@@ -82,6 +82,7 @@ export default class AllBills extends React.Component {
 
                                 currentUser={this.props.currentUser}
                                 friends={this.props.friends}
+                                // num_payers={this.props.num_payers}
                                 bills={this.props.bills}
                                 users={this.props.users}
                                 usersObj={this.props.usersObj}
