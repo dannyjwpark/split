@@ -21,7 +21,7 @@ class HomepageNavbarDropDown extends React.Component {
   }
 
   render() {
-    const { logout } = this.props
+    const { logout, currentUser } = this.props
     
     return (
       <div>
@@ -34,7 +34,9 @@ class HomepageNavbarDropDown extends React.Component {
           <img src={window.window.account_icon} alt="" className='account-icon'/>
 
           <div className='dd-username'>
-            {this.props.currentuser.username}
+            {/* {console.log('props in dropdown')}
+            {console.log(this.props)} */}
+            {currentUser.username}
           </div>
           
           <img src={window.dropdown_arrow} alt="" className='dropdown-arrow'/>

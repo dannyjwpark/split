@@ -10,12 +10,10 @@ export default class FriendList extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
-    handleDelete(e) {
-        e.preventDefault();
-        this.getFriend(field);
+    handleDelete(friend) {
         const user_id = this.props.currentUser.id;
-        const friend = { friend_user_id: user_id, name: this.state.friend };
-        this.props.deleteFriend(friend);
+        const friend_selected = { user_id: user_id, id: friend.id };
+        this.props.deleteFriend(friend_selected);
     }
 
     getFriend(field) {
@@ -25,6 +23,8 @@ export default class FriendList extends React.Component {
     }
 
     render() {
+        // {console.log('props in friend)list')}
+        // {console.log(this.props)}
         return(
             <div>
                 <div className='friend-list-title'>
@@ -34,19 +34,22 @@ export default class FriendList extends React.Component {
                 </div>
                 
                 <ul className='friend-list-container'>
-                    {/* {console.log('this.props @ friend_list: ')} */}
-                    {/* {console.log(this.props)} */}
+                   
                     {
                     this.props.friends.map ( (friend, i) => 
-                        <li className='friend-list' key={`Friend #${i}: `}>
+                        <li className='friend-list' key={`Friend #${i}: `} value={friend} >
                             <img src={window.user_icon} className='user-icon' alt="" />
                             <Link to={`/friends/${friend.id}`} className='friend-show-link'>
                                 <div className='friend-names'>
                                     {friend.name}
                                 </div>
                             </Link>
-                            <button className='friend-delete-button' onClick={this.handleDelete}>
-                                <img src={window.delete_icon} id='delete-icon' alt="" />
+                            <button 
+                                className='friend-delete-button' 
+                                value={friend} 
+                                // onClick={this.handleDelete(friend)}
+                            >
+                                x
                             </button>
                         </li>
                         )

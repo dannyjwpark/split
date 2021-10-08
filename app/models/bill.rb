@@ -14,7 +14,7 @@ class Bill < ApplicationRecord
         foreign_key: :author_id,
         class_name: "User"
     
-    belongs_to :bill_groups,
+    has_many :bill_group,
         foreign_key: :bill_id,
         class_name: "BillGroup"
 
@@ -22,4 +22,8 @@ class Bill < ApplicationRecord
         foreign_key: :bill_id,
         class_name: "Comment"
 
+    def bill_payer_id 
+        bill_group= self.bill_group
+        return bill_group.first.payer_id
+    end
 end

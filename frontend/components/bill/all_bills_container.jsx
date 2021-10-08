@@ -1,8 +1,12 @@
-import { connect } from 'react-redux';
 import React from 'react';
+import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 import AllBills from './all_bills'
+import { addBill, deleteBill, fetchBill, fetchBills, updateBill } from '../../actions/bill_actions'
+import { addFriend, deleteFriend, fetchFriends, fetchFriend } from '../../actions/friend_actions'
+import { logout } from '../../actions/session_actions';
+import { fetchUser, fetchUsers } from '../../actions/user_actions'
 
 const mapStateToProps = ({ session, entities: { bills, friends, users } }) => {
     return ({
@@ -16,29 +20,30 @@ const mapStateToProps = ({ session, entities: { bills, friends, users } }) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
-        fetchFriend: (friend) => dispatch(fetchFriend(friend)),
         addFriend: (friend) => dispatch(addFriend(friend)),
         deleteFriend: (friend) => dispatch(deleteFriend(friend)),
-
-        fetchUsers: () => dispatch(fetchUsers()),
-
-        fetchBills: () => dispatch(fetchBills()),
-        fetchBill: (bill) => dispatch(fetchBill(bill)),
+        fetchFriend: (friend) => dispatch(fetchFriend(friend)),
+        fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
+        
         addBill: (bill) => dispatch(addBill(bill)),
         deleteBill: (billId) => dispatch(deleteBill(billId)),
+        fetchBill: (billId) => dispatch(fetchBill(billId)),
+        fetchBills: () => dispatch(fetchBills()),
         updateBill: (bill) => dispatch(deleteBill(bill)),
-
+        
+        fetchUser: (user_id) => dispatch(fetchUser(user_id)),
+        fetchUsers: () => dispatch(fetchUsers()),
         logout: () => dispatch(logout()),
 
+        openModal: () => dispatch(openModal()),
+        closeModal: () => dispatch(closeModal()),
+        
         addBillForm: (
             <button className='add-bill-button' onClick={() => dispatch(openModal('addBill'))}>
                 Add an expense
             </button>
         ),
 
-        openModal: () => dispatch(openModal()),
-        closeModal: () => dispatch(closeModal()),
 
 
     })

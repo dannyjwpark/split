@@ -21,7 +21,7 @@ class HomepageCentercolumn extends React.Component {
                         <button 
                             className='add-bill-button'
                             // addBill={this.props.addBill} 
-                            currentuser={this.props.currentuser}
+                            currentuser={this.props.currentUser}
                             // onClick={() => openModal('addBill')}
                             onClick={() => dispatch(this.props.openModal('addBill'))}
                         >
@@ -30,7 +30,7 @@ class HomepageCentercolumn extends React.Component {
 
                         <button
                             className='settle-up-button'
-                            currentuser={this.props.currentuser}
+                            currentuser={this.props.currentUser}
                         >
                             <p className='bill-form-text'>Settle up</p>
                         </button>

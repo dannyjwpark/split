@@ -1,7 +1,7 @@
 class BillGroup < ApplicationRecord
     validates_presence_of :bill_id, :split_id, :payer_id
     
-    has_many :bill,
+    belongs_to :bill,
         foreign_key: :bill_id,
         class_name: "Bill"
     

@@ -10,16 +10,15 @@ import { logout } from '../../../actions/session_actions';
 import { fetchUser, fetchUsers } from '../../../actions/user_actions'
 
 
-const mapStateToProps = ({ session, entities: { users, friends, bills } }) => {
+const mapStateToProps = ({ session, entities: { bills, friends, users } }) => {
 // const mapStateToProps = (state) => {
     return {
         bills: Object.values(bills),
-        currentuser: users[session.id],
+        currentUser: users[session.id],
         friends: Object.values(friends),
         users: Object.values(users),
         usersObj: users
-        // currentuser: state.entities.users[state.session.id],
-        // entities: entities,
+
     };
 };
 
@@ -30,9 +29,15 @@ const mapDispatchToProps = dispatch => {
         fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
         fetchFriend: (friend) => dispatch(fetchFriend(friend)),
 
-        logout: () => dispatch(logout()),
+        addBill: (bill) => dispatch(addBill(bill)),
+        deleteBill: (billId) => dispatch(deleteBill(billId)),
+        fetchBill: (billId) => dispatch(fetchBill(billId)),
+        fetchBills: () => dispatch(fetchBills()),
+        updateBill: (bill) => dispatch(updateBill(bill)),
+
         fetchUser: (user_id) => dispatch(fetchUser(user_id)),
         fetchUsers: () => dispatch(fetchUsers()),
+        logout: () => dispatch(logout()),
 
         openModal: modal => dispatch(openModal(modal)),
         closeModal: modal => dispatch(closeModal(modal)),

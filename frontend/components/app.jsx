@@ -23,9 +23,9 @@ const App = () => (
 
             <ProtectedRoute exact path="/home" component={HomepageContainer} />
             
-            <Route path="/friends/:friendId" component={FriendsShowContainer} />
+            <ProtectedRoute path="/friends/:friendId" component={FriendsShowContainer} />
 
-            <Route exact path="/bills" component={AllBillsContainer} />
+            <ProtectedRoute exact path="/bills" component={AllBillsContainer} />
         </Switch>
     </div>
 );

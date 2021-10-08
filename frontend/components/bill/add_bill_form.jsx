@@ -1,5 +1,22 @@
-import React from 'react';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { withRouter } from 'react-router-dom';
+import Select from 'react-select'
+
+
+const styles = {
+    multiValue: (base, state) => {
+        return state.data.isFixed ? { ...base, backgroundColor: "gray" } : base;
+    },
+    multiValueLabel: (base, state) => {
+        return state.data.isFixed
+            ? { ...base, fontWeight: "bold", color: "white", paddingRight: 5, fontSize: 11 }
+            : base;
+    },
+    multiValueRemove: (base, state) => {
+        return state.data.isFixed ? { ...base, display: "none" } : base;
+    }
+};
 
 class AddBillForm extends React.Component {
     constructor(props) {
@@ -19,14 +36,28 @@ class AddBillForm extends React.Component {
         // this.selectFriend = this.selectFriend.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchFriends(this.props.currentUser.id);
-    // }
+    componentDidMount() {
+        console.log(this.state.friend_list);
+    }
 
     handleSubmit(e) {
+        // debugger;
         e.preventDefault();
-        const bill = Object.assign({}, this.state);
-        this.props.processForm(bill).then(this.props.closeModal);
+        const bill = { 
+            author_id: this.state.author_id, 
+            amount: this.state.amount, 
+            category: this.state.category, 
+            description: this.state.description, 
+            friend_list: this.state.friend_list,
+            notes: this.state.notes,
+            num_payers: this.state.friend_list.length,
+            payer_id: this.state.payer_id,
+        }
+        // this.props.addBill(bill);
+        this.props.processForm(bill)
+            .then(this.props.closeModal)
+            .then(this.props.history.push("/bills"))
+            .then(this.props.fetchBills());
     }
 
     update(field) {
@@ -35,29 +66,34 @@ class AddBillForm extends React.Component {
         })
     }
 
-    updateFriend(field){
+    onChange = (e, option) => {
+        if (option.removedValue && option.removedValue.isFixed) return;
 
-    }
+        this.setState({
+            friend_list: e
+        });
+        console.log('friend_list: ')
+        console.log(this.state.friend_list);
+    };
 
 
-    // selectFriend(friend_name) {
-    //     let friend_list = Object.values(this.state.friends).map((friend) => friend.name);
-    //     for(let i=0; i<friend_list.length; i++){
-    //         if(friend_list[i] === friend_name){
-    //             friend_list.push(friend_list[i])
-    //         }
-    //     }
-        
-    //     this.setState({ friends: friend_list })
-    // }
 
     render() {
-        const friendsList = Object.values(this.props.friends);
-        const friendNames = friendsList.map((friend) => friend.name);
+        // console.log('props in add_bill_form');
+        // console.log(this.props);
+        // const friendsList = Object.values(this.props.friends);
+        // const friendNames = friendsList.map((friend) => friend.name);
         // console.log('friends:');
         // console.log(this.props.friends.map((friend) => friend["name"]));
+        const friendsList =
+            this.props.friends !== null &&
+            this.props.friends.map(friend => ({
+                value: friend.id,
+                label: friend.name,
+                isFixed: true // true : false
+            }));
 
-        const amountQuota = this.state.amount / (friendsList.length + 1)
+        const amountQuota = this.state.amount / (this.state.friend_list.length + 1)
         const numFriends = parseFloat(amountQuota.toFixed(2));
 
         return (
@@ -75,19 +111,28 @@ class AddBillForm extends React.Component {
                             <p className='friends-text-regular'> With&nbsp; </p>
                             <p className='friends-text-bold'> you&nbsp; </p>
                             <p className='friends-text-regular'> and friend:&nbsp; </p>
-                            <select className='friend-list-selector' 
+                            {/* <select className='friend-list-selector' 
                                 onChange={this.update('friend_list')} 
                                 value={this.props.friends} 
-                                // multiple={true}
+                                multiple={true}
                             >
                                 {
                                     this.props.friends.map((friend, i) =>
-                                        <option className='friend-list-selector-item' key={`Friend #${i}: `}>
-                                            {friend["name"]}
+                                        <option className='friend-list-selector-item' key={`Friend #${i}: `} onClick={this.selectFriend}>
+                                                {friend["name"]}
                                         </option>
                                     )
                                 }
-                            </select>
+                            </select> */}
+                            <Select
+                                isMulti
+                                value={this.state.friend_list}
+                                onChange={this.onChange}
+                                options={friendsList || []}
+                                className="friend-list-selector"
+                                classNamePrefix="select"
+                                styles={styles}
+                            />
                         </div>
                     </div>
                     
@@ -139,9 +184,9 @@ class AddBillForm extends React.Component {
                                 <select className='paidby-selector' onChange={this.update('payer_id')} value={this.state.payer_id}>
                                     <option value={this.props.currentUser.id}>you</option>
                                     {
-                                        friendsList.forEach((friend, i) =>
-                                            <option value={friend} key={i}>
-                                                {friend}
+                                        this.props.friends.map((friend, i) =>
+                                            <option className='friend-list-selector-item' key={`Friend #${i}: `} value={friend.id} onClick={this.update('payer_id')}>
+                                                {friend["name"]}
                                             </option>
                                         )
                                     }

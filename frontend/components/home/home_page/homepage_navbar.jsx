@@ -48,7 +48,7 @@ class HomepageNavbar extends React.Component {
                                     // currentuser={this.props.currentuser}
                                     // logout={this.props.logout} 
                                 >
-                                    <HomepageNavbarDropDown logout={this.props.logout} currentuser={this.props.currentuser} />
+                                    <HomepageNavbarDropDown logout={this.props.logout} currentUser={this.props.currentUser} />
                                     {/* <p className='username-text'> {this.props.currentuser.username} </p>
                                     <img className='user-dropdown-icon' src={window.dropdown_arrow} alt="" currentuser={this.props.currentuser} logout={this.props.logout}/> */}
                                 </div>

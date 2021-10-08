@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 user_demo = User.create!(username: "Demo User", email: "demo_user@email.com", password: 'demo123');
 user1 = User.create!(username: "Danny", email: "danny@split.com", password: 'abc!12345');
 user2 = User.create!(username: "Grace", email: "grace@split.com", password: 'abc!12345');
@@ -39,3 +40,12 @@ friend4_1 = Friend.create!(user_id: user4.id, friend_id: user1.id, email: user1.
 friend4_2 = Friend.create!(user_id: user4.id, friend_id: user3.id, email: user3.email, name: user3.username)
 friend4_3 = Friend.create!(user_id: user4.id, friend_id: user5.id, email: user5.email, name: user5.username)
 friend4_4 = Friend.create!(user_id: user4.id, friend_id: user6.id, email: user6.email, name: user6.username)
+
+bill_group1 = BillGroup.create!(bill_id: 1, payer_id: 23, split_id: 1, payer_name: "John");
+bill_group2 = BillGroup.create!(bill_id: 2, payer_id: 23, split_id: 2, payer_name: "John");
+
+bill1 = Bill.create!(author_id: 23, category: "General", amount: 24.00, notes: "Please pay by tomorrow", payer_id: 23 );
+bill2 = Bill.create!(author_id: 23, category: "Entertainment", amount: 100.00, notes: "Let's split the bill", payer_id: 23 );
+
+
+comment1 = Comment.create!(comment: "Thanks for paying", commenter_id: 23, bill_id: 1);

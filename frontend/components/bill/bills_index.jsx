@@ -6,10 +6,6 @@ export default class BillsIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchBills();
-    }
-
     render() {
         return (
             <div className='bill-index-container'>

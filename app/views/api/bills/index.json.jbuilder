@@ -1,4 +1,4 @@
-@bills_records.each do |bill|
+@bills.each do |bill|
     json.set! bill.id do
         json.partial! "api/bills/bill", bill: bill
     end

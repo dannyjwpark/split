@@ -29,6 +29,8 @@ const mapDispatchToProps = dispatch => {
         openModal: () => dispatch(openModal()),
         closeModal: () => dispatch(closeModal()),
 
+        addBill: (bill) => dispatch(addBill(bill)),
+
         fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
         fetchFriend: (friend) => dispatch(fetchFriend(friend)),
 

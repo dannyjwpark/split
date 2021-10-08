@@ -1,8 +1,15 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import AddBillForm from './add_bill_form';
-import HomepageNavbar from '../home/home_page/homepage_navbar';
+import { openModal, closeModal } from '../../actions/modal_actions'
+
+
+// components that will be included in the page
+import HomepageCentercolumn from '../home/home_page/homepage_centercolumn'
 import HomepageLeftsidebar from '../home/home_page/homepage_leftsidebar';
+import HomepageNavbar from '../home/home_page/homepage_navbar';
+import HomepageRightsidebar from '../home/home_page/homepage_rightsidebar';
 import BillsIndex from './bills_index';
 import modal from '../modal/modal';
 
@@ -10,9 +17,11 @@ export default class AllBills extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    
 
     render() {
+        console.log('props @ all bills')
+        console.log(this.props.bills);
         return (
             <div className='homepage-wrapper'>
                 <div className='homepage-navbar'>
@@ -37,10 +46,29 @@ export default class AllBills extends React.Component {
                     </div>
 
                     <div className='homepage-centercolumn'>
-                        <div className='homepage-centercolumn-bill-header'>
-                            <span className='homepage-centercolumn-bill-text'>All expenses</span>
-                            {/* {this.props.AddBillForm} */}
-                            <AddBillForm />
+                        <div>
+                            <nav className='center-nav'>
+                                <nav className='center-nav-left'>
+                                    <p>All expenses</p>
+                                </nav>
+
+                                <nav className='center-nav-right'>
+                                    {/* <button
+                                        className='add-bill-button'
+                                        currentuser={this.props.currentUser}
+                                        onClick={() => dispatch(this.props.openModal('addBill'))}
+                                    >
+                                        <p className='bill-form-text'>Add an expense</p>
+                                    </button> */}
+
+                                    <button
+                                        className='settle-up-button'
+                                        currentuser={this.props.currentUser}
+                                    >
+                                        <p className='bill-form-text'>Settle up</p>
+                                    </button>
+                                </nav>
+                            </nav>
                         </div>
 
 
