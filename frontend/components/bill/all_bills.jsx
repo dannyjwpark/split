@@ -91,7 +91,7 @@ export default class AllBills extends React.Component {
                     </div>
 
                     <div className='homepage-rightsidebar'>
-                        <br />
+                        {/* <br />
                         <p className='homepage-rightsidebar-balance'>
                             Your Balance
                         </p>
@@ -99,7 +99,7 @@ export default class AllBills extends React.Component {
                         <p className='homepage-rightsidebar-amount'>
                             ____ owes you $__
                         </p>
-                        <br />
+                        <br /> */}
                     </div>
 
                 </div>

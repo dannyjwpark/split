@@ -9,7 +9,6 @@ export default class BillsIndex extends React.Component {
     render() {
         return (
             <div className='bill-index-container'>
-                <p className='bill-index-header'>Bills</p>
                 <ul>
                     {
                         this.props.bills.map((bill) => (

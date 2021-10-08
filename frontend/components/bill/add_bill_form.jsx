@@ -56,8 +56,7 @@ class AddBillForm extends React.Component {
         // this.props.addBill(bill);
         this.props.processForm(bill)
             .then(this.props.closeModal)
-            .then(this.props.history.push("/bills"))
-            .then(this.props.fetchBills());
+            .then(this.props.history.push("/bills"));
     }
 
     update(field) {
