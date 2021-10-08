@@ -13,8 +13,22 @@
 ## Features
 
 ### User Authentication
+- Able to create an account, sign in, and sign out with credentials
+- Able to auto-sign in suing demo-user login feature
+- Homepage dashboard is a protected route that can only be viewed after logging in.
+
 ### Homepage Dashboard
+- Dashboard page consists of the user show page, as well as the components for adding friends and expenses.
+
 ### Friending
-### Explensing
+- Able to add another existing user in the app as a friend
+- Able to remove a friend
+- A friend's show page consists of the shared expenses between the current user and a friend.
 
+### Expensing
+- Able to add an exppense that shows the payer's name, split amount, category, description, and notes
+- Expense dynamically generates the list of potential payers based on the current user's friend list
+< br/>
 
+## Future Actions
+- Commenting feature on each expenses by a current user, as well as friends included in the expense
