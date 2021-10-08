@@ -136,9 +136,9 @@ export default class BillIndexItem extends React.Component {
 
                     </div>
                 </div>
-
-                {/* <div className='bill-item-bottom'>
-                    <div className='bill-item-bottomleft'>
+                
+                <div className='bill-item-bottom'>
+                    {/* <div className='bill-item-bottomleft'>
                         <ul>
                             <li className='bill-item-paid' id='bottomleft-paid1'>
                                 <span id='font-bold'>{payer_name}</span> paid <span id='money' className='font-bold-2'>{amount2}</span> and owes <span id='money' className='font-bold-2'>{portion_paid}</span>
@@ -153,7 +153,7 @@ export default class BillIndexItem extends React.Component {
 
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className='bill-item-right'>
                         <div className='bill-item-right-category'>
                             <div className='bill-item-paid'>
@@ -162,12 +162,11 @@ export default class BillIndexItem extends React.Component {
                             </div>
                         </div>
                         <div className='bill-item-right-notes'>
-                            <span id='font-bold' className='bill-item-paid'>Notes:</span>
-                            <br />
+                            <span id='font-bold' className='bill-item-paid'>Notes: &nbsp;</span>
                             <span>{notes}</span>
                         </div>
                     </div>
-                </div> */}
+                </div>
 
             </div>
         )

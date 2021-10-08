@@ -132,10 +132,9 @@
 
 .bill-item-bottom {
   display: flex;
-  background-color: rgb(226, 221, 221);
-  height: 110px;
-  padding: 7px;
-  font-size: 14px;
+  background-color: rgb(246, 243, 243);
+  padding: 8px;
+  font-size: 13px;
   border-bottom: 1.5px solid rgb(221, 214, 214)
 }
 
@@ -151,3 +150,7 @@
   margin-bottom: 5px;
 }
 
+
+.bill-item-right {
+  line-height: 1.3
+}
