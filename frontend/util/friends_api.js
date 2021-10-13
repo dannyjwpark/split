@@ -32,7 +32,8 @@ export const deleteFriend = friend => {
     return (
         $.ajax({
             method: 'DELETE',
-            url: `/api/users/${friend.user_id}/friends/${friend.friend_id}`
+            url: `/api/users/${friend.user_id}/friends/${friend.friend_id}`,
+            data: friend
     })
     )
 };

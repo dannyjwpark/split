@@ -14,12 +14,17 @@ export default class FriendList extends React.Component {
         const user_id = this.props.currentUser.id;
         const friend_selected = { user_id: user_id, id: friend.id };
         this.props.deleteFriend(friend_selected);
+        this.props.fetchFriends(user_id).then(() => this.props.history.push("/dashboard"));
     }
 
     getFriend(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         })
+    }
+
+    componentDidMount(){
+      this.props.fetchFriends(this.props.currentUser.id)
     }
 
     render() {
@@ -44,13 +49,6 @@ export default class FriendList extends React.Component {
                                     {friend.name}
                                 </div>
                             </Link>
-                            <button 
-                                className='friend-delete-button' 
-                                value={friend} 
-                                // onClick={this.handleDelete(friend)}
-                            >
-                                x
-                            </button>
                         </li>
                         )
                     }

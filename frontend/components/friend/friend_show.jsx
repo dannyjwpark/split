@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 import HomepageNavbar from '../home/home_page/homepage_navbar';
 import HomepageLeftsidebar from '../home/home_page/homepage_leftsidebar';
+import FriendExpensesIndex from './friend_expenses_index';
 
 export default class FriendShow extends React.Component {
     constructor(props) {
@@ -42,23 +42,24 @@ export default class FriendShow extends React.Component {
                     <section className='homepage-centercolumn'>
                         <div className='db-center-header'>
                             <span className='db-header-wrd'>Friend Expenses</span>
-                            {this.props.addExpenseForm}
+                            {this.props.addBillForm}
                         </div>
 
                         <div className='db-expenses-index'>
                             <FriendExpensesIndex
-                                fetchExpenses={this.props.fetchExpenses}
-                                fetchExpense={this.props.fetchExpense}
-                                addExpense={this.props.addExpense}
-                                updateExpense={this.props.updateExpense}
-                                deleteExpense={this.props.deleteExpense}
+                                fetchBills={this.props.fetchBills}
+                                fetchBill={this.props.fetchBill}
+                                addBill={this.props.addBill}
+                                updateBill={this.props.updateBill}
+                                deleteBill={this.props.deleteBill}
 
                                 currentUser={this.props.currentUser}
+
+                                friend={this.props.friend}
                                 friends={Object.values(this.props.friends)}
-                                expenses={this.props.expenses}
+                                bills={this.props.bills}
                                 users={this.props.users}
                                 usersObj={this.props.usersObj}
-                                friend={this.props.friend}
 
                             />
                         </div>
