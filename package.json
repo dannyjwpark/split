@@ -4,8 +4,8 @@
   "description": ".split() is a clone of [Splitwise](https://www.splitwise.com/), an interpersonal finance app that allows consumers to split expenses with friends. If a group needs to share the cost of a particular bill, .split() ensures that anyone who pays is reimbursed the correct amount and with a minimal number of transactions.",
   "main": "index.js",
   "engines": {
-    "node": "14.17.6",
-    "npm": "7.24.0"
+    "node": ">=14.17.6",
+    "npm": ">=7.24.0"
   },
   "directories": {
     "lib": "lib",
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "fortawesome": "^0.0.1-security",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
@@ -25,13 +26,17 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "travis": "^0.1.1",
-    "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0"
+    "webpack": "^5.53.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "deploy:dev": "rm -rf dist & npm run build:dev & clasp push",
+    "build:dev": "set NODE_ENV=development & webpack",
+    "serve": "webpack-dev-server",
+    "start": "npm run deploy:dev & npm run serve",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -43,5 +48,8 @@
   "bugs": {
     "url": "https://github.com/dannyjwpark/split/issues"
   },
-  "homepage": "https://github.com/dannyjwpark/split#readme"
+  "homepage": "https://github.com/dannyjwpark/split#readme",
+  "devDependencies": {
+    "webpack-cli": "^4.9.0"
+  }
 }
