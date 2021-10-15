@@ -8,7 +8,7 @@ class Api::BillsController < ApplicationController
       bill_payers = params[:bill][:friend_list]
       # bill_payers.push(current_user.id)
 
-
+      
       bill_payers.each do |payer|
         bill_group = BillGroup.new(bill_id: bill_id, split_id: payer, payer_id: bill_payer_id)
         if !bill_group
@@ -19,7 +19,7 @@ class Api::BillsController < ApplicationController
       end
 
 
-      if @bill
+      if @bill.save
         render "api/bills/show.json.jbuilder"
       else
         render @bill.errors.full_messages
@@ -57,10 +57,17 @@ class Api::BillsController < ApplicationController
     end
 
     def destroy
-        @bill = Bill.find_by(id: params[:id])
-        @bill.destroy
+        @bill = Bill.find(id: params[:id])
+        
+        if @bill
+          @bill.destroy
+        else
+          Bill.each do |bill|
+            bill.destroy
+          end
+        end
 
-        render "api/bills/show.json.jbuilder"
+        # render "api/bills/show.json.jbuilder"
     end 
 
   private 

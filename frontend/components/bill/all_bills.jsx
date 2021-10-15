@@ -16,8 +16,15 @@ import modal from '../modal/modal';
 export default class AllBills extends React.Component {
     constructor(props) {
         super(props);
+
+        this.settleBills = this.settleBills.bind(this);
     }
     
+    settleBills (){
+      this.props.bills.forEach((bill) => {
+        this.props.deleteBill(bill)
+      })
+    }
 
     render() {
         console.log('props @ all bills')
@@ -64,8 +71,9 @@ export default class AllBills extends React.Component {
                                     <button
                                         className='settle-up-button'
                                         currentuser={this.props.currentUser}
+                                        onClick={this.settleBills}
                                     >
-                                        <p className='bill-form-text'>Settle up</p>
+                                        <p className='bill-form-text'>Settle bills</p>
                                     </button>
                                 </nav>
                             </nav>

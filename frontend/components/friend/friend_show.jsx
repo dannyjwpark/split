@@ -11,9 +11,9 @@ export default class FriendShow extends React.Component {
 
     deleteFriend() {
         const user_id = this.props.currentUser.id
-        const friend_id = this.props.friend.id
-        const friend = { user_id: user_id, friend_id: friend_id }
-        this.props.deleteFriend(friend);
+        // const friend_id = this.props.friend.id
+        // const friend = { user_id: user_id, friend_id: friend_id }
+        this.props.deleteFriend(this.props.friend);
         this.props.fetchFriends(user_id).then(() => this.props.history.push("/home"))
     }
 
@@ -41,8 +41,9 @@ export default class FriendShow extends React.Component {
 
                     <section className='homepage-centercolumn'>
                         <div className='db-center-header'>
-                            <span className='db-header-wrd'>Friend Expenses</span>
-                            {this.props.addBillForm}
+                          <img className='user-icon2' src={window.doge} alt="" />
+                          <span className='friend-name-text'>{this.props.friend.name}</span>
+                          {this.props.addBillForm}
                         </div>
 
                         <div className='db-expenses-index'>
@@ -67,7 +68,7 @@ export default class FriendShow extends React.Component {
 
                     <section className='homepage-rightsidebar'>
                         <button className='remove-friend-btn' onClick={this.deleteFriend}>
-                            Remove this friend
+                            <p className='remove-friend-text'>Remove this friend</p>
                         </button>
 
                     </section>

@@ -1,0 +1,59 @@
+@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+
+.db-center-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-icon2 {
+    width: 40px;
+    padding: 10px;
+}
+
+.friend-name-text{
+  font-size: 20px;
+}
+
+.add-bill-button2{
+    background-color:rgb(255, 98, 0);
+    border-radius: 8%;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+
+.add-bill-button2:hover {
+    cursor: pointer;
+    background-color: rgb(255, 68, 0);
+}
+
+.bill-form-text2{
+    color: whitesmoke;
+    font-family: 'Helvetica Neue';
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.remove-friend-text{
+    color: rgb(116, 114, 114);
+    font-family: 'Helvetica Neue';
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.remove-friend-btn {
+  width: 130px; 
+  height: 25px;
+  font-family: 'Helvetica Neue';
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 19px;
+  color: rgb(63, 62, 62);
+}
+
+.remove-friend-btn:hover {
+  cursor: pointer;
+  background-color: rgb(91, 89, 89);
+}
