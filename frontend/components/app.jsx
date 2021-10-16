@@ -11,6 +11,7 @@ import SplashPage from './home/splash_page/splash_page';
 import Modal from './modal/modal';
 import SessionFormContainer from './session/session_form_container';
 import SignupFormContainer from './user/signup_form_container';
+import BillIndexItem from './bill/bill_index_item';
 
 const App = () => (
     <div>
@@ -24,6 +25,7 @@ const App = () => (
             <ProtectedRoute exact path="/home" component={HomepageContainer} />
             
             <ProtectedRoute path="/friends/:friendId" component={FriendsShowContainer} />
+            {/* <ProtectedRoute path="/bills/:billId" component={BillIndexItem} /> */}
 
             <ProtectedRoute exact path="/bills" component={AllBillsContainer} />
         </Switch>

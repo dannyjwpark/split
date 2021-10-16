@@ -45,7 +45,7 @@ export const addBill = (bill) => dispatch => {
 };
 export const updateBill = (bill) => dispatch => {
     return BillsUtil.updateBill(bill)
-        .then(expense => (dispatch(receiveBill(bill))
+        .then(bill => (dispatch(receiveBill(bill))
     ))
 };
 

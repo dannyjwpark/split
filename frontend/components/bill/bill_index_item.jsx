@@ -92,10 +92,11 @@ export default class BillIndexItem extends React.Component {
         return (
             <div className='bill-item'>
                 <header className='bill-item-header'>
+                  {/* <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link'>
+                    </Link> */}
 
                     <div className='bill-item-header-left'>
                         <p>{created_at}</p>
-                        {/* <img src={window.category_choose_icon} alt="" className='category_choose_icon_1' /> */}
                         <span className='bill-item-header-description'>{description}</span>
                     </div>
 
@@ -118,7 +119,6 @@ export default class BillIndexItem extends React.Component {
 
 
                     </div>
-
                 </header>
 
 
