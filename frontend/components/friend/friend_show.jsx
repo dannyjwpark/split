@@ -10,10 +10,11 @@ export default class FriendShow extends React.Component {
     }
 
     deleteFriend() {
+      // debugger;
         const user_id = this.props.currentUser.id
-        // const friend_id = this.props.friend.id
-        // const friend = { user_id: user_id, friend_id: friend_id }
-        this.props.deleteFriend(this.props.friend);
+        const friend_id = this.props.friend.id
+        const friend = { user_id: user_id, friend_id: friend_id }
+        this.props.deleteFriend(friend);
         this.props.fetchFriends(user_id).then(() => this.props.history.push("/home"))
     }
 
@@ -45,6 +46,7 @@ export default class FriendShow extends React.Component {
                           <span className='friend-name-text'>{this.props.friend.name}</span>
                           {this.props.addBillForm}
                         </div>
+                        
 
                         <div className='db-expenses-index'>
                             <FriendExpensesIndex

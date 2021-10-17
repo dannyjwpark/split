@@ -28,12 +28,12 @@ class HomepageCentercolumn extends React.Component {
                             <p className='bill-form-text'>Add an expense</p>
                         </button>
 
-                        <button
+                        {/* <button
                             className='settle-up-button'
                             currentuser={this.props.currentUser}
                         >
                             <p className='bill-form-text'>Settle up</p>
-                        </button>
+                        </button> */}
                     </nav>
                 </nav>
                 <div className='center-contents'>
