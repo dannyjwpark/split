@@ -13,7 +13,7 @@ import HomepageRightsidebar from '../home/home_page/homepage_rightsidebar';
 import BillsIndex from './bills_index';
 import modal from '../modal/modal';
 
-export default class AllBills extends React.Component {
+class AllBills extends React.Component {
     constructor(props) {
         super(props);
 
@@ -118,3 +118,4 @@ export default class AllBills extends React.Component {
     }
 }
 
+export default AllBills;

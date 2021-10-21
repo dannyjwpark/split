@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
       # Expose these methods to the views
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :logged_in?
 
   private
   def current_user
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_signed_in!
-    redirect_to new_session_url unless signed_in?
+    redirect_to new_session_url unless logged_in?
   end
 
   def logged_in?

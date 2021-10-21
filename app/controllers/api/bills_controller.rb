@@ -27,12 +27,14 @@ class Api::BillsController < ApplicationController
 
     end
 
+
     def index
       @bills = Bill.all
       #bills_all = current_user.split_bills
       #bill_ids = bills_all.pluck(:bill_id).uniq
       
     end
+
 
     def show
       @bill = Bill.find(params[:id])
@@ -41,6 +43,7 @@ class Api::BillsController < ApplicationController
         render "api/bills/show.json.jbuilder"
       end
     end
+
 
     def update
       @bill = Bill.find_by(id: params[:id])
@@ -56,6 +59,7 @@ class Api::BillsController < ApplicationController
       end
     end
 
+
     def destroy
         @bill = Bill.find(id: params[:id])
         
@@ -70,10 +74,11 @@ class Api::BillsController < ApplicationController
         # render "api/bills/show.json.jbuilder"
     end 
 
+    
   private 
 
   def bill_params
-    params.require(:bill).permit(:author_id, :category, :description, :amount, :notes, :payer_id, :num_payers)
+    params.require(:bill).permit(:author_id, :category, :description, :amount, :notes, :payer_id, :num_payers, :friend_list)
   end
 
 end

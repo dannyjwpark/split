@@ -20,8 +20,8 @@ export const fetchFriend = friend => {
 export const addFriend = friend => (
         $.ajax({
         method: 'POST',
-            url: `/api/users/${friend.friend_user_id}/friends`,
-            data: {name: friend.name},
+            url: `/api/users/${friend.user_id}/friends`,
+            data: {friend},
             // contentType: false,
             // processData: false
     })

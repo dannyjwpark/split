@@ -5,7 +5,6 @@ import BillIndexItem from '../bill/bill_index_item'
 class FriendExpensesIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.deleteFriend = this.deleteFriend.bind(this);
   }
 
   componentDidMount() {
@@ -13,7 +12,6 @@ class FriendExpensesIndex extends React.Component {
   }
 
   render() {
-
     let friendconst = {}
     if (this.props.friend) {
       // debugger
@@ -22,15 +20,14 @@ class FriendExpensesIndex extends React.Component {
 
     let billsArr = []
     
-    console.log(this.props.bills)
+    console.log(this.props.bills);
     if (Object.keys(this.props.bills).length > 0 ) {
-      const billsconst = this.props.bills
+      const billsconst = this.props.bills;
       billsconst.forEach ( (bill) => {
         billsArr.push(bill)
       })
     } 
 
-    billsArr 
     // debugger
 
     return(
@@ -41,8 +38,6 @@ class FriendExpensesIndex extends React.Component {
           <BillIndexItem
             key={bill.id}
             bill={bill}
-
-            
 
             fetchBill={this.props.fetchBill}
             addBill={this.props.addBill}

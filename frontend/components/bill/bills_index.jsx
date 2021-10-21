@@ -1,7 +1,7 @@
 import React from 'react';
 import BillIndexItem from './bill_index_item';
 
-export default class BillsIndex extends React.Component {
+class BillsIndex extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -34,3 +34,5 @@ export default class BillsIndex extends React.Component {
     }
 
 }
+
+export default BillsIndex;
