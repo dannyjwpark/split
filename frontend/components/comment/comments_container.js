@@ -11,8 +11,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchComments: () => dispatch(fetchComments()),
-        addComment: comment => dispatch(addComment(comment))
+        fetchComments: bill_id => dispatch(fetchComments(bill_id)),
+        fetchComment: comment => dispatch(fetchComment(comment)),
+        addComment: comment => dispatch(addComment(comment)),
+        updateComment: comment => dispatch(updateComment(comment)),
+        deleteComment: comment => dispatch(deleteComment(comment)),
     }
 }
 

@@ -1,14 +1,19 @@
 import React from 'react';
 import { Link, Switch, Route, Redirect, HashRouter } from 'react-router-dom';
+import AddCommentForm from '../comment/add_comment_form';
+import CommentList from '../comment/comment_list';
+import styled from "styled-components";
+
+const linkStyle = {
+  textDecoration: "none",
+  color: 'inherit'
+}
 
 export default class BillIndexItem extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchUsers();
-    // }
 
     render() {
         const users_list = Object.values(this.props.friends);
@@ -91,9 +96,8 @@ export default class BillIndexItem extends React.Component {
 
         return (
             <div className='bill-item'>
+              <Link to={`bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
                 <header className='bill-item-header'>
-                  {/* <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link'>
-                    </Link> */}
 
                     <div className='bill-item-header-left'>
                         <p>{created_at}</p>
@@ -167,7 +171,8 @@ export default class BillIndexItem extends React.Component {
                         </div>
                     </div>
                 </div>
-
+                
+                </Link>
             </div>
         )
 

@@ -78,8 +78,7 @@ class AllBills extends React.Component {
                                 </nav>
                             </nav>
                         </div>
-
-
+   
                         <div className='homepage-centercolumn-bills-index'>
                             <BillsIndex
                                 fetchBills={this.props.fetchBills}
@@ -87,6 +86,18 @@ class AllBills extends React.Component {
                                 addBill={this.props.addBill}
                                 updateBill={this.props.updateBill}
                                 deleteBill={this.props.deleteBill}
+
+                                fetchFriend={this.props.fetchFriend}
+                                fetchFriends={this.props.fetchFriends}
+
+                                fetchUser={this.props.fetchUser}
+                                fetchUsers={this.props.fetchUsers}
+
+                                fetchComments={this.props.fetchComments}
+                                fetchComment={this.props.fetchComment}
+                                addComment={this.props.addComment}
+                                deleteComment={this.props.deleteComment}
+                                updateComment={this.props.updateComment}
 
                                 currentUser={this.props.currentUser}
                                 friends={this.props.friends}

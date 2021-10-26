@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import AllBillsContainer from './bill/all_bills_container';
+import BillShowContainer from './bill/bill_show_container';
 import FriendsShowContainer from './friend/friends_show_container'
 import HomepageContainer from './home/home_page/homepage_container'
 import SplashPage from './home/splash_page/splash_page';
@@ -25,7 +26,7 @@ const App = () => (
             <ProtectedRoute exact path="/home" component={HomepageContainer} />
             
             <ProtectedRoute path="/users/:userId/friends/:friendId" component={FriendsShowContainer} />
-            {/* <ProtectedRoute path="/bills/:billId" component={BillIndexItem} /> */}
+            <ProtectedRoute exact path="/bills/:billId" component={BillShowContainer} />
 
             <ProtectedRoute exact path="/bills" component={AllBillsContainer} />
         </Switch>

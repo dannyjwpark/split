@@ -6,7 +6,8 @@ import AllBills from './all_bills'
 import { addBill, deleteBill, fetchBill, fetchBills, updateBill } from '../../actions/bill_actions'
 import { addFriend, deleteFriend, fetchFriends, fetchFriend } from '../../actions/friend_actions'
 import { logout } from '../../actions/session_actions';
-import { fetchUser, fetchUsers } from '../../actions/user_actions'
+import { fetchUser, fetchUsers } from '../../actions/user_actions';
+import { fetchComments, fetchComment, addComment, updateComment, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = ({ session, entities: { bills, friends, users } }) => {
     return ({
@@ -34,6 +35,12 @@ const mapDispatchToProps = dispatch => {
         fetchUser: (user_id) => dispatch(fetchUser(user_id)),
         fetchUsers: () => dispatch(fetchUsers()),
         logout: () => dispatch(logout()),
+
+        fetchComments: (bill_id) => dispatch(fetchComments(bill_id)),
+        fetchComment: (comment) => dispatch(fetchComment(comment)),
+        addComment: (comment) => dispatch(addComment(comment)),
+        deleteComment: (comment) => dispatch(deleteComment(comment)),
+        updateComment: (comment) => dispatch(updateComment(comment)),
 
         openModal: () => dispatch(openModal()),
         closeModal: () => dispatch(closeModal()),
