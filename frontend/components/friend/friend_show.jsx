@@ -20,11 +20,10 @@ export default class FriendShow extends React.Component {
   }
 
   render() {
-    console.log('this.props.friend:');
-    console.log(this.props.friend.id);
-    console.log('this.props.currentUser.id');
-    console.log(this.props.currentUser.id);
-    console.log(this.props.friends)
+    // console.log('this.props.friend:');
+    // console.log(this.props.friend.id);
+    // console.log('this.props.currentUser.id');
+    // console.log(this.props.currentUser.id);
       return (
         <div className='homepage-wrapper'>
           <header className='homepage-navbar'>
