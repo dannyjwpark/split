@@ -45,7 +45,7 @@ export default class BillShow extends React.Component {
           <section className='homepage-centercolumn'>
               <div className='db-center-header'>
                 <img className='user-icon2' src={window.doge} alt="" />
-                {/* <span className='friend-name-text'>{this.props.friend.name}</span> */}
+                <span className='bill-title-text'>Expense {this.props.bill.id}</span>
                 {this.props.addBillForm}
               </div>
               
@@ -124,6 +124,8 @@ export default class BillShow extends React.Component {
                   // num_payers={this.props.num_payers}
                   bills={this.props.bills}
                   users={this.props.users}
+
+                  bill = {this.props.bill}
                   // usersObj={this.props.usersObj}
                 />
               </div>

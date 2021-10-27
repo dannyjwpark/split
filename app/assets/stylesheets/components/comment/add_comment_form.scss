@@ -5,7 +5,22 @@
   border: 1px solid rgb(240, 235, 235);
   margin-top: 15px;
   height: 85px;
-  width:167px;
+  width:100%;
+}
+
+.comment-index-box {
+  font-weight: 500;
+  font-size:14.5px;
+  color: rgb(206, 202, 202);
+  width: 90%;
+  // padding-left: 3px;
+  padding-right: 2px;
+  margin: 6px;
+  border: 1px solid rgb(240, 235, 235);
+}
+
+.comment-index-box:focus {
+    color:rgb(75, 74, 74)
 }
 
 .add-comment-wrd {
@@ -17,6 +32,7 @@
   padding-left: 5px;
   // margin-left: 5px;
 }
+
 
 .add-comment-submit {
   font-size: 12px;

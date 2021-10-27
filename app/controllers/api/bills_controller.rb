@@ -65,13 +65,9 @@ class Api::BillsController < ApplicationController
         
         if @bill
           @bill.destroy
-        else
-          Bill.each do |bill|
-            bill.destroy
-          end
+          render "api/bills/show.json.jbuilder"
         end
 
-        # render "api/bills/show.json.jbuilder"
     end 
 
     

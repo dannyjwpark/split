@@ -18,12 +18,9 @@ const mapStateToProps = ({ session, entities: { bills, friends, users } }, ownPr
 
 const mapDispatchToProps = dispatch => {
     return {
-        // addFriend: (friend) => dispatch(addFriend(friend)),
-        // deleteFriend: (friend) => dispatch(deleteFriend(friend)),
         fetchFriend: (friend) => dispatch(fetchFriend(friend)),
         fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
 
-        // addBill: (bill) => dispatch(addBill(bill)),
         deleteBill: (billId) => dispatch(deleteBill(billId)),
         fetchBills: () => dispatch(fetchBills()),
         fetchBill: (bill) => dispatch(fetchBill(bill)),

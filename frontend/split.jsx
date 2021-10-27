@@ -8,11 +8,12 @@ import { addBill, deleteBill, fetchBill, fetchBills, updateBill } from './action
 import { addFriend, deleteFriend, fetchFriend, fetchFriends } from './actions/friend_actions'
 import { login, logout } from './actions/session_actions'
 import { createUser, fetchUser, fetchUsers } from './actions/user_actions'
+import { fetchComments, fetchComment, addComment, updateComment, deleteComment } from './actions/comment_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   let preloadedState = undefined;
-  console.log(`current user: ${window.currentuser.username}`);
+  // console.log(`current user: ${window.currentuser.username}`);
   
   if (window.currentuser) {
     preloadedState = {
@@ -36,6 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchBill = fetchBill;
   window.fetchBills = fetchBills;
   window.updateBill = updateBill;
+    // comments
+  window.fetchComments = fetchComments;
+  window.fetchComment = fetchComment;
+  window.addComment = addComment;
+  window.updateComment = updateComment;
+  window.deleteComment = deleteComment;
       // friends
   window.addFriend = addFriend;
   window.deleteFriend = deleteFriend;    
