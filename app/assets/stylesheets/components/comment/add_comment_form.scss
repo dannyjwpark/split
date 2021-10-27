@@ -1,0 +1,40 @@
+@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+
+
+.add-comment-form {
+  border: 1px solid rgb(240, 235, 235);
+  margin-top: 15px;
+  height: 85px;
+  width:167px;
+}
+
+.add-comment-wrd {
+  color: white; 
+  background-color: #5bc5a7;
+  font-size: 16px;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-left: 5px;
+  // margin-left: 5px;
+}
+
+.add-comment-submit {
+  font-size: 12px;
+  margin-left: 5px;
+  color: rgb(159, 155, 155);
+  background-color:  rgb(240, 235, 235);
+  border: 1px solid rgb(240, 235, 235);
+  padding: 3.5px; 
+  border-radius: 2px;
+}
+
+
+.submit-button-add-comment{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-comment-submit:hover {
+  cursor: pointer;
+}

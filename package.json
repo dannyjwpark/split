@@ -15,6 +15,8 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "babel-loader": "^8.2.2",
     "fortawesome": "^0.0.1-security",
     "react": "^17.0.2",
@@ -25,6 +27,7 @@
     "redux": "^4.1.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.3",
     "travis": "^0.1.1",
     "webpack": "^5.53.0"
   },

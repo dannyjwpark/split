@@ -27,6 +27,7 @@
 .add-bill-button2:hover {
     cursor: pointer;
     background-color: rgb(255, 68, 0);
+    transform: scale3d(1.01,1.01,1.01)
 }
 
 .bill-form-text2{
@@ -55,5 +56,5 @@
 
 .remove-friend-btn:hover {
   cursor: pointer;
-  background-color: rgb(91, 89, 89);
+  transform: scale3d(1.01,1.01,1.01);
 }

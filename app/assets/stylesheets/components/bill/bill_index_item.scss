@@ -17,6 +17,17 @@
   // padding: 5px;
 }
 
+.bill-item{
+  text-decoration: none;
+  color: inherit;
+}
+
+.bill-item:hover{
+  transform: scale3d(1.02,1.02,1.02);
+  background-color: rgb(239, 246, 239);
+  border-radius: 5px;
+}
+
 .bill-item-header {
   display: flex;
   justify-content: space-between;

@@ -39,6 +39,7 @@
 .add-bill-button:hover {
     cursor: pointer;
     background-color: rgb(255, 68, 0);
+    transform: scale3d(1.01,1.01,1.01);
 }
 
 .settle-up-button {
