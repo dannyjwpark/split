@@ -26,6 +26,10 @@ class AllBills extends React.Component {
       })
     }
 
+    componentDidMount() {
+      this.props.fetchBills();
+    }
+
     render() {
         console.log('props @ all bills')
         console.log(this.props.bills);

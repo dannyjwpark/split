@@ -46,11 +46,11 @@ class Api::BillsController < ApplicationController
 
 
     def update
-      @bill = Bill.find_by(id: params[:id])
+      @bill = Bill.find(params[:id])
       @bill.update(bill_params)
 
       bill_id=@bill.id
-      bill_payers = params[:bill][:friends]
+      bill_payers = params[:bill][:friend_list]
       bill_payers.push(current_user.id)
       bill_payer_id = params[:bill][:bill_payer_id]
 
@@ -61,7 +61,7 @@ class Api::BillsController < ApplicationController
 
 
     def destroy
-        @bill = Bill.find(id: params[:id])
+        @bill = Bill.find(params[:id])
         
         if @bill
           @bill.destroy

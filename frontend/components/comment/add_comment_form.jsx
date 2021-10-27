@@ -33,7 +33,7 @@ export default class AddCommentForm extends React.Component {
       <div>
       <form onSubmit={this.handleSubmit} className='add-comment-form'>
           {/* <p className='add-comment-wrd'>Add Comment</p> */}
-            <input className='users-index-box' 
+            <input className='comment-index-box' 
               onChange={this.update('comment')} 
               // value={this.state.bill} 
               value={this.state.comment} 

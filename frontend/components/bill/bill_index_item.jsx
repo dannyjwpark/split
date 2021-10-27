@@ -96,7 +96,7 @@ export default class BillIndexItem extends React.Component {
 
         return (
             <div className='bill-item'>
-              <Link to={`bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
+              <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
                 <header className='bill-item-header'>
 
                     <div className='bill-item-header-left'>

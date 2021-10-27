@@ -36,7 +36,9 @@ export default class FriendList extends React.Component {
             <li className='friend-list' key={`Friend #${i}: `} value={friend} >
               <img src={window.user_icon} className='user-icon' alt="" />
               {/* <Link to={`/friends/${friend.id}`} className='friend-show-link'> */}
-              <Link to={`users/${this.props.currentUser.id}/friends/${friend.id}`} className='friend-show-link'>
+
+              {/* <Link to={{ pathname: this.props.match.url + /path1/path2 }}>Path name</Link> */}
+              <Link to={`/users/${this.props.currentUser.id}/friends/${friend.id}`} className='friend-show-link'>
                 <div className='friend-names'>
                   {friend.name}
                 </div>
