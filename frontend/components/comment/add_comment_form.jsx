@@ -14,7 +14,9 @@ export default class AddCommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const comment = { 
-      bill_id: this.props.bill.id
+      bill_id: this.props.bill.id,
+      commenter_id: this.props.currentUser.id,
+      comment: this.state.comment      
     };
 
     this.props.addComment(comment);

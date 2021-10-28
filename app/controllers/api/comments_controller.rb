@@ -1,47 +1,48 @@
-# class Api::CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
 
-#   def create
-#     @comment = Bill.find_by(bill_id: params[:bill][:id])
+  def create
+    @comment = Bill.find(params[:bill_id])
+    # @bill = Bill.find(params[:id])
     
-#     if @comment
-#       @friend_relationshipship = Comment.create!({
-#         bill_id: params[:bill][:id],
-#         commenter_id: params[:friend][:friend_id],
-#         name: params[:friend][:name]
-#       })
-#       render 'api/comments/show.json.jbuilder'
-#     else
-#       render json: "error: no user found"
-#     end
-#   end
+    if @comment
+      @comment_relationshipship = Comment.create!({
+        comment: params[:comment][:comment],
+        commenter_id: params[:comment][:commenter_id],
+        bill_id: params[:comment][:bill_id]
+      })
+      render 'api/comments/show.json.jbuilder'
+    else
+      render json: "error: no bill found"
+    end
+  end
 
-#   def destroy
-#       @friend_relationship = Friend.find_by(user_id: params[:user_id], id: params[:id])
-#       @friend_relationship.destroy
+  def destroy
+      @comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], id: params[:id])
+      @comment_relationshipship.destroy
 
-#       if @friend_relationship
-#         render 'api/friends/friend_relationship.json.jbuilder'
-#       end
-#   end
+      if @comment_relationshipship
+        render 'api/comments/comment_relationshipship.json.jbuilder'
+      end
+  end
 
-#   def show
-#       friend_relationship = Friend.find_by(user_id: params[:user_id], friend_id: params[:id])
-#       @friend = User.find_by(id: friend_relationship.friend_id)
+  def show
+      comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], bill_id: params[:bill_id])
+      @comment = Bill.find_by(id: comment_relationshipship.bill_id)
       
-#       if @friend
-#           render 'api/friends/show.json.jbuilder'
-#       end
-#   end
+      if @comment
+          render 'api/comments/show.json.jbuilder'
+      end
+  end
 
-#   def index
-#       @user = User.find(params[:user_id])
-#       @friends = @user.friends
-#       render 'api/friends/index.json.jbuilder'
-#   end
+  def index
+      @bill = Bill.find(params[:bill_id])
+      @comments = @bill.comments
+      render 'api/comments/index.json.jbuilder'
+  end
 
-#   private 
+  private 
 
-#   def friend_params
-#       params.require(:friend).permit(:id, :user_id, :friend_id, :name)
-#   end
-# end
+  def comment_params
+      params.require(:comment).permit(:id, :comment, :commenter_id, :bill_id)
+  end
+end

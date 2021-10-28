@@ -1,1 +1,1 @@
-# json.extract!
+json.extract! @comment_relationshipship, :comment, :commenter_id, :bill_id
