@@ -49,7 +49,7 @@ class AddBillForm extends React.Component {
       description: this.state.description, 
       friend_list: this.state.friend_list,
       notes: this.state.notes,
-      num_payers: this.state.friend_list.length,
+      num_payers: this.state.friend_list.length + 1,
       payer_id: this.state.payer_id,
     }
     this.props.processForm(bill)
@@ -61,6 +61,10 @@ class AddBillForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     })
+  }
+
+  updateFriendList = (friend_list) => {
+    this.setState({ friend_list })
   }
 
   onChange = (e, option) => {
@@ -83,9 +87,11 @@ class AddBillForm extends React.Component {
         label: friend.name,
         isFixed: true // true : false
       }));
+    
+    const { friend_list } = this.state;
 
     const amountQuota = this.state.amount / (this.state.friend_list.length + 1)
-    const numFriends = parseFloat(amountQuota.toFixed(2));
+    const amountQuotaFixed = parseFloat(amountQuota.toFixed(2));
 
     return (
       <div className="add-bill-form-container">
@@ -116,8 +122,8 @@ class AddBillForm extends React.Component {
               </select> */}
               <Select
                 isMulti
-                value={this.state.friend_list}
-                onChange={this.onChange}
+                value={friend_list}
+                onChange={this.updateFriendList}
                 options={friendsList || []}
                 className="friend-list-selector"
                 classNamePrefix="select"
@@ -185,7 +191,7 @@ class AddBillForm extends React.Component {
             </div>
             <div className='details-2-middle'>
               ($
-              {numFriends}
+              {amountQuotaFixed}
               /person)
             </div>
             <div className='details-2-bottom'>

@@ -72,13 +72,13 @@ class AllBills extends React.Component {
                                         <p className='bill-form-text'>Add an expense</p>
                                     </button> */}
 
-                                    <button
+                                    {/* <button
                                         className='settle-up-button'
                                         currentuser={this.props.currentUser}
                                         onClick={this.settleBills}
                                     >
                                         <p className='bill-form-text'>Settle bills</p>
-                                    </button>
+                                    </button> */}
                                 </nav>
                             </nav>
                         </div>

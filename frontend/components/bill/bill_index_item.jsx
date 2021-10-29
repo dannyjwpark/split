@@ -45,7 +45,8 @@ export default class BillIndexItem extends React.Component {
             author_name = 'you'
         };
 
-        const amount2 = amount.toFixed(2).toString();
+        // const amount2 = amount.toFixed(2).toString();
+        const amount2 = amount;
 
         // const num_payers = Object.values(split).length;
         // let portion_paid = (amount / num_payers);
@@ -168,6 +169,10 @@ export default class BillIndexItem extends React.Component {
                         <div className='bill-item-right-notes'>
                             <span id='font-bold' className='bill-item-paid'>Notes: &nbsp;</span>
                             <span>{notes}</span>
+                        </div>
+                        <div className='bill-item-right-friends'>
+                            <span id='font-bold' className='bill-item-paid'>Friends involved: &nbsp;</span>
+                            <span>{friend_list}</span>
                         </div>
                     </div>
                 </div>

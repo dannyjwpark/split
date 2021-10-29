@@ -16,14 +16,8 @@ export default class Comment extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchComments();
-    this.interval = setInterval(() => {
-      this.refresh()
-    }, 1000000)
-  }
+    this.props.fetchComments(this.props.bill.id);
 
-  refresh() {
-    this.props.fetchComments();
   }
 
   update(e) {

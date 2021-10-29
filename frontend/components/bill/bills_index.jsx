@@ -6,12 +6,18 @@ class BillsIndex extends React.Component {
         super(props);
     }
 
+    
     render() {
+      const ownBills = this.props.bills.filter((bill) => 
+        (bill.authorId === this.props.currentUser.id) || (bill.payerId === this.props.currentUser.id)
+      );
+
         return (
             <div className='bill-index-container'>
                 <ul>
                     {
-                        this.props.bills.map((bill) => (
+                        ownBills.map((bill) => (
+                                                    
                             <BillIndexItem
                                 key={bill.id}
                                 bill={bill}

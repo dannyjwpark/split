@@ -1,26 +1,36 @@
 import React from 'react';
 
-class CommentList extends React.Component{
-    constructor(props){
-        super(props);
-    }
+export default class CommentList extends React.Component{
+  constructor(props){
+    super(props);
+  }
 
-    render() {
-        if(!this.props.comments) return null;
+  componentDidMount(){
+    let bill_id = this.props.bill.id;
+    this.props.fetchComments(bill_id);
+  }
 
-        return (
-            <ul className="comment-list">
-                {this.props.comments.map((comment) => (
-                    <li className="comment-item">
-                        <div className="comment-item-user">
-                            {comment.user}
-                        </div>
-                        <div className="comment-item-comment">
-                            {comment.content}
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        )
-    }
+  render() {
+    if(!this.props.comments) return null;
+    console.log(this.props);
+
+    return (
+      <div>
+        <p>Comments: </p>
+        <ul className="comment-list">
+          {this.props.comments.map((comment) => (
+            <li className="comment-item">
+              <div className="comment-item-user">
+                {comment.commenter_id}
+              </div>
+              <div className="comment-item-comment">
+                {comment.comment}
+              </div>
+            </li>
+          ))}
+        </ul>
+
+      </div>
+    )
+  }
 }

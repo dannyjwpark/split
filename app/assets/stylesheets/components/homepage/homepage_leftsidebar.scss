@@ -168,6 +168,9 @@
 
 .add-friend-submit:hover {
   cursor: pointer;
+  color: rgb(98, 95, 95);
+  background-color:  rgb(181, 177, 177);
+  transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .question-hint-container {
@@ -183,7 +186,13 @@
 
 .add-friend-question:hover + .friend-list-invisible {
   display: block;
+  border-width: 2px;
+  border-style: groove;
+}
+
+.add-friend-question:hover {
   cursor: help;
+  transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .friend-list-invisible {
@@ -191,9 +200,9 @@
   position: absolute;
   // margin-top: 30px;
   margin-left: 50px;
-  color: #8c8b8b;
+  color: #6a6868;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
+  font-size: 16px;
   
 }
 

@@ -2,7 +2,8 @@ import React from 'react';
 import HomepageNavbar from '../home/home_page/homepage_navbar';
 import HomepageLeftsidebar from '../home/home_page/homepage_leftsidebar';
 import BillIndexItem from './bill_index_item';
-import Comment from '../comment/comment';
+// import Comment from '../comment/comment';
+import CommentList from '../comment/comment_list'
 import AddCommentForm from '../comment/add_comment_form';
 
 export default class BillShow extends React.Component {
@@ -53,6 +54,7 @@ export default class BillShow extends React.Component {
                 <BillIndexItem
                   key={this.props.bill.id}
                   bill={this.props.bill}
+                  bills={this.props.bills}
 
                   addBill={this.props.addBill}
                   deleteBill={this.props.deleteBill}
@@ -73,18 +75,18 @@ export default class BillShow extends React.Component {
               </div>
 
               <div className='comment-container'>
-                {/* <Comment 
-                  fetchBills={this.props.fetchBills}
+                <CommentList 
+                  // fetchBills={this.props.fetchBills}
                   fetchBill={this.props.fetchBill}
-                  addBill={this.props.addBill}
-                  updateBill={this.props.updateBill}
-                  deleteBill={this.props.deleteBill}
+                  // addBill={this.props.addBill}
+                  // updateBill={this.props.updateBill}
+                  // deleteBill={this.props.deleteBill}
 
                   fetchFriend={this.props.fetchFriend}
                   fetchFriends={this.props.fetchFriends}
 
-                  fetchUser={this.props.fetchUser}
-                  fetchUsers={this.props.fetchUsers}
+                  // fetchUser={this.props.fetchUser}
+                  // fetchUsers={this.props.fetchUsers}
 
                   fetchComments={this.props.fetchComments}
                   fetchComment={this.props.fetchComment}
@@ -97,9 +99,10 @@ export default class BillShow extends React.Component {
                   // num_payers={this.props.num_payers}
                   bill={this.props.bill}
                   bills={this.props.bills}
+                  comments={this.props.comments}
                   users={this.props.users}
                   usersObj={this.props.usersObj}
-                /> */}
+                />
                 <AddCommentForm 
                   fetchBills={this.props.fetchBills}
                   fetchBill={this.props.fetchBill}

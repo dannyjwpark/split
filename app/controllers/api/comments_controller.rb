@@ -17,32 +17,32 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-      @comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], id: params[:id])
-      @comment_relationshipship.destroy
+    @comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], id: params[:id])
+    @comment_relationshipship.destroy
 
-      if @comment_relationshipship
-        render 'api/comments/comment_relationshipship.json.jbuilder'
-      end
+    if @comment_relationshipship
+      render 'api/comments/comment_relationshipship.json.jbuilder'
+    end
   end
 
   def show
-      comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], bill_id: params[:bill_id])
-      @comment = Bill.find_by(id: comment_relationshipship.bill_id)
-      
-      if @comment
-          render 'api/comments/show.json.jbuilder'
-      end
+    @comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], bill_id: params[:bill_id])
+    @comment = Bill.find_by(id: @comment_relationshipship.bill_id)
+    
+    if @comment
+      render 'api/comments/show.json.jbuilder'
+    end
   end
 
   def index
-      @bill = Bill.find(params[:bill_id])
-      @comments = @bill.comments
-      render 'api/comments/index.json.jbuilder'
+    @bill = Bill.find(params[:bill_id])
+    @comments = @bill.comments
+    render 'api/comments/index.json.jbuilder'
   end
 
   private 
 
   def comment_params
-      params.require(:comment).permit(:id, :comment, :commenter_id, :bill_id)
+    params.require(:comment).permit(:id, :comment, :commenter_id, :bill_id)
   end
 end

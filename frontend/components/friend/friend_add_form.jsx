@@ -60,7 +60,7 @@ export default class FriendAddForm extends React.Component {
               <div className='question-hint-container'>
                 <button className='add-friend-question'>?</button>
                 <div className='friend-list-invisible'>
-                  <p className='friend-list-texts'> Add a friend from the 'Friends' show </p>
+                  <p className='friend-list-texts'> Try adding a friend from the 'Friends' show </p>
                   <br />
                   <p className='friend-list-texts'> Ross, Rachael, Joey, </p>
                   <p className='friend-list-texts'> Spencer, Phoebe, Monica </p>

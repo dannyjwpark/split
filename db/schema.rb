@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_004724) do
+ActiveRecord::Schema.define(version: 2021_10_29_082531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_10_28_004724) do
     t.string "notes"
     t.integer "payer_id", null: false
     t.integer "num_payers"
-    t.string "friend_list"
+    t.string "friend_list", array: true
   end
 
   create_table "comments", force: :cascade do |t|

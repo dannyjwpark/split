@@ -8,6 +8,7 @@ const mapStateToProps = ({ session, entities: { bills, friends, users } }, ownPr
 
     bill: bills[ownProps.match.params.billId],
     bills: Object.values(bills),
+    comments: bills[ownProps.match.params.billId.comments],
     currentUser: users[session.id],
     friends: Object.values(friends),
     users: Object.values(users),
@@ -17,26 +18,26 @@ const mapStateToProps = ({ session, entities: { bills, friends, users } }, ownPr
 
 
 const mapDispatchToProps = dispatch => {
-    return {
-        fetchFriend: (friend) => dispatch(fetchFriend(friend)),
-        fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
+  return {
+    fetchFriend: (friend) => dispatch(fetchFriend(friend)),
+    fetchFriends: (user_id) => dispatch(fetchFriends(user_id)),
 
-        deleteBill: (billId) => dispatch(deleteBill(billId)),
-        fetchBills: () => dispatch(fetchBills()),
-        fetchBill: (bill) => dispatch(fetchBill(bill)),
-        updateBill: (bill) => dispatch(updateBill(bill)),
+    deleteBill: (billId) => dispatch(deleteBill(billId)),
+    fetchBills: () => dispatch(fetchBills()),
+    fetchBill: (bill) => dispatch(fetchBill(bill)),
+    updateBill: (bill) => dispatch(updateBill(bill)),
 
-        fetchComments: (bill_id) => dispatch(fetchComments(bill_id)),
-        fetchComment: (comment) => dispatch(fetchComment(comment)),
-        addComment: (comment) => dispatch(addComment(comment)),
-        updateComment: (comment) => dispatch(updateComment(comment)),
-        deleteComment: (comment) => dispatch(deleteComment(comment)),
-        
-        fetchUser: (user_id) => dispatch(fetchUser(user_id)),
-        fetchUsers: () => dispatch(fetchUsers()),
-        logout: () => dispatch(logout()),
-        
-    }
+    fetchComments: (bill_id) => dispatch(fetchComments(bill_id)),
+    fetchComment: (comment) => dispatch(fetchComment(comment)),
+    addComment: (comment) => dispatch(addComment(comment)),
+    updateComment: (comment) => dispatch(updateComment(comment)),
+    deleteComment: (comment) => dispatch(deleteComment(comment)),
+    
+    fetchUser: (user_id) => dispatch(fetchUser(user_id)),
+    fetchUsers: () => dispatch(fetchUsers()),
+    logout: () => dispatch(logout()),
+    
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BillShow);
