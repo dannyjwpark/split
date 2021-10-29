@@ -20,6 +20,7 @@ export default class BillIndexItem extends React.Component {
         const { author_id, amount, category, created_at, description, friend_list, id, notes, num_payers, payer_id } = this.props.bill;
 
         console.log(this.props);
+        console.log("friend_list: " + friend_list);
         let payer_name = '';
         // let payer_name = 'you';
         this.props.friends.forEach(user => {
@@ -172,7 +173,7 @@ export default class BillIndexItem extends React.Component {
                         </div>
                         <div className='bill-item-right-friends'>
                             <span id='font-bold' className='bill-item-paid'>Friends involved: &nbsp;</span>
-                            <span>{friend_list}</span>
+                            <span>{Object.values(friend_list)}</span>
                         </div>
                     </div>
                 </div>

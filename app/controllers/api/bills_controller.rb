@@ -2,15 +2,27 @@ class Api::BillsController < ApplicationController
 
     def create
       # debugger
-      bill_payer_id = params[:bill][:bill_payer_id]
-      @bill = Bill.create(bill_params)
+      payer_id = params[:bill][:payer_id]
+      friend_list = params[:bill][:friend_list]
+      # @bill = Bill.create(bill_params)
+      @bill = Bill.create({
+        author_id: params[:bill][:author_id],
+        amount: params[:bill][:amount],
+        category: params[:bill][:category],
+        description: params[:bill][:description],
+        friend_list: params[:bill][:friend_list],
+        notes: params[:bill][:notes],
+        num_payers: params[:bill][:num_payers],
+        payer_id: params[:bill][:payer_id]
+      })
+      @bill_friends = @bill.friend_list
       bill_id=@bill.id
-      bill_payers = params[:bill][:friend_list]
+      # debugger
       # bill_payers.push(current_user.id)
 
       
-      bill_payers.each do |payer|
-        bill_group = BillGroup.new(bill_id: bill_id, split_id: payer, payer_id: bill_payer_id)
+      friend_list.each do |payer|
+        bill_group = BillGroup.new(bill_id: bill_id, split_id: payer, payer_id: payer_id)
         if !bill_group
         #  render "api/bills/show.json.jbuilder"
         #else
@@ -61,6 +73,7 @@ class Api::BillsController < ApplicationController
 
 
     def destroy
+      # debugger
         @bill = Bill.find(params[:id])
         
         if @bill

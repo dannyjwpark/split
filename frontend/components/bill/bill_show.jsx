@@ -14,9 +14,9 @@ export default class BillShow extends React.Component {
 
   deleteBill() {
   // debugger;
-    const billId = this.props.bill.id
-    console.log(billId);
-    this.props.deleteBill(billId);
+    // const billId = this.props.bill.id
+    // console.log(billId);
+    this.props.deleteBill(this.props.bill.id);
     this.props.fetchBills().then(() => this.props.history.push("/home"))
   }
 

@@ -64,7 +64,8 @@ class AddBillForm extends React.Component {
   }
 
   updateFriendList = (friend_list) => {
-    this.setState({ friend_list })
+    console.log("test");
+    this.setState({...this.state, friend_list })
   }
 
   onChange = (e, option) => {
@@ -78,8 +79,9 @@ class AddBillForm extends React.Component {
   };
 
 
-
+  
   render() {
+    console.log("this.state", this.state);
     const friendsList =
       this.props.friends !== null &&
       this.props.friends.map(friend => ({
@@ -125,6 +127,7 @@ class AddBillForm extends React.Component {
                 value={friend_list}
                 onChange={this.updateFriendList}
                 options={friendsList || []}
+                isSearchable={true}
                 className="friend-list-selector"
                 classNamePrefix="select"
                 styles={styles}
