@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => {
         deleteBill: (billId) => dispatch(deleteBill(billId)),
         fetchBill: (billId) => dispatch(fetchBill(billId)),
         fetchBills: () => dispatch(fetchBills()),
-        updateBill: (bill) => dispatch(deleteBill(bill)),
+        updateBill: (bill) => dispatch(updateBill(bill)),
         
         fetchUser: (user_id) => dispatch(fetchUser(user_id)),
         fetchUsers: () => dispatch(fetchUsers()),
@@ -50,9 +50,6 @@ const mapDispatchToProps = dispatch => {
                 Add an expense
             </button>
         ),
-
-
-
     })
 }
 

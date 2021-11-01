@@ -9,7 +9,7 @@ const linkStyle = {
   color: 'inherit'
 }
 
-export default class BillIndexItem extends React.Component {
+export default class FriendExpensesIndexItem extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -23,8 +23,8 @@ export default class BillIndexItem extends React.Component {
         const users_list = Object.values(this.props.friends);
         const { author_id, amount, category, created_at, description, friendList, notes, num_payers, payer_id } = this.props.bill;
 
-        // console.log("props.bill at bill_index_item: ")
-        // console.log(this.props.bill);
+        console.log("props.bill at bill_index_item: ")
+        console.log(this.props.bill);
 
         // console.log("friend_list: " + Object.values(friend_list));
         let payer_name = '';
@@ -102,9 +102,17 @@ export default class BillIndexItem extends React.Component {
         //     amount5 = payer_2_portion.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // }
 
-        return (
-            <div className='bill-item'>
-              <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
+
+        let friendNames = [];
+        Object.keys(friendList).map((k,v) => friendNames.push(friendList[k].label));
+        console.log("friendNames: " + friendNames);
+        console.log("friend.name: " + this.props.friend.name);
+        console.log("friendNames.includes(friend.name): " + friendNames.includes(this.props.friend.name));
+
+        const renderBill = () => {
+          if(friendNames.includes(this.props.friend.name)){
+            return(
+            <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
                 <header className='bill-item-header'>
 
                     <div className='bill-item-header-left'>
@@ -180,13 +188,21 @@ export default class BillIndexItem extends React.Component {
                         <div className='bill-item-right-friends'>
                             <span id='font-bold' className='bill-item-paid'>Friends involved: &nbsp;</span>
                             {Object.keys(friendList).map((k,v) => 
-                              <span> {friendList[k].label} &nbsp;</span>
-                            ) }
+                              <span> {friendList[k].label} &nbsp;</span> ) }
                         </div>
                     </div>
                 </div>
                 
                 </Link>
+            )
+          }
+        }
+
+
+
+        return (
+            <div className='bill-item'>
+              {renderBill()}
             </div>
         )
 

@@ -5,7 +5,7 @@ class Api::BillsController < ApplicationController
       payer_id = params[:bill][:payer_id]
       friend_list = params[:bill][:friend_list]
       # @bill = Bill.create(bill_params)
-      @bill = Bill.create({
+      @bill = Bill.create!({
         author_id: params[:bill][:author_id],
         amount: params[:bill][:amount],
         category: params[:bill][:category],
@@ -44,7 +44,7 @@ class Api::BillsController < ApplicationController
       @bills = Bill.all
       #bills_all = current_user.split_bills
       #bill_ids = bills_all.pluck(:bill_id).uniq
-      
+      render "api/bills/index.json.jbuilder"
     end
 
 

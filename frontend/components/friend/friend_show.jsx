@@ -20,8 +20,8 @@ export default class FriendShow extends React.Component {
   }
 
   render() {
-    // console.log('this.props.friend:');
-    // console.log(this.props.friend.id);
+    console.log('this.props @ friend show page');
+    console.log(this.props);
     // console.log('this.props.currentUser.id');
     // console.log(this.props.currentUser.id);
       return (

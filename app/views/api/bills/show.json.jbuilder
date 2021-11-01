@@ -1,5 +1,5 @@
 # json.partial! "api/bills/bill", bill: @bill
-json.extract! @bill, :id, :author_id, :amount, :category, :description, :notes, :payer_id, :friend_list
+json.extract! @bill, :id, :author_id, :amount, :category, :description, :friend_list, :notes, :payer_id
 
 
 # , :friend_list
