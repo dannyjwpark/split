@@ -105,12 +105,9 @@ export default class FriendExpensesIndexItem extends React.Component {
 
         let friendNames = [];
         Object.keys(friendList).map((k,v) => friendNames.push(friendList[k].label));
-        console.log("friendNames: " + friendNames);
-        console.log("friend.name: " + this.props.friend.name);
-        console.log("friendNames.includes(friend.name): " + friendNames.includes(this.props.friend.name));
 
         const renderBill = () => {
-          if(friendNames.includes(this.props.friend.name)){
+          if(friendNames.includes(this.props.friend.name) || this.props.friend.id === author_id){
             return(
             <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
                 <header className='bill-item-header'>

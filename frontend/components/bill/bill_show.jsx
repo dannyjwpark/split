@@ -2,7 +2,6 @@ import React from 'react';
 import HomepageNavbar from '../home/home_page/homepage_navbar';
 import HomepageLeftsidebar from '../home/home_page/homepage_leftsidebar';
 import BillIndexItem from './bill_index_item';
-// import Comment from '../comment/comment';
 import CommentList from '../comment/comment_list'
 import AddCommentForm from '../comment/add_comment_form';
 
@@ -21,6 +20,7 @@ export default class BillShow extends React.Component {
   }
 
   render() {
+    console.log("this.props @ bill.show");
     console.log(this.props);
     return (
       <div className='homepage-wrapper'>
@@ -100,8 +100,7 @@ export default class BillShow extends React.Component {
                   bill={this.props.bill}
                   bills={this.props.bills}
                   comments={this.props.comments}
-                  users={this.props.users}
-                  usersObj={this.props.usersObj}
+                  users={this.props.users} usersObj={this.props.usersObj}
                 />
                 <AddCommentForm 
                   fetchBills={this.props.fetchBills}

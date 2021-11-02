@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { addMessage, fetchMessage } from "../../actions/comment_actions";
-import Comment from "./comment";
+import CommentList from "./comment_list";
 
 const mapStateToProps = state => {
     return {
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Comment);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentList);

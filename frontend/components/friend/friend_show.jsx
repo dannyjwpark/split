@@ -33,16 +33,16 @@ export default class FriendShow extends React.Component {
           <section className='homepage-main'>
 
             <aside className='homepage-leftsidebar'>
-                <HomepageLeftsidebar
-                  fetchFriends={this.props.fetchFriends}
-                  fetchFriend={this.props.fetchFriend}
-                  addFriend={this.props.addFriend}
-                  deleteFriend={this.props.deleteFriend}
-                  fetchUsers={this.props.fetchUsers}
-                  currentUser={this.props.currentUser}
-                  friends={this.props.friends}
-                  users={this.props.users}
-                />
+              <HomepageLeftsidebar
+                fetchFriends={this.props.fetchFriends}
+                fetchFriend={this.props.fetchFriend}
+                addFriend={this.props.addFriend}
+                deleteFriend={this.props.deleteFriend}
+                fetchUsers={this.props.fetchUsers}
+                currentUser={this.props.currentUser}
+                friends={this.props.friends}
+                users={this.props.users}
+              />
             </aside>
 
             <section className='homepage-centercolumn'>

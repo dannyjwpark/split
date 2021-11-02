@@ -10,6 +10,9 @@ export default class AddCommentForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchComments(this.props.bill.id);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
