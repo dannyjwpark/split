@@ -25,7 +25,11 @@ export default class CommentList extends React.Component{
           {Object.keys(this.props.comments).map((k,v) => 
             <li className="comment-item">
               <div className="comment-item-user">
-                {this.props.users[this.props.comments[k].commenterId].username}: &nbsp;
+                {this.props.users[this.props.comments[k].commenterId].username} &nbsp;
+                <p className='time-small-font'>
+                  {this.props.comments[k].createdAt.slice(0,10)} &nbsp;
+                  {this.props.comments[k].createdAt.slice(11,16)}
+                </p>
               </div>
               <div className="comment-item-comment">
                 {this.props.comments[k].comment}

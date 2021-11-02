@@ -16,10 +16,13 @@ export default class AddCommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // const year = new Date().getFullYear();
+    // const yearIdx = new Date().toString().indexOf(year);
     const comment = { 
       bill_id: this.props.bill.id,
       commenter_id: this.props.currentUser.id,
-      comment: this.state.comment      
+      comment: this.state.comment,
+      // created_at:  new Date().toString().slice(0,yearIdx + 4)
     };
 
     this.props.addComment(comment);

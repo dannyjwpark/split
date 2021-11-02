@@ -4,7 +4,7 @@ json.extract! @bill, :id, :author_id, :amount, :category, :description, :friend_
 json.comments do
   @bill.comments.each do |comment|
     json.set! comment.id do
-      json.extract! comment, :id, :commenter_id, :bill_id, :comment
+      json.extract! comment, :id, :commenter_id, :bill_id, :comment, :created_at, :updated_at
     end
   end
 end

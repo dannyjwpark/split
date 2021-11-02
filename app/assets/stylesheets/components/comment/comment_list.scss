@@ -5,19 +5,38 @@
 }
 
 .comment-title{
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: #999;
+  font-weight: 600;
 }
 
 .comment-item{
   display: flex;
-  flex-direction: row;
-  margin-top: 3px;
+  flex-direction: column;
+  margin-top: 8px;
+  background-color: #ffffe9;
+  padding: 4px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
 }
 
 .comment-item-user{
   font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+}
+
+.time-small-font{
+  font-weight: 200;
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 .comment-item-comment{
   font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
