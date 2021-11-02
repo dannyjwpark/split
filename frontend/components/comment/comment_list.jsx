@@ -19,13 +19,13 @@ export default class CommentList extends React.Component{
     console.log(this.props.comments);
 
     return (
-      <div>
-        <p>Comments: </p>
+      <div className='comment-container'>
+        <p className='comment-title'>Comments: </p>
         <ul className="comment-list">
           {Object.keys(this.props.comments).map((k,v) => 
             <li className="comment-item">
               <div className="comment-item-user">
-                {this.props.comments[k].commenter_id}
+                {this.props.users[this.props.comments[k].commenterId].username}: &nbsp;
               </div>
               <div className="comment-item-comment">
                 {this.props.comments[k].comment}

@@ -1,0 +1,23 @@
+@import url( href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family='IBM Plex Serif'&display=swap");
+
+.comment-container{
+  padding: 7px;
+}
+
+.comment-title{
+  margin-bottom: 5px;
+}
+
+.comment-item{
+  display: flex;
+  flex-direction: row;
+  margin-top: 3px;
+}
+
+.comment-item-user{
+  font-weight: 600;
+}
+
+.comment-item-comment{
+  font-weight: 300;
+}
