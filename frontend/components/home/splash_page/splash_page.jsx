@@ -352,6 +352,9 @@ class SplashPage extends React.Component {
                         <a href="https://www.linkedin.com/in/jwp007/" target="_blank">
                             <img className="footer_Linkedin" src={window.linkedin_icon} />
                         </a>
+                        <a href="https://dannyjwpark.github.io/dannyjwp/" target="_blank">
+                            <img className="footer_Favicon" src={window.favicon} />
+                        </a>
                     </div>
                     <p>Made with ❤️ in Seattle, WA</p>
                 </section>
