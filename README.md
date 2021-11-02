@@ -22,6 +22,8 @@
 ### Homepage Dashboard
 - Dashboard page consists of the user show page, as well as the components for adding friends and expenses.
 
+![](https://github.com/dannyjwpark/split/blob/main/app/assets/images/adding_friend_bill.gif)
+
 ### Friending
 - Able to add another existing user in the app as a friend
 - Able to remove a friend
