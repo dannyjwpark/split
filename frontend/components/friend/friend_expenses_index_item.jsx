@@ -23,8 +23,8 @@ export default class FriendExpensesIndexItem extends React.Component {
         const users_list = Object.values(this.props.friends);
         const { author_id, amount, category, created_at, description, friendList, notes, num_payers, payer_id } = this.props.bill;
 
-        console.log("props.bill at bill_index_item: ")
-        console.log(this.props.bill);
+        // console.log("props.bill at bill_index_item: ")
+        // console.log(this.props.bill);
 
         // console.log("friend_list: " + Object.values(friend_list));
         let payer_name = '';
@@ -109,7 +109,7 @@ export default class FriendExpensesIndexItem extends React.Component {
         const renderBill = () => {
           if(friendNames.includes(this.props.friend.name) || this.props.friend.id === author_id){
             return(
-            <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
+            <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle} key={this.props.bill.id}>
                 <header className='bill-item-header'>
 
                     <div className='bill-item-header-left'>
@@ -185,7 +185,7 @@ export default class FriendExpensesIndexItem extends React.Component {
                         <div className='bill-item-right-friends'>
                             <span id='font-bold' className='bill-item-paid'>Friends involved: &nbsp;</span>
                             {Object.keys(friendList).map((k,v) => 
-                              <span> {friendList[k].label} &nbsp;</span> ) }
+                              <span key={friendList[k].label}> {friendList[k].label} &nbsp;</span> ) }
                         </div>
                     </div>
                 </div>

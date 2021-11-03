@@ -17,16 +17,16 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], id: params[:id])
-    @comment_relationshipship.destroy
+    @comment_relationshipship = Comment.find_by(id: params[:id], bill_id: params[:bill_id])
 
     if @comment_relationshipship
-      render 'api/comments/comment_relationshipship.json.jbuilder'
+      @comment_relationshipship.destroy
     end
+    render 'api/comments/comment_relationshipship.json.jbuilder'
   end
 
   def show
-    @comment_relationshipship = Comment.find_by(commenter_id: params[:commenter_id], bill_id: params[:bill_id])
+    @comment_relationshipship = Comment.find_by(id: params[:id], bill_id: params[:bill_id])
     @comment = Bill.find_by(id: @comment_relationshipship.bill_id)
     
     if @comment

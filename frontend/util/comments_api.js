@@ -29,7 +29,7 @@ export const addComment = comment => (
 export const updateComment = comment => (
   $.ajax({
     method: 'PATCH',
-    url: `api/bills/${comment.bill_id}/comments/${comment.comment_id}`,
+    url: `api/bills/${comment.bill_id}/comments/${comment.id}`,
     data: {comment}
   })
 )
@@ -39,8 +39,8 @@ export const deleteComment = comment => {
   return (
     $.ajax({
       method: 'DELETE',
-      url: `/api/bills/${comment.bill_id}/comments/${comment.comment_id}`,
-      data: friend
+      url: `/api/bills/${comment.bill_id}/comments/${comment.id}`,
+      data: {comment}
     })
   )
 };

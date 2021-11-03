@@ -14,14 +14,14 @@ export default class FriendShow extends React.Component {
     const user_id = this.props.currentUser.id
     const friend_id = this.props.friend.id
     const friend = { user_id: user_id, friend_id: friend_id }
-    console.log(friend);
+    // console.log(friend);
     this.props.deleteFriend(friend);
     this.props.fetchFriends(user_id).then(() => this.props.history.push("/home"))
   }
 
   render() {
-    console.log('this.props @ friend show page');
-    console.log(this.props);
+    // console.log('this.props @ friend show page');
+    // console.log(this.props);
     // console.log('this.props.currentUser.id');
     // console.log(this.props.currentUser.id);
       return (
@@ -48,7 +48,7 @@ export default class FriendShow extends React.Component {
             <section className='homepage-centercolumn'>
                 <div className='db-center-header'>
                   <img className='user-icon2' src={window.doge} alt="" />
-                  <span className='friend-name-text'>{this.props.friend.name}</span>
+                  <span className='friend-name-text'>{this.props.friend?.name}</span>
                   {this.props.addBillForm}
                 </div>
                 

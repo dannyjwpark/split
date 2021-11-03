@@ -28,9 +28,6 @@ export default class FriendAddForm extends React.Component {
         friend.friend_id = this.props.users[i].id;
       }
     }
-    console.log("friend: " + friend.name + ", id: " + friend.friend_id);
-    console.log("this.props: ")
-    console.log(this.props)
     this.props.addFriend(friend);
     this.props.fetchFriends(this.props.currentUser.id);
   }

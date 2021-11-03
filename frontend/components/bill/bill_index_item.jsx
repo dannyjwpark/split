@@ -104,28 +104,28 @@ export default class BillIndexItem extends React.Component {
 
         return (
             <div className='bill-item'>
-              <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle}>
-                <header className='bill-item-header'>
+              <Link to={`/bills/${this.props.bill.id}`} className='bill-show-link' style={linkStyle} key={this.props.bill.id}>
+                <header className='bill-item-header' key='bill-item-header'>
 
-                    <div className='bill-item-header-left'>
-                        <p>{created_at}</p>
-                        <span className='bill-item-header-description'>{description}</span>
+                    <div className='bill-item-header-left' key='bill-item-header-left'>
+                        <p className='timestamp' key='timestamp'>{created_at}</p>
+                        <span className='bill-item-header-description' key='bill-item-header-description'>{description}</span>
                     </div>
 
-                    <div className='bill-item-header-right'>
+                    <div className='bill-item-header-right' key='bill-item-header-right'>
                         <div className='bill-payer'>
-                            <span className='bill-payer-text'>{payer_name} paid
+                            <span className='bill-payer-text' key='bill-payer-text'>{payer_name} paid
                             </span>
                             {/* <span className='bill-portion-amount'>{amount2} */}
-                            <span className='bill-portion-amount'> {amount}
+                            <span className='bill-portion-amount' key='bill-portion-amount'> {amount}
                             </span>
                         </div>
 
-                        <div className='bill-lender'>
-                            <span className='bill-lender-text'>{payer_name} lent
+                        <div className='bill-lender' key='bill-lender'>
+                            <span className='bill-lender-text' key='bill-lender-text'>{payer_name} lent
                             </span>
                             {/* <span className='bill-lent-amount'>{amount3} */}
-                            <span className='bill-lent-amount'> {amount / this.props.bill.num_payers * (this.props.bill.num_payers - 1)}
+                            <span className='bill-lent-amount' key='bill-lent-amount'> {amount / this.props.bill.num_payers * (this.props.bill.num_payers - 1)}
                             </span>
                         </div>
 
@@ -134,22 +134,21 @@ export default class BillIndexItem extends React.Component {
                 </header>
 
 
-                <div className='bill-item-center'>
+                <div className='bill-item-center' key='bill-item-center'>
 
-                    <img src={window.category_choose_icon} alt="" className='category_choose_icon_1' />
+                    <img src={window.category_choose_icon} alt="" className='category_choose_icon_1' key='category_choose_icon_1' />
 
-                    <div className='bill-item-center-content'>
+                    <div className='bill-item-center-content' key='bill-item-center-content'>
 
-                        <span className='bill-item-center-description'>{description}</span>
-                        <span className='bill-item-center-amount' id='money'>${amount2}</span>
-                        <span className='bill-item-center-author'>Added by {author_name}</span>
-                        {/* <button className='bill-item-center-edit'>Edit expense</button> */}
+                        <span className='bill-item-center-description' key='bill-item-center-description'>{description}</span>
+                        <span className='bill-item-center-amount' id='money' key='bill-item-center-amount'>${amount2}</span>
+                        <span className='bill-item-center-author' key='bill-item-center-author'>Added by {author_name}</span>
 
 
                     </div>
                 </div>
                 
-                <div className='bill-item-bottom'>
+                <div className='bill-item-bottom' key='bill-item-bottom'>
                     {/* <div className='bill-item-bottomleft'>
                         <ul>
                             <li className='bill-item-paid' id='bottomleft-paid1'>
@@ -166,21 +165,21 @@ export default class BillIndexItem extends React.Component {
                             </li>
                         </ul>
                     </div> */}
-                    <div className='bill-item-right'>
-                        <div className='bill-item-right-category'>
-                            <div className='bill-item-paid'>
-                                <span id='font-bold' >Category: </span>
+                    <div className='bill-item-right' key='bill-item-right'>
+                        <div className='bill-item-right-category' key='bill-item-right-category'>
+                            <div className='bill-item-paid' key='bill-item-paid-category-container'>
+                                <span id='font-bold' key='bill-item-paid-category' >Category: </span>
                                 {category}
                             </div>
                         </div>
-                        <div className='bill-item-right-notes'>
-                            <span id='font-bold' className='bill-item-paid'>Notes: &nbsp;</span>
-                            <span>{notes}</span>
+                        <div className='bill-item-right-notes' key='bill-item-right-notes'>
+                            <span id='font-bold' className='bill-item-paid' key='bill-item-paid-notes-text'>Notes: &nbsp;</span>
+                            <span key='bill-item-paid-notes'>{notes}</span>
                         </div>
-                        <div className='bill-item-right-friends'>
-                            <span id='font-bold' className='bill-item-paid'>Friends involved: &nbsp;</span>
+                        <div className='bill-item-right-friends' key='bill-item-right-friends'>
+                            <span id='font-bold' className='bill-item-paid' key='bill-item-paid-friends-involved'>Friends involved: &nbsp;</span>
                             {Object.keys(friendList).map((k,v) => 
-                              <span> {friendList[k].label} &nbsp;</span>
+                              <span key={friendList[k].label}> {friendList[k].label} &nbsp;</span>
                             ) }
                         </div>
                     </div>

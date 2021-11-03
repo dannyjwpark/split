@@ -64,7 +64,6 @@ class AddBillForm extends React.Component {
   }
 
   updateFriendList = (friend_list) => {
-    console.log("test");
     this.setState({...this.state, friend_list })
   }
 
@@ -74,14 +73,11 @@ class AddBillForm extends React.Component {
     this.setState({
       friend_list: e
     });
-    console.log('friend_list: ')
-    console.log(this.state.friend_list);
   };
 
 
   
   render() {
-    console.log("this.state", this.state);
     const friendsList =
       this.props.friends !== null &&
       this.props.friends.map(friend => ({

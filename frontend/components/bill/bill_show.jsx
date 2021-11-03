@@ -20,8 +20,8 @@ export default class BillShow extends React.Component {
   }
 
   render() {
-    console.log("this.props @ bill.show");
-    console.log(this.props);
+    // console.log("this.props @ bill.show");
+    // console.log(this.props);
     return (
       <div className='homepage-wrapper'>
         <header className='homepage-navbar'>

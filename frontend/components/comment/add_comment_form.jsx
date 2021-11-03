@@ -1,4 +1,7 @@
 import React from 'react';
+import { createHashHistory } from 'history';
+
+export const history = createHashHistory({forceRefresh:true});
 
 
 export default class AddCommentForm extends React.Component {
@@ -11,6 +14,12 @@ export default class AddCommentForm extends React.Component {
   }
 
   componentDidMount() {
+    this.interval = setInterval(() => {
+      this.refresh()
+    }, 1000)
+  }
+
+  refresh() {
     this.props.fetchComments(this.props.bill.id);
   }
 
@@ -26,7 +35,8 @@ export default class AddCommentForm extends React.Component {
     };
 
     this.props.addComment(comment);
-    this.props.fetchComments(this.props.bill.id);
+    this.props.fetchComments(this.props.bill.id).then(() => history.push(`/bills/${this.props.bill.id}`));
+
   }
 
   update(field) {

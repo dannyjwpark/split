@@ -41,7 +41,7 @@ class Api::BillsController < ApplicationController
 
 
     def index
-      @bills = Bill.all
+      @bills = Bill.includes(params[:author_id])
       #bills_all = current_user.split_bills
       #bill_ids = bills_all.pluck(:bill_id).uniq
       render "api/bills/index.json.jbuilder"

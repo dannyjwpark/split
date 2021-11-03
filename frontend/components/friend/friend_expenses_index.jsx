@@ -24,7 +24,7 @@ class FriendExpensesIndex extends React.Component {
       const billsconst = this.props.bills;
       billsconst.forEach ( (bill) => {
         // let friendNames = [];
-        console.log(bill);
+        // console.log(bill);
         // Object.keys(bill.friendList).map((k,v) => friendNames.push(friendList[k].label));
 
         // if(friendNames.includes(friend.name) || (bill.authorId === this.props.friend.id)){
@@ -58,10 +58,10 @@ class FriendExpensesIndex extends React.Component {
       
     <ul>
       {
-        billsArr.map((bill) => (
+        billsArr.map((bill, idx) => (
           // <BillIndexItem
           <FriendExpensesIndexItem
-            key={bill.id}
+            key={idx}
             bill={bill}
 
             fetchBill={this.props.fetchBill}

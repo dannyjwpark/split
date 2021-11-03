@@ -34,8 +34,6 @@ class HomepageNavbarDropDown extends React.Component {
           <img src={window.window.account_icon} alt="" className='account-icon'/>
 
           <div className='dd-username'>
-            {/* {console.log('props in dropdown')}
-            {console.log(this.props)} */}
             {currentUser.username}
           </div>
           

@@ -16,8 +16,8 @@ class Homepage extends React.Component {
 
   componentDidMount() {
     this.props.fetchUsers();
-    console.log(`props at homepage: `);
-    console.log(this.props);
+    // console.log(`props at homepage: `);
+    // console.log(this.props);
   }
 
 

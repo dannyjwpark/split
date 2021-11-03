@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.eager_load(params[:username])
     render "api/users/index.json.jbuilder"
   end
 

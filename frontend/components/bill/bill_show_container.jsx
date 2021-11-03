@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import BillShow from './bill_show';
 
-const mapStateToProps = ({ session, entities: { bills, comments, friends, users } }, ownProps) => {
+const mapStateToProps = ({ session, entities: { bills, friends, users } }, ownProps) => {
   // debugger;
   return {
     formType: 'addComment',
