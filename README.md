@@ -37,6 +37,7 @@
 
 ### Commenting
 - Commenting feature on each expenses by a current user, as well as friends included in the expense
+<br />
 
 
 ## Development
@@ -50,7 +51,6 @@ def index
   render "api/users/index.json.jbuilder"
 end
 ```
-
 
 ## Comments feature backend
 
@@ -87,6 +87,8 @@ end
 ```
 
 
-## code snipppet 3
 
 ## Future actions
+- Enable users to form a group between themselves for transactions on regular basis
+- Settling expenses once paid out
+- Enable changing split ratio of the expenses (other than equal proportions among number of payers)
