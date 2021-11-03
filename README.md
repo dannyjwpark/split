@@ -35,11 +35,22 @@
 - Able to add an exppense that shows the payer's name, friends involved, category, description, and notes
 - Expense dynamically generates the list of potential payers based on the current user's friend list
 
-## Commenting
+### Commenting
 - Commenting feature on each expenses by a current user, as well as friends included in the expense
 
 
-## code snipppet 1
+## Optimizations
+### N+1 queries
+
+Through implementing eager loading, which works by preloading every data beforehand in a temporary cache stored in memory, number of queries being made from the Rails side can be reduced significantly. This allows earlier loading of data, which means number of queries is independent of the number of items fetched.
+
+``` Ruby
+def index
+  @users = User.eager_load(params[:username])
+  render "api/users/index.json.jbuilder"
+end
+```
+
 ## code snipppet 2
 ## code snipppet 3
 
