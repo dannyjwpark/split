@@ -37,3 +37,10 @@
 
 ## Commenting
 - Commenting feature on each expenses by a current user, as well as friends included in the expense
+
+
+## code snipppet 1
+## code snipppet 2
+## code snipppet 3
+
+## Future actions
