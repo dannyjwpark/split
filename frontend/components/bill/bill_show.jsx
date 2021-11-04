@@ -27,7 +27,7 @@ export default class BillShow extends React.Component {
 
 
     let comment_list = [];
-    Object.keys(this.props.comments).map((k,v) => comment_list.push(this.props.comments[k]));
+    if(this.props.comments) Object.keys(this.props.comments).map((k,v) => comment_list.push(this.props.comments[k]));
     this.setState({comments: comment_list});
     // this.setState({comments: this.props.comments});
   }
@@ -36,7 +36,7 @@ export default class BillShow extends React.Component {
     this.props.fetchComments(this.props.bill.id);
 
     let comment_list = [];
-    Object.keys(this.props.comments).map((k,v) => comment_list.push(this.props.comments[k]));
+    if(this.props.comments) Object.keys(this.props.comments).map((k,v) => comment_list.push(this.props.comments[k]));
     this.setState({comments: comment_list});
     
   }
