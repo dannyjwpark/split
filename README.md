@@ -35,6 +35,8 @@
 - Able to add an exppense that shows the payer's name, friends involved, category, description, and notes
 - Expense dynamically generates the list of potential payers based on the current user's friend list
 
+![](https://github.com/dannyjwpark/split/blob/main/app/assets/images/commenting.gif)
+
 ### Commenting
 - Commenting feature on each expenses by a current user, as well as friends included in the expense
 <br />
