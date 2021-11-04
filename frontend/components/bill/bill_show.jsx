@@ -8,8 +8,37 @@ import AddCommentForm from '../comment/add_comment_form';
 export default class BillShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      comment: 'Add a comment',
+      comments: [],
+    }
     this.deleteBill = this.deleteBill.bind(this);
+    this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+
   }
+
+  componentDidMount(){
+    this.props.fetchComments(this.props.bill.id);
+    this.refresh();
+
+
+    let comment_list = [];
+    Object.keys(this.props.comments).map((k,v) => comment_list.push(this.props.comments[k]));
+    this.setState({comments: comment_list});
+    // this.setState({comments: this.props.comments});
+  }
+
+  refresh() {
+    this.props.fetchComments(this.props.bill.id);
+
+    let comment_list = [];
+    Object.keys(this.props.comments).map((k,v) => comment_list.push(this.props.comments[k]));
+    this.setState({comments: comment_list});
+    
+  }
+
 
   deleteBill() {
   // debugger;
@@ -17,6 +46,68 @@ export default class BillShow extends React.Component {
     // console.log(billId);
     this.props.deleteBill(this.props.bill.id);
     this.props.fetchBills().then(() => this.props.history.push("/home"))
+  }
+
+  forceUpdateHandler(){
+    this.forceUpdate();
+  };
+
+  handleDelete(id){
+    const bill_id = this.props.bill.id;
+    const comment = {bill_id: bill_id, id: id}
+    // debugger
+
+    let new_comments = this.state.comments.filter((comment) => comment.id !== id);
+    this.props.deleteComment(comment);
+    this.setState(state => {
+      const comments = state.comments.filter((comment) => comment.id !== id);
+      
+      return {
+        comments,
+      }
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const comment = { 
+      bill_id: this.props.bill.id,
+      commenter_id: this.props.currentUser.id,
+      comment: this.state.comment,
+    };
+
+    // debugger;
+    this.props.addComment(comment)
+      .then(() => this.props.fetchComments(this.props.bill.id))
+      .then(() => this.setState(state => {
+        let comments = state.comments;
+        comments[comments.length] = {
+          commenterId: this.props.currentUser.id,
+          billId: this.props.bill.id,
+          comment: this.state.comment,
+          createdAt: 'Now',
+          updatedAt: 'Now',
+
+        }
+        return {
+          comment: this.state.comment,
+          comments,
+          }
+        }
+      )
+    );
+    this.forceUpdate();
+    console.log(this.state.comments);
+  }
+
+  update() {
+    return e => {
+      this.setState({ comment: e.target.value })
+    }
+    // return e => this.setState({
+    //   [field]: e.currentTarget.value
+    // });
   }
 
   render() {
@@ -75,7 +166,7 @@ export default class BillShow extends React.Component {
               </div>
 
               <div className='comment-container'>
-                <CommentList 
+                {/* <CommentList 
                   // fetchBills={this.props.fetchBills}
                   fetchBill={this.props.fetchBill}
                   // addBill={this.props.addBill}
@@ -101,8 +192,31 @@ export default class BillShow extends React.Component {
                   bills={this.props.bills}
                   comments={this.props.comments}
                   users={this.props.users} usersObj={this.props.usersObj}
-                />
-                <AddCommentForm 
+                /> */}
+                <div className='comment-container'>
+                  <p className='comment-title'>Comments: </p>
+                  <ul className="comment-list">
+                    {this.state.comments.map((comment, idx) => 
+                      <li className="comment-item" key={comment.id}>
+                        <div className="comment-item-user">
+                          {this.props.users[comment.commenterId -1].username} &nbsp; <div className='time-small-font'>
+                            <p className='comment-name-time' key={comment.createdAt}>
+                              {comment.createdAt.slice(0,10)} &nbsp;
+                              {comment.createdAt.slice(11,16)}
+                            </p>
+                          </div>
+                            <button className='comment-delete' onClick={() => this.handleDelete(comment.id)}>
+                              <p className='comment-delete-button'> x </p>
+                            </button>
+                        </div>
+                        <div className="comment-item-comment" key={comment.comment}>
+                          {comment.comment}
+                        </div>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+                {/* <AddCommentForm 
                   fetchBills={this.props.fetchBills}
                   fetchBill={this.props.fetchBill}
                   addBill={this.props.addBill}
@@ -123,13 +237,25 @@ export default class BillShow extends React.Component {
 
                   currentUser={this.props.currentUser}
                   friends={this.props.friends}
-                  // num_payers={this.props.num_payers}
                   bills={this.props.bills}
+                  comments={this.props.comments}
                   users={this.props.users}
 
                   bill = {this.props.bill}
-                  // usersObj={this.props.usersObj}
-                />
+                  onClick= {this.forceUpdateHandler}
+                /> */}
+                <form onSubmit={this.handleSubmit} className='add-comment-form'>
+                  <input className='comment-index-box' 
+                    onChange={this.update()} 
+                    // value={this.state.bill} 
+                    value={this.state.comment} 
+                  />
+                  <br />
+                  <div className='submit-button-add-comment'>
+                    <input className="add-comment-submit" type="submit" value='Post' />
+                  </div>
+                </form>
+
               </div>
           </section>
 
