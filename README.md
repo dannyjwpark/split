@@ -54,7 +54,7 @@ def index
 end
 ```
 
-## Comments feature backend
+## Nested routes backend
 
 One of the challenges of setting backend architecture was with nested attributes.  Commenting routes were nested under each bills,so the necessary parameters and properties had to be passed in acoordingly in order to successfully return data from backend api calls, as well as to populate on frontend side.
 
@@ -86,6 +86,60 @@ json.comments do
     end
   end
 end
+```
+
+## Re-rendering components
+While adding/deleting comments worked fine on database level, simple props change and re-fetching inside lifecycle methods such as componentDidMount() were not sufficient to trigger components' re-rendering. In this case, the props were stored inside declared variables to be set as states to proactively trigger re-rendering with setState() method.
+
+```Javascript
+handleDelete(id){
+  const bill_id = this.props.bill.id;
+  const comment = {bill_id: bill_id, id: id}
+
+  if(this.props.comments[id].commenterId === this.props.currentUser.id){
+    let new_comments = this.state.comments.filter((comment) => comment.id !== id);
+    this.props.deleteComment(comment);
+    this.setState(state => {
+      const comments = state.comments.filter((comment) => comment.id !== id);
+      return {
+        comments,
+      }
+    })
+  } else {
+    alert("You can only delete your own comment")
+  }
+}
+
+handleSubmit(e) {
+  e.preventDefault();
+
+  const comment = { 
+    bill_id: this.props.bill.id,
+    commenter_id: this.props.currentUser.id,
+    comment: this.state.comment,
+  };
+
+  this.props.addComment(comment)
+    .then(() => this.props.fetchComments(this.props.bill.id))
+    .then(() => this.setState(state => {
+      let comments = state.comments;
+      comments[comments.length] = {
+        commenterId: this.props.currentUser.id,
+        billId: this.props.bill.id,
+        comment: this.state.comment,
+        createdAt: 'Now',
+        updatedAt: 'Now',
+      }
+      return {
+        comment: this.state.comment,
+        comments,
+        }
+      }
+    )
+  );
+  this.forceUpdate();
+  console.log(this.state.comments);
+}
 ```
 
 
