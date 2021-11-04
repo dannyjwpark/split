@@ -4,6 +4,8 @@ import HomepageLeftsidebar from '../home/home_page/homepage_leftsidebar';
 import BillIndexItem from './bill_index_item';
 import CommentList from '../comment/comment_list'
 import AddCommentForm from '../comment/add_comment_form';
+import { Alert } from 'react-alert'
+
 
 export default class BillShow extends React.Component {
   constructor(props) {
@@ -44,8 +46,12 @@ export default class BillShow extends React.Component {
   // debugger;
     // const billId = this.props.bill.id
     // console.log(billId);
-    this.props.deleteBill(this.props.bill.id);
-    this.props.fetchBills().then(() => this.props.history.push("/home"))
+    if(this.props.bill.authorId === this.props.currentUser.id || this.props.bill.payerId === this.props.currentUser.id){
+      this.props.deleteBill(this.props.bill.id);
+      this.props.fetchBills().then(() => this.props.history.push("/home"))
+    } else {
+      alert("Only the author or payer of the bill can delete this bill.")
+    }
   }
 
   forceUpdateHandler(){
@@ -57,15 +63,19 @@ export default class BillShow extends React.Component {
     const comment = {bill_id: bill_id, id: id}
     // debugger
 
-    let new_comments = this.state.comments.filter((comment) => comment.id !== id);
-    this.props.deleteComment(comment);
-    this.setState(state => {
-      const comments = state.comments.filter((comment) => comment.id !== id);
-      
-      return {
-        comments,
-      }
-    })
+    if(this.props.comments[id].commenterId === this.props.currentUser.id){
+      let new_comments = this.state.comments.filter((comment) => comment.id !== id);
+      this.props.deleteComment(comment);
+      this.setState(state => {
+        const comments = state.comments.filter((comment) => comment.id !== id);
+        
+        return {
+          comments,
+        }
+      })
+    } else {
+      alert("You can only delete your own comment")
+    }
   }
 
   handleSubmit(e) {
