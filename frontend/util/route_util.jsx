@@ -23,13 +23,13 @@ const mapStateToProps = state => {
 
 // making sure users can't visit "/signup" once already logged in
 const Protected = ({ component: Component, path, loggedIn, exact }) => (
-  <Route path={path} exact={exact} render={(props) => (
-    loggedIn ? (
-      <Component {...props} />
-    ) : (
-      <Redirect to="/login" />
-    )
-  )} />
+  <Route 
+    path={path} 
+    exact={exact} 
+    render={(props) => 
+      loggedIn ? <Component {...props} /> : <Redirect to="/login" />
+  } 
+  />
 );
 
   // withRouter: gives access to history object's properties
